@@ -120,6 +120,46 @@ dialog::backdrop{background:rgba(10,20,28,.55)}
 @media (min-width:900px){.toast{bottom:24px}}
 footer.ver{font-size:.75rem; color:var(--muted); text-align:center; padding:24px 0 0}
 
+/* M10: report stampabili */
+.report-bar{display:flex; flex-wrap:wrap; align-items:center; gap:10px 14px; margin-bottom:10px}
+.report-bar .check{min-height:44px}
+/* Il report usa sempre i colori chiari, anche con il tema scuro: è un foglio */
+.report{--bg:#FFFFFF; --surface:#FFFFFF; --surface-2:#EEF2F1; --ink:#17232F; --muted:#56636F; --line:#D3DCDA; --accent:#1C6E8C; --accent-ink:#FFFFFF;
+  --mark:#E8B400; --mark-ink:#2B2200; --good:#2F8A57; --bad:#B83A2E; --good-ink:#1F6B42; --bad-ink:#9B2C22; --warn-bg:#FFF4CC; --warn-ink:#5A4500;
+  background:var(--surface); color:var(--ink); max-width:820px; margin:0 auto; padding:28px 30px; border:1px solid var(--line); border-radius:var(--r-m);
+  -webkit-print-color-adjust:exact; print-color-adjust:exact}
+.report a{color:inherit; text-decoration:none}
+.rhead{display:flex; gap:18px; align-items:center; padding-bottom:14px; border-bottom:2px solid var(--ink); margin-bottom:18px}
+.rbib{font-family:var(--font-bib); font-stretch:condensed; font-weight:800; font-size:2.2rem; line-height:1; border:2px solid var(--ink); border-radius:4px; padding:8px 12px; min-width:74px; text-align:center}
+.rkind{margin:0; color:var(--muted); font-size:.9rem}
+.rhead h1{margin:2px 0 4px; font-size:1.6rem; line-height:1.15}
+.rmeta{margin:0; font-size:.9rem}
+.rsec{margin-bottom:22px}
+.rsec h2{font-size:1.15rem; margin:0 0 8px}
+.rsec h2 span{font-weight:400; color:var(--muted); font-size:.9rem}
+.rtab{font-size:.85rem}
+.rtab th,.rtab td{padding:5px 8px}
+.rnote{font-size:.8rem; color:var(--muted); margin:6px 0 0}
+.rfoot{margin-top:22px; padding-top:10px; border-top:1px solid var(--line); font-size:.75rem; color:var(--muted)}
+.report .chartbox{border:0; padding:0}
+@media (max-width:620px){.report{padding:16px}}
+@media print{
+  @page{size:A4; margin:14mm 12mm}
+  :root,:root:not([data-theme="light"]){--bg:#fff; --surface:#fff; --ink:#17232F; --muted:#56636F; --line:#D3DCDA}
+  html,body{background:#fff !important}
+  .topbar,.lanes,.nav,.update-bar,.toast,#modal,.no-print{display:none !important}
+  .app{display:block !important; min-height:0}
+  main{padding:0 !important; max-width:none !important}
+  .report{max-width:none; border:0; border-radius:0; padding:0; font-size:10.5pt}
+  .rsec{break-inside:avoid}
+  .rsec.long{break-inside:auto}
+  .rsec h2,.rhead{break-after:avoid}
+  .report tr{break-inside:avoid}
+  .report thead{display:table-header-group}
+  .report .scroll-x{overflow:visible}
+  .prog td:first-child,.prog th:first-child{position:static; box-shadow:none}
+}
+
 /* M9: aggiornamento e uso offline */
 .update-bar{display:flex; flex-wrap:wrap; align-items:center; gap:8px 12px; flex:0 0 100%; width:100%; background:var(--mark); color:var(--mark-ink); padding:8px 16px; font-size:.9rem; font-weight:600}
 .update-bar .btn{background:var(--mark-ink); border-color:var(--mark-ink); color:#fff}
@@ -280,7 +320,7 @@ textarea{width:100%; min-height:200px; padding:10px 12px; border:1px solid var(-
    ========================================================= */
 const APP_ID = 'registro-scienze-motorie';
 const SCHEMA_VERSION = 1;
-const APP_VERSION = 'M9';
+const APP_VERSION = 'M10';
 
 /* ---------- Utilità ---------- */
 const U = {
@@ -704,6 +744,7 @@ function viewClasse(id, tab = 'studenti') {
   return `<p class="small" style="margin:0 0 4px"><a href="#/classi">Classi</a></p>
     <h2>Classe ${U.esc(c.name)}</h2><p class="sub">Anno scolastico ${U.esc(y?.label ?? '')}</p>
     <div class="row" style="margin:-6px 0 14px">
+      <a class="btn" href="#/report/classe/${c.id}">Report PDF</a>
       <button class="btn ghost" data-action="renameClass" data-class="${c.id}">Rinomina classe</button>
       ${Ops.classDeletable(c.id) ? `<button class="btn ghost" data-action="deleteClass" data-class="${c.id}">Elimina classe</button>` : ''}
     </div>
@@ -771,6 +812,7 @@ function viewStudente(id) {
     <p class="sub">${s.birthDate ? 'Nato/a il ' + U.fmtDate(s.birthDate) : 'Data di nascita non indicata'}${s.alias ? ', alias ' + U.esc(s.alias) : ''}</p>
     ${homonym && !s.alias && !s.birthDate ? '<div class="notice">In archivio c\'è un altro studente con lo stesso nome. Aggiungi la data di nascita o un alias per distinguerli.</div>' : ''}
     <div class="row" style="margin-bottom:16px">
+      <a class="btn primary" href="#/report/studente/${s.id}">Report PDF</a>
       <button class="btn" data-action="editStudent" data-student="${s.id}">Modifica dati</button>
       ${active.map(x => `<button class="btn" data-action="removeStudent" data-student="${s.id}" data-class="${x.c.id}">Rimuovi da ${U.esc(x.c.name)}</button>`).join('')}
     </div>
@@ -1965,9 +2007,9 @@ function marker(shape, x, y, hollow) {
   return `<circle ${c} cx="${x}" cy="${y}" r="5"/>`;
 }
 
-function chartHTML(p, pts, studentId) {
-  const W = chartWidth(), H = 250;
-  lastChartW = W;
+function chartHTML(p, pts, studentId, opts = {}) {
+  const W = opts.width || chartWidth(), H = 250;
+  if (!opts.static) lastChartW = W;
   const M = { l: p.decimals > 0 ? 48 : 42, r: 14, t: 14, b: 38 };
   const pw = W - M.l - M.r, ph = H - M.t - M.b;
   const vals = pts.map(x => x.value);
@@ -2013,7 +2055,9 @@ function chartHTML(p, pts, studentId) {
   const shapeOf = w => weights.length > 1 ? weights.indexOf(w) % 4 : 0;
   pts.forEach(pt => {
     const label = `${U.fmtDate(pt.date)}: ${U.fmtNum(pt.value, p.decimals)} ${p.unit}${pt.recovery ? ', recupero' : ''}${pt.weight != null && p.requiresEquipmentWeight ? `, attrezzo da ${U.fmtKg(pt.weight)} kg` : ''}`;
-    g += `<g class="pt" tabindex="0" role="button" data-action="showPoint" data-result="${pt.r.id}" data-student="${studentId}" aria-label="${U.esc(label)}">
+    g += opts.static
+      ? `<g class="pts" aria-label="${U.esc(label)}">${marker(shapeOf(pt.weight), pt.x, pt.y, pt.recovery)}</g>`
+      : `<g class="pt" tabindex="0" role="button" data-action="showPoint" data-result="${pt.r.id}" data-student="${studentId}" aria-label="${U.esc(label)}">
       <circle class="hit" cx="${n1(pt.x)}" cy="${n1(pt.y)}" r="17"/>${marker(shapeOf(pt.weight), pt.x, pt.y, pt.recovery)}</g>`;
   });
 
@@ -2028,7 +2072,7 @@ function chartHTML(p, pts, studentId) {
   const aria = `Grafico dell'andamento, ${pts.length} ${pts.length === 1 ? 'misura' : 'misure'}, da ${U.fmtNum(first.value, p.decimals)} a ${U.fmtNum(last.value, p.decimals)} ${p.unit}. I dati sono anche nella tabella sotto il grafico.`;
   return `<div class="chartbox chart"><svg class="plot" viewBox="0 0 ${W} ${H}" role="group" aria-label="${U.esc(aria)}" focusable="false">${g}</svg>
     ${leg ? `<div class="legend">${leg}</div>` : ''}
-    <div class="pt-info" aria-live="polite">Tocca un punto per vedere le prove di quella sessione.</div></div>`;
+    ${opts.static ? '' : '<div class="pt-info" aria-live="polite">Tocca un punto per vedere le prove di quella sessione.</div>'}</div>`;
 }
 
 function pointInfoHTML(r, ses, p, studentId) {
@@ -2069,16 +2113,10 @@ function sparkHTML(pts, p) {
 }
 
 /** Scheda Progressi della classe: ogni studente è confrontato solo con se stesso. Nessuna media, nessuna classifica. */
-function viewProgressi(c) {
-  const studs = Q.studentsOfClass(c.id);
+/** Righe della tabella progressi di una classe per un test (anno della classe). Usata nella scheda Progressi e nel report. */
+function progressRows(c, p, studs, counts) {
   const yid = c.schoolYearId;
-  const withData = Q.params(true).filter(p => studs.some(s => Prog.points(s.id, p.id, yid).length));
-  if (!studs.length) return '<div class="panel empty"><strong>Nessuno studente</strong>Aggiungi gli studenti alla classe per vedere i progressi.</div>';
-  if (!withData.length) return '<div class="panel empty"><strong>Ancora nessuna misura</strong>I progressi compaiono dopo la prima sessione di test con risultati registrati.</div>';
-  let p = Q.param(ProgSel[c.id]);
-  if (!p || !withData.includes(p)) p = withData[0];
-  const counts = Q.homonymCounts();
-  const rows = studs.map(s => {
+  return studs.map(s => {
     const pts = Prog.points(s.id, p.id, yid);
     const t = Prog.trend(pts, p);
     const pending = S.results.filter(r => r.studentId === s.id && r.status === 'assente' && Q.session(r.sessionId)?.parameterId === p.id && Q.cls(Q.session(r.sessionId).classId)?.schoolYearId === yid).length;
@@ -2095,6 +2133,18 @@ function viewProgressi(c) {
     return `<tr><td><a href="#/studente/${s.id}">${U.esc(Q.displayName(s, counts))}</a></td><td class="num">${pts.length}</td><td>${first}</td><td>${last}</td><td>${change}</td>
       <td>${sparkHTML(pts, p)}</td><td>${pending ? `<span class="tag mark">${pending} da recuperare</span>` : ''}</td></tr>`;
   });
+}
+
+function viewProgressi(c) {
+  const studs = Q.studentsOfClass(c.id);
+  const yid = c.schoolYearId;
+  const withData = Q.params(true).filter(p => studs.some(s => Prog.points(s.id, p.id, yid).length));
+  if (!studs.length) return '<div class="panel empty"><strong>Nessuno studente</strong>Aggiungi gli studenti alla classe per vedere i progressi.</div>';
+  if (!withData.length) return '<div class="panel empty"><strong>Ancora nessuna misura</strong>I progressi compaiono dopo la prima sessione di test con risultati registrati.</div>';
+  let p = Q.param(ProgSel[c.id]);
+  if (!p || !withData.includes(p)) p = withData[0];
+  const counts = Q.homonymCounts();
+  const rows = progressRows(c, p, studs, counts);
   return `<div class="row" style="margin-bottom:12px; align-items:flex-end">
       <label class="field">Test<select data-change="progParam" data-class="${c.id}">${withData.map(x => `<option value="${x.id}" ${x.id === p.id ? 'selected' : ''}>${U.esc(x.name)}</option>`).join('')}</select></label>
       <span class="muted small">Anno scolastico ${U.esc(Q.year(yid)?.label ?? '')}, migliore se ${p.betterWhen === 'lower' ? 'più basso' : 'più alto'}</span></div>
@@ -2297,6 +2347,7 @@ const stamp = () => { const d = new Date(); return `${U.isoFromDate(d)}_${pad2(d
 
 /** Azzera lo stato dell'interfaccia legato all'archivio precedente (procedure aperte, filtri). */
 function resetUiState() {
+  ReportOpt = { studentId: null, withPrevious: false };
   Wiz = null; StudView = { studentId: null, yearId: 'all' };
   Object.keys(ProgSel).forEach(k => delete ProgSel[k]);
   clearTimeout(saveTimer); saveTimer = null;
@@ -2658,6 +2709,114 @@ function pwaPanelHTML() {
     </div>`;
 }
 
+/* ==========================================================
+   M10: report per studente e per classe
+   Il report è una pagina dell'app con uno stile per la stampa: il pulsante apre la
+   finestra di stampa del browser, dove si sceglie "Salva come PDF" o una stampante.
+   ========================================================== */
+const REPORT_W = 680;
+let ReportOpt = { studentId: null, withPrevious: false };
+const PRIVACY_NOTE = 'Il documento contiene dati personali: conservalo e condividilo secondo le indicazioni della scuola.';
+
+/** Anno scolastico "in corso" per lo studente: il più recente tra quelli in cui è iscritto (iscrizioni attive per prime). */
+function studentCurrentYearId(s) {
+  const yearsOf = list => [...new Set(list.map(e => Q.cls(e.classId)?.schoolYearId).filter(y => Q.year(y)))]
+    .sort((a, b) => Q.year(b).label.localeCompare(Q.year(a).label));
+  const mine = S.enrollments.filter(e => e.studentId === s.id);
+  return yearsOf(mine.filter(e => !e.removedAt))[0] || yearsOf(mine)[0] || null;
+}
+function studentYearsWithData(s) {
+  return [...new Set(S.results.filter(r => r.studentId === s.id).map(r => Q.cls(Q.session(r.sessionId)?.classId)?.schoolYearId).filter(y => Q.year(y)))]
+    .sort((a, b) => Q.year(a).label.localeCompare(Q.year(b).label));
+}
+const genDate = () => U.fmtDate(U.todayISO());
+const fileLabel = label => String(label).split('/').join('-');
+
+function viewReportStudente(id) {
+  const s = Q.student(id);
+  if (!s) return viewNotFound();
+  if (ReportOpt.studentId !== id) ReportOpt = { studentId: id, withPrevious: false };
+  const curY = studentCurrentYearId(s);
+  const curLabel = Q.year(curY)?.label ?? '';
+  const prevYears = studentYearsWithData(s).filter(y => Q.year(y).label < curLabel);
+  const withPrev = ReportOpt.withPrevious && prevYears.length > 0;
+  const included = new Set([curY, ...(withPrev ? prevYears : [])].filter(Boolean));
+  const inPeriod = x => included.has(Q.cls(x.ses.classId)?.schoolYearId);
+
+  const classes = S.enrollments.filter(e => e.studentId === s.id).map(e => Q.cls(e.classId)).filter(c => c && included.has(c.schoolYearId))
+    .filter((c, i, arr) => arr.findIndex(k => k.id === c.id) === i)
+    .sort((a, b) => Q.year(b.schoolYearId).label.localeCompare(Q.year(a.schoolYearId).label));
+  const cur = classes.find(c => c.schoolYearId === curY);
+  const yearsTxt = [...included].map(y => Q.year(y).label).sort().join(', ');
+
+  const allRes = S.results.filter(r => r.studentId === s.id).map(r => ({ r, ses: Q.session(r.sessionId) })).filter(x => x.ses && Q.cls(x.ses.classId) && inPeriod(x));
+  const empty = [];
+  const sections = Q.params(true).map(p => {
+    const rows = allRes.filter(x => x.ses.parameterId === p.id).sort((a, b) => a.ses.date.localeCompare(b.ses.date));
+    if (!rows.length) { if (p.active) empty.push(p.name); return ''; }
+    const pts = Prog.points(s.id, p.id, 'all').filter(pt => included.has(pt.yearId));
+    return `<section class="rsec"><h2>${U.esc(p.name)} <span>(${U.esc(p.unit)}, migliore se ${p.betterWhen === 'lower' ? 'più basso' : 'più alto'})</span></h2>
+      ${pts.length ? chartHTML(p, pts, s.id, { width: REPORT_W, static: true }) : '<p class="rnote">Nessuna misura registrata nel periodo: solo assenze o esoneri.</p>'}
+      ${trendHTML(Prog.trend(pts, p), p)}
+      <table class="rtab"><thead><tr><th>Sessione</th>${withPrev ? '<th>Classe</th>' : ''}<th class="num">Prove</th><th class="num">Migliore</th><th>Attrezzo</th><th>Stato</th></tr></thead><tbody>
+      ${rows.map(({ r, ses }) => `<tr><td>${U.fmtDate(ses.date)}</td>${withPrev ? `<td>${U.esc(Q.cls(ses.classId).name)} (${U.esc(Q.year(Q.cls(ses.classId).schoolYearId).label)})</td>` : ''}
+        <td class="num">${r.trials.map(t => t === null ? '–' : U.fmtNum(t, p.decimals)).join(' / ')}</td>
+        <td class="num"><strong>${U.fmtNum(r.value, p.decimals)}</strong></td>
+        <td>${ses.equipmentWeightKg != null ? U.fmtKg(ses.equipmentWeightKg) + ' kg' : ''}</td>
+        <td>${statusTag(r)}</td></tr>`).join('')}</tbody></table></section>`;
+  }).join('');
+
+  const title = `Report ${s.lastName} ${s.firstName} ${fileLabel(withPrev ? yearsTxt.split(', ')[0] + '_' + curLabel : curLabel)}`;
+  return `<div class="no-print">
+      <p class="small" style="margin:0 0 4px"><a href="#/studente/${s.id}">${U.esc(s.lastName)} ${U.esc(s.firstName)}</a></p>
+      <div class="report-bar">
+        ${prevYears.length ? `<label class="check"><input type="checkbox" data-change="reportPrev" ${withPrev ? 'checked' : ''}>Includi anche gli anni precedenti (${prevYears.map(y => U.esc(Q.year(y).label)).join(', ')})</label>` : '<span class="small muted">Nessun anno precedente con misure.</span>'}
+        <span class="spacer"></span>
+        <button type="button" class="btn primary" data-action="printReport" data-title="${U.esc(title)}">Stampa / Salva PDF</button>
+      </div>
+      <p class="small muted">Nella finestra di stampa scegli "Salva come PDF" come destinazione, oppure una stampante.</p>
+    </div>
+    <article class="report">
+      <header class="rhead"><span class="rbib">${U.esc(cur?.name ?? '—')}</span><div>
+        <p class="rkind">Report dei progressi individuali</p>
+        <h1>${U.esc(s.lastName)} ${U.esc(s.firstName)}</h1>
+        <p class="rmeta">${classes.length ? `Classe ${classes.map(c => `${U.esc(c.name)} (${U.esc(Q.year(c.schoolYearId).label)})`).join(', ')}` : 'Nessuna classe'}. Anno scolastico ${U.esc(withPrev ? yearsTxt : curLabel)}. Generato il ${genDate()}.</p></div></header>
+      ${sections || '<p>Nessuna misura registrata nel periodo.</p>'}
+      ${sections && empty.length ? `<p class="rnote">Test senza misure nel periodo: ${empty.map(n => U.esc(n)).join(', ')}.</p>` : ''}
+      <p class="rnote">Ogni grafico mostra il risultato migliore di ogni sessione; i simboli vuoti indicano un recupero. Il progresso è valutato confrontando la prima e l'ultima misura dello studente.</p>
+      <footer class="rfoot">Registro Scienze Motorie. ${PRIVACY_NOTE}</footer>
+    </article>`;
+}
+
+function viewReportClasse(id) {
+  const c = Q.cls(id);
+  if (!c) return viewNotFound();
+  const y = Q.year(c.schoolYearId);
+  const studs = Q.studentsOfClass(c.id);
+  const counts = Q.homonymCounts();
+  const params = Q.params(true).filter(p => studs.some(s => Prog.points(s.id, p.id, c.schoolYearId).length));
+  const sections = params.map(p => `<section class="rsec long"><h2>${U.esc(p.name)} <span>(${U.esc(p.unit)}, migliore se ${p.betterWhen === 'lower' ? 'più basso' : 'più alto'})</span></h2>
+      <table class="prog rtab">${'<thead><tr><th>Studente</th><th class="num">Misure</th><th>Prima misura</th><th>Ultima misura</th><th>Variazione</th><th>Andamento</th><th>Recuperi</th></tr></thead>'}
+      <tbody>${progressRows(c, p, studs, counts).join('')}</tbody></table>
+      ${p.requiresEquipmentWeight ? '<p class="rnote">Se l\'attrezzo è cambiato tra la prima e l\'ultima misura, la variazione è segnalata.</p>' : ''}</section>`).join('');
+  const title = `Report classe ${c.name} ${fileLabel(y?.label ?? '')}`;
+  return `<div class="no-print">
+      <p class="small" style="margin:0 0 4px"><a href="#/classe/${c.id}">Classe ${U.esc(c.name)}</a></p>
+      <div class="report-bar"><span class="small muted">Anno scolastico ${U.esc(y?.label ?? '')}: il report della classe riguarda solo il suo anno.</span><span class="spacer"></span>
+        <button type="button" class="btn primary" data-action="printReport" data-title="${U.esc(title)}">Stampa / Salva PDF</button></div>
+      <p class="small muted">Nella finestra di stampa scegli "Salva come PDF" come destinazione, oppure una stampante.</p>
+    </div>
+    <article class="report">
+      <header class="rhead"><span class="rbib">${U.esc(c.name)}</span><div>
+        <p class="rkind">Report dei progressi della classe</p>
+        <h1>Classe ${U.esc(c.name)}</h1>
+        <p class="rmeta">Anno scolastico ${U.esc(y?.label ?? '')}. ${studs.length} ${studs.length === 1 ? 'studente' : 'studenti'}. Generato il ${genDate()}.</p></div></header>
+      ${!studs.length ? '<p>La classe non ha studenti iscritti.</p>' : sections || '<p>Nessuna misura registrata in questo anno scolastico.</p>'}
+      ${sections ? '<p class="rnote">Gli studenti sono in ordine alfabetico e ognuno è confrontato solo con le proprie misure: nessuna media e nessuna classifica. Ogni mini grafico ha una scala propria e mostra la forma dell\'andamento.</p>' : ''}
+      <footer class="rfoot">Registro Scienze Motorie. ${PRIVACY_NOTE}</footer>
+    </article>`;
+}
+
 /* ---------- Navigazione ---------- */
 const routes = [
   { re: /^#\/classi$/, sec: 'classi', fn: () => viewClassi() },
@@ -2665,6 +2824,8 @@ const routes = [
   { re: /^#\/studente\/([\w-]+)$/, sec: 'classi', fn: m => viewStudente(m[1]) },
   { re: /^#\/sessione\/([\w-]+)(?:\/(riepilogo)|\/s\/([\w-]+))?$/, sec: 'classi', fn: m => viewSessione(m[1], m[2] || 'entry', m[3]) },
   { re: /^#\/passaggio$/, sec: 'classi', fn: () => viewPassaggio() },
+  { re: /^#\/report\/studente\/([\w-]+)$/, sec: 'classi', fn: m => viewReportStudente(m[1]) },
+  { re: /^#\/report\/classe\/([\w-]+)$/, sec: 'classi', fn: m => viewReportClasse(m[1]) },
   { re: /^#\/recuperi$/, sec: 'recuperi', fn: () => viewRecuperi() },
   { re: /^#\/parametri$/, sec: 'parametri', fn: () => viewParametri() },
   { re: /^#\/dati$/, sec: 'dati', fn: () => viewDati() }
@@ -2722,6 +2883,7 @@ const ChangeActions = {
   async selectYear(el) { S.settings.selectedYearId = el.value; await commit(); render(); },
   progParam(el) { ProgSel[el.dataset.class] = el.value; render(); },
   studYear(el) { StudView.yearId = el.value; render(); },
+  reportPrev(el) { ReportOpt.withPrevious = el.checked; render(); },
   async backupDays(el) { S.settings.backupReminderDays = Number(el.value); await commit('Promemoria aggiornato'); render(); }
 };
 Object.assign(Actions, {
@@ -3228,6 +3390,18 @@ Object.assign(Actions, {
     const w = PWA.reg.active || sw.controller;
     if (!w) { toast('Preparazione in corso: riprova tra qualche istante', 'error'); return; }
     w.postMessage({ type: 'CHECK_UPDATE' });
+  }
+});
+Object.assign(Actions, {
+  printReport(el) {
+    // Il titolo della pagina diventa il nome proposto per il PDF; poi si ripristina.
+    const prev = document.title;
+    let done = false;
+    const restore = () => { if (done) return; done = true; document.title = prev; window.removeEventListener('afterprint', restore); };
+    window.addEventListener('afterprint', restore);
+    document.title = el.dataset.title || prev;
+    try { window.print(); } catch (e) { toast('La stampa non è disponibile in questo browser', 'error'); }
+    setTimeout(restore, 5000);
   }
 });
 document.addEventListener('click', e => {
