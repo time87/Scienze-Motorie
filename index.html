@@ -1,0 +1,3264 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- Blocca qualsiasi connessione verso l'esterno: i dati non lasciano il dispositivo -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src 'self' data: blob:; font-src data:; connect-src 'none'; manifest-src 'self'; worker-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="theme-color" content="#17232F">
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAOSElEQVR42uWbeXAdxZ3HP9098049PUuWJd/WymAHOfjgNmc4AgQvV7DNFcCubGCX1BaQPSioLMdWJUvtkiVbIalwVQwURwisOQKE4nRgYQNkHYyRD/AhMNiysc53zkx37x/z3pOEDX62JSNMV02V9H49Pf379u/s/rVg500CJvzzBGfs1N5TLOZMEHPBNgPpUp+R1AzQA2Ij2DcE8qkt62pfgGXBjjz1N7HjOAsU/E4DsumA2Yux/FAI5iAEWIu1AJaR2QRCwIC5Lkfwy44P/vKbkPkKb58HwAkOLAuaWmZ+EynukNI52hqDtcaCNZSG3zlwI6LZ8LEWhBRCCiElxgSvY+wVHetXrCzzuBMASsz/1cwzhZQPIEXKah0ghByB4l69WlhrhFIOxvZZYy7u2LDiqYEgyH6xXxY0tcyaJ5R8HEHKaq0RwvkKMx/yJ4QT8kJKKPl4U8useSHzC1RZAiRgxh444yCM+xaCRCjy4qvM+M60wwghBZYc0j98y/vvrQKkAzcCbcqYNfdKKZNWBxohFPtdE9Iao4Vyksaoe2HBXGi1CpbZphb3MuW4V1odBCWx3z+bEBJjAuW4k5LpbRuyXb9dLjj0ULexy18upWoNRR/J/t2MEFIYo9u21rlz5Jie4EQp5QxrDV8D5gGktQYp5YwxPcGJjrScixRgjYHqdF+IkRkGWFttgGYNQipp7LkO2LlheFcdV1JKtNZorUdQPGRRSqGUwhhT1RKGPNu5DtBcQk5Ws/LZXI5kIkG6tjZEXHzpvJfmlSWTyZFIxKuRBFnq0+yAqK125bPZHCefeCy33XIzo0bVEgTBl64O1lqUcsj0ZfiH62/mD8+/QjKZqFYSakXT1Fm2Wr0vFIr88fmlpJJJ7rnvIZKJOH4Q5hZKScQ+SJPK39A6ZNB1HDLZLIsuXoixhrknnoXrVu/Jq+5prCUScUnXpvjd0qc4dM5MjjxsDkophBT09mb2aZZYm0phrSXQmuXvrOSxJ57hkovmE41G0FojpazKKDq7K25aa+KxGM2TJzKusZElDz6CMYZLLpyPsXbfGDypeOCR/ybwA75/yYV0TZ7IuvUb0VrvhifYAwDKqqC1QUrJ6g/WsfgHV4HRzGidzmFzZpHJZpFyeMIJYy3JeJx331vNoh9cBb7P4YfOJhIJV31P7NEehb1CCDzPp6V5CpddegHaaFqap1D0PKSUw2YYJeD5HpMnTWDxpRfgeT5TJk1k40eb9vibewgAaKNJJhLc/atbEQg83x92r1CWvkQizl233xp6AKn2ePX3GIDyZAyGbDaHEKLyhAFSf7RorcWGm1Ul6egfI9TZftMupdip+mht+mMOC8Z4+H6AtYZEMrlXoO915lcWeWstQkC6JhVOGhMyPSBSyhULg/xzuW+FUWvI5fODGLLWUltTMyjeskAml0UIuddx2JCkvtZaXNclCALue/hRXnv9TbZ3dqGUpK5uFC3Nk5n5zVYOO2QmiUQYpCgpuef+h9m8pYNoNEo2l+OYow7nW8fOJV8sIKXEGEM8FuOxJ5+mbdVa4ok4+Xyeg6ZP4+wzTqXgFfd67s6QMO849Pb2seiKq3nhpVeJlHyxKemm67rkCwWW3Plzvrfgu3T39eE6Dr++5z7efms5NbUpMr29HHPsXI576rcIKSqgdnX3cO2Pf8KG9g9JJhJkOrs47/xzWXD2PHKF/JAY1r1q2hji0Ri3/Ox2/vD8y4xtGoPrOkyeOJ5vTD+QCePHhYAUPYIgGPTuqHSa+oZ66urSTJoyibZVa3nz/5aTjMXx/YB4JMrzL/2Rjq3bmDxxAnV1o0g11JOqqRkyw7p3EmAh4rps7+7mhZdfZXR9HflCgX+59moumH82Ukoy2Rxr167j/oceJR6LDUqgtNYEQfhYa8kXCix94lmOP+rI0KAazWNPPA0CisUiUimCQFcZ5+8DAGwpDe3q7qEvk8EYQ319HVdevoiYGyFXLJBOp2hpnsx3Tj2J3kwf2UIepdSgMYQQ1NQkKXoez73wCp9cs5XGhtGsXL2W1//3bWqSSVKpFNlcdlhii71KTay1RKMRHKVwHIfOrm6uu+GnrGhbRbFYJBaJIRFkcjuPEIUQBEHAvNNOpi6dZv2Gdp5/cRmOVCx98lm2fbqdcWOb+PZJx5HLF1BDHGXu1WhCgOd5jGtqpPWgafT09lGTTHD3kgf59pkXcOpZF7Lob6/m3oceRQeaWCy2g/iqkpocefgcZs+cQbFQ5PfPvkDB83j2uZcwWnPc0UcwfdoB5POFIQ+05FC5wRuu+xETxo9l85atxGIxpJRsbP+Ix554hiv+/p847eyLWL3mfWLR6A4gaK2pSSY5a96pCCV5t201v7xrCe0fbSIWi/Hdc+YxXAHmXgMgpSRfKDD74Bk898RD/PDyRUycMI4gCMhmc8SiUZqaxrB8xUquufamMJESYlDirKQkm8tzxmknM35cE52dXdz2izvxPI8DD2jhmCMOI5PJDUuSNSQjKqXozWSYMH4st/3bTbz49CM8/dj93PrTG5jaMoW+TJYxDaNZsbKNNR+s6/cGgzZbCoypr+dbxx1NNptDSUkuX2De6afgOg6+7w+LFAwJAMYYRqVqibguXX29OI5i5sGtXPk3l3HfXf9FIh4vubyAru6ez92ssNZy3jnzwijQGlI1NZxz5mkhSMOUYu/dqDZc/Vwuz7U3/IQ/vb2cVDJJbbKGmBsBIAg0paICHMch+TmbluWc4vhjj+Ib0w9g04cfM/fIQ5h98IwSfXiMwJCEwkoplj75DHcteYCjjziMQ+YcTFPjGLLZLI8+/jRFzwOgsbGhtG9QrDA88AGIRSMsuePnbN68hebmyfiBJuqGHuezfUcEAANbNpfjldfe4KVlr1XEPB6PIYRke2cXN1x3DQ11dXT39RGLRgiCAN/38X2/IhW+HzDtgBZmTJ9GMfDJ5fNAHK0Nvu9jpAmlakQAIEL9j8WiXP/PV7H0yWdZ+8F6urq68XwfUTKQY5vGcPOP/5HLF19MXy6LcsJIMJ2uZfToenzPJxKJlFJqQb5QJGcLSCkqqXYiHqdhdD1KKlKp5G7v/Q27BCy+aCGXXjSfzZs72PTJFrq6u8FCff0oDpzaQn06TV8uWxHfQGvu/MW/h5siQDIRJ1csDAiTw36OUuSKBS773kLOn382EOYfg/uOAAB6Mn0IIWhoGM34cWMrGyEGS6FYpCfTt8OE0+naCiBftKNbloCaZLL0v6mcC4wYAMrM+b6P53llw18xXjtbrYHp8a4Mmzamst1WTf9hB8AYU3l2NpmBP1lrd6mzu6vT5THLc9hnAJQnWpuqwZUOtTWpL+18tLyfWptK7RGIuw2AEALHcTDG8OIr/8P2zu5hydB2ZzHi8Rgr21YTaI3rOrs9l6oBCNPWLOs3tHPF4kt48NHH2dj+EfvkRHQXLRaLsejihbzzbhu5fH6HXOMLF7Xa02EpBIVikaktzdx43Y+YMnkiWhu+7GKRciS6adNmbr7lP1nzfphsVWsXqgagrALFokfRK4ZWfaSUDIvQjUYiEWLR6G7Zgt0+HY7HIiQTgz9iStW5UuxYaFN215+lWaC8SFIOLjSxNhzzi2iiRBu4OMZYtLHDaQSh6EPBLyUkNvwtHtFICQVPUAxKx18WhLAkoqGa5IoSX4sKTUlLLGIQQDYvCYwoF3njqpBmLWTyEmMElGgRxxJ1DdpCJqcqR2vWQtS1RJxK8jm0AAgBfiAYW+dx4PgiQRAW02oN77YnyRYkzU1Fpozx8AJQJUDebU/iBYKDJuZpqvPxA3AU9OQUbR/GMQhmt2SpS2p8Da4DW7sd1n4Sx1GWI6ZlSEYNgYaIAx99GmF9R5RExHBoay+ushgDjgPrNkf5pDOC69iqQagaACks2aLi+NZefvV3m9jeBzEXevNw+k2tfLw9znlzt3P9wq182gs1UVi3xeGMf22lM6u4/PQOFp3Uxae9MCoJr61KcN4t0zBGcN38jzllVpbODDSk4OFX03z/9qnUJQP+Y9FGDpro05eHhjT8bOkYrr13MmPTPndcuY7RKUveg9EpuPruCfz6uSZGuwHaiqoBsFRZ6yUAbQR5L1xday0FT4bV+QICLSiUaEpYir6svOcH/e/lXUvR7/+kN5DmWbxAVCZU9GWFVvBsRY0sUPAkeU9X3tNG7G5QZkXT1JndINLVMj+qJmB8vY/WpToBC+1boxR8SVPaZ0w6INChgfJ8Qfu2KIEWjK/3qKvRBDpUj1xR8uG2cNdoUoNHMmbQBhwJ3TnJJ9ujKGmZ0lgk6tqQpuDTXoeObpeIY2huLKJkqPNKweYul84+B0faKh2U7RFNU2f+RQg5y4a1snJXIARGDFohgKhrkDJcZV+LSmwkRUgTpVUOTD9NSUvEsRUJ0ANoTolmSxJg+ksDcJXFdSzGhrQBZQNEHFst80YIIa017zgg3kCIWVizy6rH8uTc6OBPlN2g6/QzNYgGRFxLdMDULP3WOupaxOfQ4hGzwxzKTCc+h1aNQ0dIsOINaQRLS76kqg1SW2Jq4PNZH10NzVZJM3tI24VCS6zFCJbKbWnnZWPMe+HVIAz7fzPhtQHz3ra087Lkz3/2BeJWIaWgVDO/XzdrjZBSCMStIe/cKKFNNE5d84aUzuH775UZwFotlKOMCd7aum76XGi1X/tLU6XrpAvUlvffW2WtPR+wQkiJtXq/WvnwbM1aa88PmV+gAFMS9TYLJzjZrj+tSaYblwsh/looGcOYoJTCia8o6yYUe+Vg6bPGLOzYsOL34cXJZzTAAF1vN3CCk+1+c3WyrvEpBLOlcqf051rWDMBhpF+dNSCEEFJK5Uhr9etYe27HhhWvfcHV2XL7Wl+e7k/++Jpcn/9/9JlTReHYxy0AAAAASUVORK5CYII=">
+<title>Registro Scienze Motorie</title>
+<style>
+:root{
+  --bg:#F3F6F5; --surface:#FFFFFF; --surface-2:#E8EEEC; --ink:#17232F; --muted:#56636F;
+  --line:#D3DCDA; --accent:#1C6E8C; --accent-ink:#FFFFFF; --mark:#E8B400; --mark-ink:#2B2200;
+  --good:#2F8A57; --bad:#B83A2E; --good-ink:#1F6B42; --bad-ink:#9B2C22; --warn-bg:#FFF4CC; --warn-ink:#5A4500;
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-bib: "Roboto Condensed", "Arial Narrow", "sans-serif-condensed", system-ui, sans-serif;
+  --r-s:6px; --r-m:10px;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#101820; --surface:#18232D; --surface-2:#22303C; --ink:#E6ECEF; --muted:#9AA8B3;
+    --line:#2C3B48; --accent:#4FA9C9; --accent-ink:#0B1A21; --mark:#E8B400; --mark-ink:#2B2200;
+    --good:#5CC48A; --bad:#F07A6E; --good-ink:#7ED6A3; --bad-ink:#FF9C90; --warn-bg:#3A3110; --warn-ink:#F3DE8C;
+  }
+}
+*,*::before,*::after{box-sizing:border-box}
+html{height:100%; scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0; min-height:100%; background:var(--bg); color:var(--ink); font-family:var(--font); font-size:16px; line-height:1.45; -webkit-text-size-adjust:100%}
+a{color:var(--accent)}
+button,input,select,textarea{font:inherit; color:inherit}
+:focus-visible{outline:3px solid var(--accent); outline-offset:2px}
+@media (prefers-reduced-motion: reduce){*{transition:none!important; animation:none!important}}
+
+/* Struttura */
+.app{display:flex; flex-direction:column; min-height:100vh}
+.topbar{position:sticky; top:env(safe-area-inset-top,0px); z-index:5; background:var(--ink); color:var(--bg); display:flex; align-items:center; gap:12px; padding:10px 16px}
+.topbar h1{font-size:1.05rem; margin:0; font-weight:650; letter-spacing:.01em; flex:1}
+.lanes{height:4px; background:repeating-linear-gradient(90deg, var(--mark) 0 28px, transparent 28px 40px)}
+.save-state{font-size:.8rem; opacity:.8}
+main{flex:1; width:100%; max-width:960px; margin:0 auto; padding:16px 16px 96px}
+.nav{position:fixed; left:0; right:0; bottom:0; z-index:6; display:flex; background:var(--surface); border-top:1px solid var(--line); padding-bottom:env(safe-area-inset-bottom,0px)}
+.nav a{flex:1; display:flex; flex-direction:column; align-items:center; gap:2px; padding:8px 4px 10px; text-decoration:none; color:var(--muted); font-size:.75rem; min-height:56px; position:relative}
+.nav a svg{width:24px; height:24px}
+.nav a[aria-current="page"]{color:var(--accent); font-weight:600}
+.nav a[aria-current="page"]::before{content:""; position:absolute; top:0; left:25%; right:25%; height:3px; background:var(--accent); border-radius:0 0 3px 3px}
+.nav .count{position:absolute; top:4px; left:calc(50% + 6px); background:var(--mark); color:var(--mark-ink); font-size:.68rem; font-weight:700; border-radius:9px; padding:0 5px; min-width:18px; text-align:center}
+@media (min-width:900px){
+  .app{flex-direction:row; flex-wrap:wrap}
+  .topbar,.lanes{width:100%}
+  .nav{position:sticky; top:62px; align-self:flex-start; flex-direction:column; width:200px; height:calc(100vh - 62px); border-top:0; border-right:1px solid var(--line); padding:12px 0}
+  .nav a{flex:0; flex-direction:row; gap:12px; padding:12px 20px; font-size:.95rem; min-height:0}
+  .nav a[aria-current="page"]::before{top:20%; bottom:20%; left:0; right:auto; width:3px; height:auto; border-radius:0 3px 3px 0}
+  .nav .count{position:static; margin-left:auto}
+  main{max-width:none; flex:1; padding:24px 32px 48px}
+}
+
+/* Tipografia e blocchi */
+h2{font-size:1.5rem; margin:4px 0 16px; font-weight:700; letter-spacing:-.01em}
+h3{font-size:1.1rem; margin:24px 0 10px}
+.sub{color:var(--muted); margin:-10px 0 16px}
+.row{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+.spacer{flex:1}
+.panel{background:var(--surface); border:1px solid var(--line); border-radius:var(--r-m); padding:16px; margin-bottom:16px}
+.muted{color:var(--muted)}
+.small{font-size:.875rem}
+.notice{background:var(--warn-bg); color:var(--warn-ink); border-radius:var(--r-m); padding:12px 14px; margin-bottom:16px}
+.notice.danger{background:var(--bad); color:#fff}
+
+/* Pulsanti e campi */
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:44px; padding:0 16px; border-radius:var(--r-s); border:1px solid var(--line); background:var(--surface); color:var(--ink); cursor:pointer; text-decoration:none; font-weight:550}
+.btn.primary{background:var(--accent); border-color:var(--accent); color:var(--accent-ink)}
+.btn.danger{background:var(--bad); border-color:var(--bad); color:#fff}
+.btn.ghost{background:transparent}
+.btn[disabled]{opacity:.45; cursor:not-allowed}
+select,input[type=text],input[type=date],input[type=number]{min-height:44px; padding:0 12px; border:1px solid var(--line); border-radius:var(--r-s); background:var(--surface)}
+label.field{display:flex; flex-direction:column; gap:4px; font-size:.9rem; color:var(--muted)}
+
+/* Pettorale: elemento distintivo per le classi */
+.bibs{display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:14px}
+.bib{position:relative; display:block; text-decoration:none; color:var(--ink); background:var(--surface); border:2px solid var(--ink); border-radius:4px; padding:14px 12px 12px; text-align:center}
+.bib::before,.bib::after{content:""; position:absolute; top:7px; width:7px; height:7px; border-radius:50%; background:var(--line); box-shadow:0 0 0 1px var(--muted)}
+.bib::before{left:8px} .bib::after{right:8px}
+.bib-num{font-family:var(--font-bib); font-stretch:condensed; font-weight:800; font-size:2.8rem; line-height:1; letter-spacing:-.02em}
+.bib-meta{font-size:.85rem; color:var(--muted); margin-top:6px}
+.bib .pending{display:inline-block; margin-top:8px; background:var(--mark); color:var(--mark-ink); font-size:.75rem; font-weight:700; border-radius:10px; padding:1px 8px}
+.bib:hover{border-color:var(--accent)}
+
+/* Liste e tabelle */
+.list{list-style:none; margin:0; padding:0; background:var(--surface); border:1px solid var(--line); border-radius:var(--r-m)}
+.list li{border-top:1px solid var(--line)}
+.list li:first-child{border-top:0}
+.list a,.list .item{display:flex; align-items:center; gap:10px; padding:12px 14px; min-height:48px; text-decoration:none; color:var(--ink)}
+.tag{font-size:.75rem; border-radius:10px; padding:1px 8px; background:var(--surface-2); color:var(--muted); white-space:nowrap}
+.tag.mark{background:var(--mark); color:var(--mark-ink); font-weight:700}
+.tag.warn{background:var(--warn-bg); color:var(--warn-ink)}
+.scroll-x{overflow-x:auto; -webkit-overflow-scrolling:touch}
+table{border-collapse:collapse; width:100%; background:var(--surface); font-size:.9rem}
+th,td{text-align:left; padding:8px 10px; border-bottom:1px solid var(--line); white-space:nowrap}
+th{font-weight:600; color:var(--muted)}
+td.num{text-align:right; font-variant-numeric:tabular-nums}
+.tabs{display:flex; gap:4px; border-bottom:1px solid var(--line); margin-bottom:16px; overflow-x:auto}
+.tabs a{padding:10px 14px; text-decoration:none; color:var(--muted); border-bottom:3px solid transparent; white-space:nowrap}
+.tabs a[aria-current="page"]{color:var(--ink); border-color:var(--accent); font-weight:600}
+.empty{text-align:center; padding:32px 16px; color:var(--muted)}
+.empty strong{display:block; color:var(--ink); font-size:1.1rem; margin-bottom:6px}
+
+/* Finestra di conferma e avvisi */
+dialog{border:0; border-radius:var(--r-m); padding:0; max-width:min(440px, calc(100vw - 32px)); background:var(--surface); color:var(--ink)}
+dialog::backdrop{background:rgba(10,20,28,.55)}
+.modal-body{padding:20px}
+.modal-body h3{margin:0 0 8px}
+.modal-actions{display:flex; justify-content:flex-end; gap:10px; margin-top:18px}
+.toast{position:fixed; left:50%; bottom:calc(76px + env(safe-area-inset-bottom,0px)); transform:translateX(-50%); background:var(--ink); color:var(--bg); padding:10px 16px; border-radius:var(--r-s); max-width:calc(100vw - 32px); z-index:20; opacity:0; pointer-events:none; transition:opacity .2s}
+.toast.show{opacity:1}
+.toast.error{background:var(--bad); color:#fff}
+@media (min-width:900px){.toast{bottom:24px}}
+footer.ver{font-size:.75rem; color:var(--muted); text-align:center; padding:24px 0 0}
+
+/* M9: aggiornamento e uso offline */
+.update-bar{display:flex; flex-wrap:wrap; align-items:center; gap:8px 12px; flex:0 0 100%; width:100%; background:var(--mark); color:var(--mark-ink); padding:8px 16px; font-size:.9rem; font-weight:600}
+.update-bar .btn{background:var(--mark-ink); border-color:var(--mark-ink); color:#fff}
+.update-bar .btn.ghost{background:transparent; color:var(--mark-ink); border-color:var(--mark-ink)}
+
+/* M8: dati */
+.notice .btn{margin-top:8px}
+.err-list{margin:8px 0 0; padding-left:20px}
+.err-list li{margin-bottom:4px}
+
+/* M7: passaggio classi */
+.steps{display:flex; flex-wrap:wrap; gap:6px; list-style:none; padding:0; margin:0 0 14px; counter-reset:st}
+.steps li{counter-increment:st; display:flex; align-items:center; gap:6px; font-size:.8rem; color:var(--muted); padding:4px 10px 4px 5px; border:1px solid var(--line); border-radius:15px; background:var(--surface)}
+.steps li::before{content:counter(st); display:inline-grid; place-items:center; width:21px; height:21px; border-radius:50%; background:var(--surface-2); color:var(--ink); font-weight:700; font-size:.75rem}
+.steps li.done::before{background:var(--good); color:#fff}
+.steps li[aria-current="step"]{border-color:var(--accent); color:var(--ink); font-weight:600}
+.steps li[aria-current="step"]::before{background:var(--accent); color:var(--accent-ink)}
+@media (max-width:620px){.steps li:not([aria-current]){font-size:0; gap:0; padding:3px}.steps li:not([aria-current])::before{font-size:.75rem}}
+.wiz h3{margin-top:0}
+.choices{display:flex; flex-direction:column; gap:8px; margin:10px 0}
+.choice{display:flex; gap:12px; align-items:flex-start; padding:12px; border:1px solid var(--line); border-radius:var(--r-s); background:var(--surface); cursor:pointer}
+.choice input[type=radio]{width:20px; height:20px; margin:2px 0 0; accent-color:var(--accent); flex:0 0 auto}
+.choice > span{display:flex; flex-direction:column; gap:2px; flex:1; min-width:0}
+.choice:has(input:checked){border-color:var(--accent); box-shadow:inset 0 0 0 1px var(--accent)}
+.wiz .list label.item{cursor:pointer}
+.wiz .list input[type=checkbox]{flex:0 0 auto}
+.sumlist{display:grid; grid-template-columns:max-content 1fr; gap:8px 16px; margin:0 0 14px}
+.sumlist dt{color:var(--muted)}
+.sumlist dd{margin:0}
+@media (max-width:480px){.sumlist{grid-template-columns:1fr; gap:2px}.sumlist dd{margin-bottom:8px}}
+
+/* M6: grafici e progressi */
+.pblock{margin-bottom:26px}
+.pblock h3{margin-bottom:8px}
+.chartbox{background:var(--surface); border:1px solid var(--line); border-radius:var(--r-m); padding:10px 10px 12px; margin-bottom:8px}
+.chart svg.plot{display:block; width:100%; height:auto}
+.chart .band{fill:var(--surface-2); opacity:.75}
+.chart .grid{stroke:var(--line); stroke-width:1}
+.chart .sep{stroke:var(--muted); stroke-width:1; stroke-dasharray:2 4}
+.chart .axl{fill:var(--muted); font-size:11px; font-family:var(--font)}
+.chart .axl.yr{font-weight:600}
+.chart .line{fill:none; stroke:var(--accent); stroke-width:2.25; stroke-linejoin:round; stroke-linecap:round}
+.mk{fill:var(--accent); stroke:var(--accent); stroke-width:2}
+.mk.hollow{fill:var(--surface)}
+.chart .pt{cursor:pointer; outline:none}
+.chart .hit{fill:transparent}
+.chart .pt:focus-visible .mk{stroke:var(--ink); stroke-width:3.5}
+.chart .pt.sel .mk{stroke:var(--mark); stroke-width:4}
+.legend{display:flex; flex-wrap:wrap; gap:6px 16px; font-size:.8rem; color:var(--muted); margin:6px 2px 0}
+.legend svg{width:14px; height:14px; vertical-align:-2px; margin-right:5px}
+.pt-info{margin:8px 2px 0; font-size:.9rem; min-height:1.4em}
+.trend{display:flex; gap:10px; align-items:flex-start; padding:10px 12px; border:1px solid var(--line); border-left-width:5px; border-radius:var(--r-s); background:var(--surface); margin:8px 0}
+.trend svg{flex:0 0 22px; width:22px; height:22px; margin-top:1px}
+.trend.better{border-left-color:var(--good)} .trend.worse{border-left-color:var(--bad)} .trend.same{border-left-color:var(--muted)}
+.trend .verdict{font-weight:700}
+.trend.better .verdict,.trend.better svg{color:var(--good-ink)}
+.trend.worse .verdict,.trend.worse svg{color:var(--bad-ink)}
+details.dt{margin:6px 0}
+details.dt summary{cursor:pointer; min-height:44px; display:flex; align-items:center; color:var(--accent); font-weight:600}
+.prog td,.prog th{vertical-align:middle}
+.prog td:first-child,.prog th:first-child{position:sticky; left:0; background:var(--surface); z-index:1; box-shadow:1px 0 0 var(--line)}
+.prog .v{display:inline-flex; align-items:center; gap:6px}
+.prog .v svg{width:16px; height:16px}
+.prog .v.better{color:var(--good-ink)} .prog .v.worse{color:var(--bad-ink)}
+.prog .small{display:block}
+svg.spark{width:96px; height:28px; display:block}
+svg.spark .l{fill:none; stroke:var(--accent); stroke-width:1.75; stroke-linejoin:round; stroke-linecap:round}
+svg.spark .d{fill:var(--accent)}
+
+/* M5: recuperi */
+.grp{margin:18px 0 8px; font-size:1rem; font-weight:650}
+.grp .small{font-weight:400}
+
+/* M4: sessioni di test */
+[hidden]{display:none !important}
+.sr{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap}
+.strip{display:flex; gap:6px; overflow-x:auto; -webkit-overflow-scrolling:touch; padding:2px 2px 10px; margin-bottom:10px}
+@media (min-width:900px){.strip{flex-wrap:wrap; overflow:visible}}
+.chip{flex:0 0 auto; display:inline-flex; align-items:center; gap:7px; min-height:40px; padding:0 12px; border-radius:20px; border:1px solid var(--line); background:var(--surface); color:var(--ink); font-size:.85rem; cursor:pointer; white-space:nowrap}
+.chip .dot{width:11px; height:11px; border-radius:50%; border:2px solid var(--muted); flex:0 0 auto}
+.chip.done .dot{background:var(--good); border-color:var(--good)}
+.chip.assente .dot{background:var(--mark); border-color:var(--mark)}
+.chip.esonerato .dot{background:var(--muted); border-color:var(--muted)}
+.chip[aria-current="true"]{border:2px solid var(--accent); font-weight:700}
+.entry{background:var(--surface); border:1px solid var(--line); border-radius:var(--r-m); padding:16px}
+.entry-head{display:flex; gap:14px; align-items:center; margin-bottom:10px}
+.entry-bib{font-family:var(--font-bib); font-stretch:condensed; font-weight:800; font-size:1.9rem; line-height:1; border:2px solid var(--ink); border-radius:4px; min-width:58px; padding:6px 8px; text-align:center}
+.entry-name{font-size:1.35rem; font-weight:700; line-height:1.2}
+.trials{display:grid; grid-template-columns:repeat(auto-fit, minmax(92px, 1fr)); gap:10px; margin:12px 0 6px}
+.trials input[type=text]{width:100%; min-height:58px; font-size:1.45rem; text-align:center; font-variant-numeric:tabular-nums}
+.trials input:disabled{background:var(--surface-2)}
+input[aria-invalid="true"]{border-color:var(--bad); outline:2px solid var(--bad)}
+.best{margin:4px 0 0}
+.best strong{font-size:1.7rem; font-variant-numeric:tabular-nums}
+.btn[aria-pressed="true"]{background:var(--mark); border-color:var(--mark); color:var(--mark-ink)}
+.entry-nav{display:flex; gap:10px; margin-top:16px}
+.entry-nav .btn{flex:1; min-height:54px}
+.stats{display:flex; flex-wrap:wrap; gap:10px; margin-bottom:16px}
+.stat{background:var(--surface); border:1px solid var(--line); border-radius:var(--r-m); padding:10px 14px; min-width:120px}
+.stat strong{display:block; font-size:1.7rem; line-height:1.1; font-variant-numeric:tabular-nums}
+
+/* M3: elenco parametri */
+.prm{display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center; padding:12px 14px}
+.prm-main{flex:1 1 220px; min-width:0}
+.prm-actions{display:flex; flex-wrap:wrap; gap:6px; align-items:center}
+.btn.icon{min-width:44px; padding:0}
+.btn.icon svg{width:20px; height:20px}
+input[type=checkbox]{width:22px; height:22px; accent-color:var(--accent)}
+.check{display:flex; flex-direction:row; align-items:center; gap:10px; color:var(--ink); font-size:1rem; min-height:44px}
+
+/* M2: finestre con moduli */
+dialog{max-height:calc(100vh - 24px); overflow:auto}
+dialog.wide{width:calc(100vw - 24px); max-width:760px}
+.form-grid{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+@media (max-width:520px){.form-grid{grid-template-columns:1fr}}
+.field-error{color:var(--bad); font-size:.875rem; margin:10px 0 0; min-height:1.3em}
+textarea{width:100%; min-height:200px; padding:10px 12px; border:1px solid var(--line); border-radius:var(--r-s); background:var(--surface); font-family:inherit; font-size:1rem; line-height:1.4}
+.cand{border:1px solid var(--line); border-radius:var(--r-s); padding:12px; margin:10px 0}
+.prow{border:1px solid var(--line); border-radius:var(--r-s); padding:10px; margin-bottom:8px; background:var(--surface)}
+.prow.flag{border:2px solid var(--mark)}
+.prow.err{border:2px solid var(--bad)}
+.prow.skipped{opacity:.55}
+.prow-grid{display:grid; grid-template-columns:1fr 1fr auto; gap:8px; align-items:end}
+@media (max-width:520px){.prow-grid{grid-template-columns:1fr 1fr}.prow-grid .btn{grid-column:1/-1}}
+.prow select{width:100%; margin-top:6px}
+.sumbar{position:sticky; top:0; z-index:1; background:var(--surface); padding:8px 0; border-bottom:1px solid var(--line); margin-bottom:10px}
+</style>
+</head>
+<body>
+<noscript><p style="padding:16px">Per usare il registro serve JavaScript attivo nel browser.</p></noscript>
+<div class="app">
+  <header class="topbar">
+    <h1>Registro Scienze Motorie</h1>
+    <span class="save-state" id="saveState" aria-live="polite"></span>
+  </header>
+  <div class="lanes" aria-hidden="true"></div>
+  <div class="update-bar" id="updateBar" role="status" hidden>
+    <span>È disponibile una nuova versione dell'app.</span>
+    <button type="button" class="btn" data-action="applyUpdate">Aggiorna</button>
+    <button type="button" class="btn ghost" data-action="dismissUpdate">Più tardi</button>
+  </div>
+  <nav class="nav" id="nav" aria-label="Sezioni">
+    <a href="#/classi" data-sec="classi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="5" width="16" height="14" rx="1.5"/><circle cx="7" cy="8" r=".8"/><circle cx="17" cy="8" r=".8"/><path d="M9 15V10l-1.5 1.2M13 10h3l-2 5"/></svg>Classi</a>
+    <a href="#/recuperi" data-sec="recuperi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.3-5.7"/><path d="M4 4v4h4"/><path d="M12 8v4l3 2"/></svg>Recuperi<span class="count" id="navPending" hidden></span></a>
+    <a href="#/parametri" data-sec="parametri"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Parametri</a>
+    <a href="#/dati" data-sec="dati"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3"/></svg>Dati</a>
+  </nav>
+  <main id="main" tabindex="-1"></main>
+</div>
+<dialog id="modal" aria-labelledby="modalTitle"></dialog>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+'use strict';
+/* =========================================================
+   Registro Scienze Motorie — Modulo M1 (fondamenta)
+   Un unico file, nessuna dipendenza, nessuna connessione esterna.
+   ========================================================= */
+const APP_ID = 'registro-scienze-motorie';
+const SCHEMA_VERSION = 1;
+const APP_VERSION = 'M9';
+
+/* ---------- Utilità ---------- */
+const U = {
+  uid(prefix = 'id') {
+    const a = new Uint8Array(8);
+    if (globalThis.crypto && typeof crypto.getRandomValues === 'function') crypto.getRandomValues(a);
+    else for (let i = 0; i < a.length; i++) a[i] = Math.floor(Math.random() * 256);
+    return prefix + '_' + Array.from(a, b => b.toString(16).padStart(2, '0')).join('');
+  },
+  esc(s) {
+    return String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  },
+  /** Normalizza un nome per il confronto omonimie: niente accenti, maiuscole, spazi doppi. */
+  normName(s) {
+    return String(s ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/\s+/g, ' ').trim();
+  },
+  /** Converte un input numerico accettando la virgola. Restituisce null se vuoto, NaN se non valido. */
+  parseNum(str) {
+    if (str === null || str === undefined) return null;
+    const t = String(str).trim().replace(/\s/g, '').replace(',', '.');
+    if (t === '') return null;
+    if (!/^-?\d+(\.\d+)?$/.test(t)) return NaN;
+    return Number(t);
+  },
+  fmtNum(v, dec = 2) {
+    if (v === null || v === undefined || Number.isNaN(v)) return '—';
+    return Number(v).toLocaleString('it-IT', { minimumFractionDigits: dec, maximumFractionDigits: dec });
+  },
+  round(v, dec) { const f = 10 ** dec; return Math.round(v * f) / f; },
+  isoFromDate(d) {
+    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+  },
+  todayISO() { return U.isoFromDate(new Date()); },
+  addDays(iso, n) { const [y, m, d] = iso.split('-').map(Number); return U.isoFromDate(new Date(y, m - 1, d + n)); },
+  fmtDate(iso) { if (!iso) return '—'; const [y, m, d] = iso.split('-'); return `${d}/${m}/${y}`; },
+  /** Migliore delle prove valide, secondo la direzione del parametro. */
+  bestOf(trials, betterWhen) {
+    const v = (trials || []).filter(x => typeof x === 'number' && !Number.isNaN(x));
+    if (!v.length) return null;
+    return betterWhen === 'lower' ? Math.min(...v) : Math.max(...v);
+  },
+  byName(a, b) {
+    return (a.lastName + ' ' + a.firstName).localeCompare(b.lastName + ' ' + b.firstName, 'it', { sensitivity: 'base' });
+  }
+};
+
+/* ---------- Stato iniziale e parametri predefiniti ---------- */
+function defaultParameters() {
+  const p = (id, name, unit, type, betterWhen, decimals, order, requiresEquipmentWeight = false) =>
+    ({ id, name, unit, type, betterWhen, decimals, attempts: 3, requiresEquipmentWeight, active: true, order });
+  return [
+    p('p30', 'Corsa 30 m', 's', 'tempo', 'lower', 2, 1),
+    p('p60', 'Corsa 60 m', 's', 'tempo', 'lower', 2, 2),
+    p('p80', 'Corsa 80 m', 's', 'tempo', 'lower', 2, 3),
+    p('pLungo', 'Salto in lungo', 'cm', 'distanza', 'higher', 0, 4),
+    p('pVortex', 'Lancio del vortex', 'm', 'distanza', 'higher', 2, 5),
+    p('pPeso', 'Getto del peso', 'm', 'distanza', 'higher', 2, 6, true),
+    p('pPalla', 'Lancio della palla', 'm', 'distanza', 'higher', 2, 7, true),
+    p('pFun', 'Salto della funicella', 'rip/30 s', 'conteggio', 'higher', 0, 8)
+  ];
+}
+function emptyState() {
+  return {
+    app: APP_ID, schemaVersion: SCHEMA_VERSION, exportedAt: null,
+    settings: { backupReminderDays: 14, lastBackupAt: null, selectedYearId: null },
+    schoolYears: [], students: [], classes: [], enrollments: [],
+    parameters: defaultParameters(), sessions: [], results: []
+  };
+}
+
+/* ---------- Archiviazione locale ---------- */
+const Storage = {
+  mode: 'memory',      // 'idb' | 'local' | 'memory'
+  persisted: null,     // il browser protegge i dati dalla pulizia automatica?
+  db: null,
+  async init() {
+    if (globalThis.indexedDB) {
+      try {
+        this.db = await new Promise((res, rej) => {
+          const r = indexedDB.open(APP_ID, 1);
+          r.onupgradeneeded = () => r.result.createObjectStore('kv');
+          r.onsuccess = () => res(r.result);
+          r.onerror = () => rej(r.error);
+          r.onblocked = () => rej(new Error('Database bloccato da un\'altra scheda'));
+        });
+        await this._idbPut('__test', 1);
+        this.mode = 'idb';
+      } catch (e) {
+        console.warn('IndexedDB non disponibile, uso localStorage', e);
+        this.db = null;
+      }
+    }
+    if (this.mode !== 'idb') {
+      try { localStorage.setItem('__rsm_test', '1'); localStorage.removeItem('__rsm_test'); this.mode = 'local'; }
+      catch (e) { this.mode = 'memory'; }
+    }
+    try {
+      if (navigator.storage && navigator.storage.persist) {
+        this.persisted = (await navigator.storage.persisted()) || (await navigator.storage.persist());
+      }
+    } catch (e) { this.persisted = null; }
+  },
+  _idbPut(key, val) {
+    return new Promise((res, rej) => {
+      const tx = this.db.transaction('kv', 'readwrite');
+      tx.objectStore('kv').put(val, key);
+      tx.oncomplete = () => res();
+      tx.onerror = () => rej(tx.error);
+      tx.onabort = () => rej(tx.error);
+    });
+  },
+  _idbGet(key) {
+    return new Promise((res, rej) => {
+      const r = this.db.transaction('kv', 'readonly').objectStore('kv').get(key);
+      r.onsuccess = () => res(r.result);
+      r.onerror = () => rej(r.error);
+    });
+  },
+  async load() {
+    let raw = null;
+    if (this.mode === 'idb') raw = await this._idbGet('state');
+    else if (this.mode === 'local') raw = localStorage.getItem('rsm_state');
+    return raw ? JSON.parse(raw) : null;
+  },
+  async save(state) {
+    const json = JSON.stringify(state);
+    if (this.mode === 'idb') return this._idbPut('state', json);
+    if (this.mode === 'local') return localStorage.setItem('rsm_state', json);
+  }
+};
+
+let S = emptyState();
+
+/** Salva lo stato corrente. Da chiamare dopo ogni modifica. */
+async function commit(message) {
+  const el = document.getElementById('saveState');
+  try {
+    await Storage.save(S);
+    el.textContent = Storage.mode === 'memory' ? 'Non salvato' : 'Salvato';
+    if (message) toast(message);
+  } catch (e) {
+    console.error(e);
+    el.textContent = 'Errore';
+    toast('Salvataggio non riuscito: ' + e.message, 'error');
+  }
+  updateNavCounts();
+}
+
+/* ---------- Interrogazioni sui dati ---------- */
+const Q = {
+  years() { return [...S.schoolYears].sort((a, b) => b.label.localeCompare(a.label)); },
+  year(id) { return S.schoolYears.find(y => y.id === id); },
+  cls(id) { return S.classes.find(c => c.id === id); },
+  student(id) { return S.students.find(s => s.id === id); },
+  param(id) { return S.parameters.find(p => p.id === id); },
+  session(id) { return S.sessions.find(s => s.id === id); },
+  classesOfYear(yid) {
+    return S.classes.filter(c => c.schoolYearId === yid).sort((a, b) => a.name.localeCompare(b.name, 'it', { numeric: true }));
+  },
+  params(includeArchived = false) {
+    return S.parameters.filter(p => includeArchived || p.active).sort((a, b) => a.order - b.order);
+  },
+  activeEnrollments(cid) { return S.enrollments.filter(e => e.classId === cid && !e.removedAt); },
+  studentsOfClass(cid) {
+    return Q.activeEnrollments(cid).map(e => Q.student(e.studentId)).filter(Boolean).sort(U.byName);
+  },
+  sessionsOfClass(cid) {
+    return S.sessions.filter(s => s.classId === cid).sort((a, b) => b.date.localeCompare(a.date) || (Q.param(a.parameterId)?.order ?? 0) - (Q.param(b.parameterId)?.order ?? 0));
+  },
+  resultsOfSession(sid) { return S.results.filter(r => r.sessionId === sid); },
+  /** Prove ancora da recuperare per una classe (solo studenti ancora iscritti). */
+  pendingOfClass(cid) {
+    const active = new Set(Q.activeEnrollments(cid).map(e => e.studentId));
+    const sess = new Set(S.sessions.filter(s => s.classId === cid).map(s => s.id));
+    return S.results.filter(r => r.status === 'assente' && sess.has(r.sessionId) && active.has(r.studentId));
+  },
+  pendingAll() {
+    return S.classes.flatMap(c => Q.pendingOfClass(c.id));
+  },
+  homonymCounts() {
+    const m = new Map();
+    for (const s of S.students) {
+      const k = U.normName(s.lastName + ' ' + s.firstName);
+      m.set(k, (m.get(k) || 0) + 1);
+    }
+    return m;
+  },
+  isHomonym(st, counts = Q.homonymCounts()) {
+    return (counts.get(U.normName(st.lastName + ' ' + st.firstName)) || 0) > 1;
+  },
+  /** Nome visualizzato; per gli omonimi aggiunge alias o data di nascita. Testo semplice, da escapare. */
+  displayName(st, counts = Q.homonymCounts()) {
+    const base = `${st.lastName} ${st.firstName}`;
+    if (!Q.isHomonym(st, counts)) return base;
+    if (st.alias) return `${base} (${st.alias})`;
+    if (st.birthDate) return `${base} (${U.fmtDate(st.birthDate)})`;
+    return `${base} (omonimo da distinguere)`;
+  },
+  isRecovery(result) {
+    const s = Q.session(result.sessionId);
+    return result.status === 'misurato' && s && result.measuredOn && result.measuredOn !== s.date;
+  }
+};
+
+/* ---------- Dati di esempio (valori fittizi generati a caso) ---------- */
+function mulberry32(a) {
+  return function () {
+    a |= 0; a = a + 0x6D2B79F5 | 0;
+    let t = Math.imul(a ^ a >>> 15, 1 | a);
+    t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+    return ((t ^ t >>> 14) >>> 0) / 4294967296;
+  };
+}
+function buildDemoState() {
+  const rnd = mulberry32(20250915);
+  const gauss = () => (rnd() + rnd() + rnd() + rnd() - 2) * 1.73;
+  const st = emptyState();
+  const year = { id: U.uid('y'), label: '2025/26' };
+  st.schoolYears.push(year);
+  st.settings.selectedYearId = year.id;
+
+  const classDefs = [
+    { name: '1A', birthYear: 2014, older: false, names: [['Rossi','Marco'],['Sanna','Giulia'],['Pinna','Luca'],['Melis','Sara'],['Serra','Matteo'],['Piras','Chiara'],['Usai','Davide'],['Fadda','Elena'],['Mura','Andrea'],['Cocco','Sofia']] },
+    { name: '1B', birthYear: 2014, older: false, names: [['Deiana','Alessio'],['Porcu','Martina'],['Carta','Simone'],['Atzeni','Alice'],['Floris','Gabriele'],['Lai','Aurora'],['Murgia','Tommaso'],['Pisano','Beatrice'],['Cabras','Federico'],['Orrù','Noemi'],['Loi','Riccardo']] },
+    { name: '2A', birthYear: 2013, older: true, names: [['Rossi','Marco'],['Manca','Francesca'],['Contu','Lorenzo'],['Puddu','Anna'],['Ledda','Nicola'],['Zedda','Ilaria'],['Spiga','Pietro'],['Tola','Giorgia'],['Marras','Emanuele'],['Vacca','Camilla']] }
+  ];
+  // Modello fittizio per i dati di prova: base, dispersione, variazione per sessione
+  const model = {
+    p30: { base: 5.6, sd: 0.35, step: -0.08 }, p60: { base: 9.9, sd: 0.6, step: -0.15 }, p80: { base: 13.2, sd: 0.8, step: -0.2 },
+    pLungo: { base: 165, sd: 18, step: 6 }, pVortex: { base: 24, sd: 6, step: 1.5 }, pPeso: { base: 5.8, sd: 0.9, step: 0.25 },
+    pPalla: { base: 18, sd: 4, step: 1 }, pFun: { base: 55, sd: 10, step: 4 }
+  };
+  const rounds = ['2025-10-06', '2026-02-09', '2026-05-11'];
+  const params = st.parameters;
+
+  classDefs.forEach((cd, ci) => {
+    const cls = { id: U.uid('c'), schoolYearId: year.id, name: cd.name, sourceClassId: null };
+    st.classes.push(cls);
+    const roster = cd.names.map(([lastName, firstName], i) => {
+      const hasBirth = rnd() < 0.6;
+      const month = 1 + Math.floor(rnd() * 12), day = 1 + Math.floor(rnd() * 28);
+      const s = {
+        id: U.uid('s'), firstName, lastName,
+        birthDate: hasBirth ? `${cd.birthYear}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}` : null,
+        alias: ''
+      };
+      // Omonimi di prova: uno distinto con la data di nascita, l'altro con l'alias
+      if (lastName === 'Rossi' && cd.name === '1A') s.birthDate = '2014-03-15';
+      if (lastName === 'Rossi' && cd.name === '2A') { s.birthDate = null; s.alias = 'Marco R. 2A'; }
+      st.students.push(s);
+      st.enrollments.push({ id: U.uid('e'), classId: cls.id, studentId: s.id, addedAt: '2025-09-15', removedAt: null });
+      return { s, ability: gauss() };
+    });
+
+    params.forEach((p, pi) => {
+      const m = model[p.id];
+      rounds.forEach((rDate, ri) => {
+        const date = U.addDays(rDate, Math.floor(pi / 2) * 7 + ci);
+        let weight = null;
+        if (p.id === 'pPeso') weight = cd.older ? (ri === 2 ? 4 : 3) : 2;
+        if (p.id === 'pPalla') weight = 1;
+        const ses = { id: U.uid('ses'), classId: cls.id, parameterId: p.id, date, equipmentWeightKg: weight };
+        st.sessions.push(ses);
+        roster.forEach(({ s, ability }) => {
+          const r = { id: U.uid('r'), sessionId: ses.id, studentId: s.id, status: 'misurato', trials: [null, null, null], value: null, measuredOn: date };
+          // Esonero di prova: uno studente della 1B esonerato dalle corse di febbraio
+          if (cd.name === '1B' && s.lastName === 'Cabras' && ri === 1 && p.type === 'tempo') {
+            r.status = 'esonerato'; r.measuredOn = null; st.results.push(r); return;
+          }
+          let measuredOn = date;
+          if (rnd() < 0.08) {
+            const recovered = ri < 2 || rnd() < 0.5;
+            if (!recovered) { r.status = 'assente'; r.measuredOn = null; st.results.push(r); return; }
+            measuredOn = U.addDays(date, 7);
+          }
+          const sign = p.betterWhen === 'lower' ? -1 : 1;
+          const ageBonus = cd.older ? (p.betterWhen === 'lower' ? 0.96 : 1.06) : 1;
+          let weightPenalty = 0;
+          if (p.id === 'pPeso' && weight === 4) weightPenalty = -0.6;
+          r.trials = [0, 1, 2].map(() => {
+            if (rnd() < 0.05) return null; // prova nulla
+            let v = m.base * ageBonus + sign * ability * m.sd + m.step * ri + weightPenalty + gauss() * m.sd * 0.2;
+            v = Math.max(v, m.base * 0.3);
+            return U.round(v, p.decimals);
+          });
+          if (r.trials.every(t => t === null)) r.trials[0] = U.round(m.base, p.decimals);
+          r.value = U.bestOf(r.trials, p.betterWhen);
+          r.measuredOn = measuredOn;
+          st.results.push(r);
+        });
+      });
+    });
+  });
+  return st;
+}
+function archiveIsEmpty() {
+  return !S.schoolYears.length && !S.students.length && !S.classes.length && !S.results.length;
+}
+
+/* ---------- Interfaccia: avvisi e conferme ---------- */
+let toastTimer = null;
+function toast(msg, kind = '') {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast show' + (kind ? ' ' + kind : '');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => { t.className = 'toast'; }, 3200);
+}
+/** Finestra di conferma. Con requireText l'utente deve digitare la parola indicata. */
+function confirmDialog({ title, message, confirmLabel = 'Conferma', danger = false, requireText = null }) {
+  return new Promise(resolve => {
+    const d = document.getElementById('modal');
+    d.onclick = d.oninput = d.onchange = d.onkeydown = null; d.className = '';
+    d.innerHTML = `<div class="modal-body">
+      <h3 id="modalTitle">${U.esc(title)}</h3>
+      <p>${U.esc(message)}</p>
+      ${requireText ? `<label class="field">Scrivi ${U.esc(requireText)} per confermare<input type="text" id="confirmText" autocomplete="off" autocapitalize="characters"></label>` : ''}
+      <div class="modal-actions">
+        <button type="button" class="btn ghost" data-close="cancel">Annulla</button>
+        <button type="button" class="btn ${danger ? 'danger' : 'primary'}" data-close="ok" ${requireText ? 'disabled' : ''}>${U.esc(confirmLabel)}</button>
+      </div></div>`;
+    const ok = d.querySelector('[data-close="ok"]');
+    const input = d.querySelector('#confirmText');
+    if (input) input.addEventListener('input', () => { ok.disabled = input.value.trim().toUpperCase() !== requireText; });
+    d.querySelectorAll('[data-close]').forEach(b => b.addEventListener('click', () => d.close(b.dataset.close)));
+    d.addEventListener('close', () => resolve(d.returnValue === 'ok'), { once: true });
+    d.returnValue = '';
+    d.showModal();
+    (input || ok).focus();
+  });
+}
+function notYet(moduleName) { toast(`Funzione in arrivo con il modulo ${moduleName}`); }
+
+/* ---------- Viste ---------- */
+function statusTag(r) {
+  if (r.status === 'assente') return '<span class="tag mark">Da recuperare</span>';
+  if (r.status === 'esonerato') return '<span class="tag">Esonerato</span>';
+  if (Q.isRecovery(r)) return `<span class="tag">Recupero ${U.fmtDate(r.measuredOn)}</span>`;
+  return '';
+}
+
+function viewClassi() {
+  const years = Q.years();
+  if (!years.length) {
+    return `<h2>Classi</h2>
+      <div class="panel empty"><strong>L'archivio è vuoto</strong>
+        Crea il primo anno scolastico e la prima classe, oppure carica i dati di esempio per provare l'app.
+        <div class="row" style="justify-content:center; margin-top:16px">
+          <button class="btn primary" data-action="newClass">Crea anno e classe</button>
+          <button class="btn" data-action="loadDemo">Carica dati di esempio</button>
+        </div></div>`;
+  }
+  let yid = S.settings.selectedYearId;
+  if (!Q.year(yid)) yid = years[0].id;
+  const classes = Q.classesOfYear(yid);
+  return `<h2>Classi</h2>
+    ${backupReminderHTML()}
+    <div class="row" style="margin-bottom:18px; align-items:flex-end">
+      <label class="field">Anno scolastico
+        <select data-change="selectYear">${years.map(y => `<option value="${y.id}" ${y.id === yid ? 'selected' : ''}>${U.esc(y.label)}</option>`).join('')}</select>
+      </label>
+      <button class="btn ghost" data-action="newYear">Nuovo anno</button>
+      <span class="spacer"></span>
+      <button class="btn primary" data-action="newSession">Nuova sessione di test</button>
+      <button class="btn" data-action="newClass">Nuova classe</button>
+      <button class="btn" data-action="startWizard">Passaggio classi</button>
+    </div>
+    ${classes.length ? `<div class="bibs">${classes.map(c => {
+      const n = Q.activeEnrollments(c.id).length;
+      const pend = Q.pendingOfClass(c.id).length;
+      return `<a class="bib" href="#/classe/${c.id}">
+        <div class="bib-num">${U.esc(c.name)}</div>
+        <div class="bib-meta">${n} ${n === 1 ? 'studente' : 'studenti'}</div>
+        ${pend ? `<span class="pending">${pend} da recuperare</span>` : ''}
+      </a>`;
+    }).join('')}</div>` : `<div class="panel empty"><strong>Nessuna classe in questo anno</strong>Aggiungi una classe o usa il passaggio classi dall'anno precedente.
+      <div class="row" style="justify-content:center; margin-top:16px">
+        <button class="btn primary" data-action="newClass">Aggiungi classe</button>
+        <button class="btn" data-action="startWizard" data-year="${yid}">Passaggio classi</button>
+        <button class="btn ghost" data-action="deleteYear" data-year="${yid}">Elimina questo anno</button>
+      </div></div>`}`;
+}
+
+function viewClasse(id, tab = 'studenti') {
+  const c = Q.cls(id);
+  if (!c) return viewNotFound();
+  const y = Q.year(c.schoolYearId);
+  const tabs = [['studenti', 'Studenti'], ['sessioni', 'Sessioni'], ['progressi', 'Progressi'], ['recuperi', 'Recuperi']];
+  let body = '';
+  if (tab === 'studenti') {
+    const counts = Q.homonymCounts();
+    const studs = Q.studentsOfClass(c.id);
+    const removed = Q.removedOfClass(c.id);
+    body = `<div class="row" style="margin-bottom:12px"><span class="muted">${studs.length} studenti iscritti</span><span class="spacer"></span>
+      <button class="btn" data-action="importList" data-class="${c.id}">Aggiungi da elenco</button>
+      <button class="btn primary" data-action="addStudent" data-class="${c.id}">Aggiungi studente</button></div>
+      ${studs.length ? `<ul class="list">${studs.map(s => `<li><a href="#/studente/${s.id}">
+        <span>${U.esc(Q.displayName(s, counts))}</span><span class="spacer"></span>
+        ${Q.isHomonym(s, counts) && !s.alias && !s.birthDate ? '<span class="tag warn">Omonimo</span>' : ''}
+      </a></li>`).join('')}</ul>` : '<div class="panel empty"><strong>Nessuno studente</strong>Aggiungi gli studenti uno alla volta o incollando un elenco.</div>'}
+      ${removed.length ? `<h3>Usciti dalla classe</h3><ul class="list">${removed.map(s => `<li><div class="item">
+        <a href="#/studente/${s.id}" style="padding:0; min-height:0">${U.esc(Q.displayName(s, counts))}</a><span class="spacer"></span>
+        <button class="btn" data-action="reenroll" data-student="${s.id}" data-class="${c.id}">Reiscrivi</button></div></li>`).join('')}</ul>` : ''}`;
+  } else if (tab === 'sessioni') {
+    const sess = Q.sessionsOfClass(c.id);
+    body = `<div class="row" style="margin-bottom:12px"><span class="muted">${sess.length} ${sess.length === 1 ? 'sessione' : 'sessioni'}</span><span class="spacer"></span>
+      <button class="btn primary" data-action="newSession" data-class="${c.id}">Nuova sessione</button></div>` + (sess.length ? `<div class="scroll-x"><table>
+      <thead><tr><th>Data</th><th>Test</th><th>Attrezzo</th><th class="num">Misurati</th><th class="num">Assenti</th><th class="num">Esonerati</th></tr></thead>
+      <tbody>${sess.map(s => {
+        const p = Q.param(s.parameterId); const rs = Q.resultsOfSession(s.id);
+        const cnt = st => rs.filter(r => r.status === st).length;
+        return `<tr><td><a href="#/sessione/${s.id}">${U.fmtDate(s.date)}</a></td><td><a href="#/sessione/${s.id}">${U.esc(p?.name ?? '?')}</a></td><td>${s.equipmentWeightKg != null ? U.fmtKg(s.equipmentWeightKg) + ' kg' : ''}</td>
+          <td class="num">${cnt('misurato')}</td><td class="num">${cnt('assente')}</td><td class="num">${cnt('esonerato')}</td></tr>`;
+      }).join('')}</tbody></table></div>` : '<div class="panel empty"><strong>Nessuna sessione registrata</strong>Usa "Nuova sessione" per registrare il primo test della classe.</div>');
+  } else if (tab === 'progressi') {
+    body = viewProgressi(c);
+  } else {
+    const pend = Q.pendingOfClass(c.id);
+    body = pend.length ? pendingList(pend) : '<div class="panel empty"><strong>Nessun recupero in sospeso</strong></div>';
+  }
+  return `<p class="small" style="margin:0 0 4px"><a href="#/classi">Classi</a></p>
+    <h2>Classe ${U.esc(c.name)}</h2><p class="sub">Anno scolastico ${U.esc(y?.label ?? '')}</p>
+    <div class="row" style="margin:-6px 0 14px">
+      <button class="btn ghost" data-action="renameClass" data-class="${c.id}">Rinomina classe</button>
+      ${Ops.classDeletable(c.id) ? `<button class="btn ghost" data-action="deleteClass" data-class="${c.id}">Elimina classe</button>` : ''}
+    </div>
+    <nav class="tabs" aria-label="Sezioni della classe">${tabs.map(([k, l]) => `<a href="#/classe/${c.id}/${k}" ${k === tab ? 'aria-current="page"' : ''}>${l}</a>`).join('')}</nav>
+    ${body}`;
+}
+
+/** Elenco dei recuperi in sospeso, raggruppati per test e ordinati dalla sessione più vecchia. */
+function pendingList(pend) {
+  const counts = Q.homonymCounts();
+  const groups = new Map();
+  pend.forEach(r => {
+    const ses = Q.session(r.sessionId);
+    if (!ses) return;
+    if (!groups.has(ses.parameterId)) groups.set(ses.parameterId, []);
+    groups.get(ses.parameterId).push({ r, ses, s: Q.student(r.studentId) });
+  });
+  return [...groups.entries()]
+    .sort((x, y) => (Q.param(x[0])?.order ?? 0) - (Q.param(y[0])?.order ?? 0))
+    .map(([pid, items]) => {
+      const p = Q.param(pid);
+      items.sort((x, y) => x.ses.date.localeCompare(y.ses.date) || U.byName(x.s, y.s));
+      return `<h4 class="grp">${U.esc(p?.name ?? '?')} <span class="small muted">${items.length} da recuperare</span></h4>
+        <ul class="list">${items.map(({ r, ses, s }) => `<li><div class="item">
+          <span><strong>${U.esc(Q.displayName(s, counts))}</strong><br>
+          <span class="small muted">Sessione del ${U.fmtDate(ses.date)}${ses.equipmentWeightKg != null ? `, attrezzo da ${U.fmtKg(ses.equipmentWeightKg)} kg` : ''}</span></span>
+          <span class="spacer"></span>
+          <button type="button" class="btn" data-action="recoverResult" data-result="${r.id}" aria-label="Registra il recupero di ${U.esc(Q.displayName(s, counts))}">Registra</button></div></li>`).join('')}</ul>`;
+    }).join('');
+}
+
+function viewStudente(id) {
+  const s = Q.student(id);
+  if (!s) return viewNotFound();
+  if (StudView.studentId !== id) StudView = { studentId: id, yearId: 'all' };
+  const enr = S.enrollments.filter(e => e.studentId === s.id).map(e => ({ e, c: Q.cls(e.classId) })).filter(x => x.c)
+    .map(x => ({ ...x, y: Q.year(x.c.schoolYearId) })).sort((a, b) => (b.y?.label ?? '').localeCompare(a.y?.label ?? ''));
+  const active = enr.filter(x => !x.e.removedAt);
+  const allRes = S.results.filter(r => r.studentId === s.id).map(r => ({ r, ses: Q.session(r.sessionId) })).filter(x => x.ses && Q.cls(x.ses.classId));
+  // Anni in cui lo studente ha risultati: servono al filtro "Periodo"
+  const yearIds = [...new Set(allRes.map(x => Q.cls(x.ses.classId).schoolYearId))].filter(y => Q.year(y))
+    .sort((a, b) => Q.year(b).label.localeCompare(Q.year(a).label));
+  if (StudView.yearId !== 'all' && !yearIds.includes(StudView.yearId)) StudView.yearId = 'all';
+  const yf = StudView.yearId;
+  const blocks = Q.params(true).map(p => {
+    const rows = allRes.filter(x => x.ses.parameterId === p.id && (yf === 'all' || Q.cls(x.ses.classId).schoolYearId === yf))
+      .sort((a, b) => a.ses.date.localeCompare(b.ses.date));
+    if (!rows.length) return '';
+    const pts = Prog.points(s.id, p.id, yf);
+    return `<section class="pblock"><h3>${U.esc(p.name)} <span class="small muted">(${U.esc(p.unit)}, migliore se ${p.betterWhen === 'lower' ? 'più basso' : 'più alto'})</span></h3>
+      ${pts.length ? chartHTML(p, pts, s.id) : '<div class="panel muted small">Nessuna misura registrata per questo test nel periodo scelto.</div>'}
+      ${trendHTML(Prog.trend(pts, p), p)}
+      <details class="dt"><summary>Dati in tabella</summary><div class="scroll-x"><table><thead><tr><th>Sessione</th><th class="num">Prove</th><th class="num">Migliore</th><th>Attrezzo</th><th>Stato</th></tr></thead><tbody>
+      ${rows.map(({ r, ses }) => `<tr><td><a href="#/sessione/${ses.id}/s/${s.id}">${U.fmtDate(ses.date)}</a></td>
+        <td class="num">${r.trials.map(t => t === null ? '–' : U.fmtNum(t, p.decimals)).join(' / ')}</td>
+        <td class="num"><strong>${U.fmtNum(r.value, p.decimals)}</strong></td>
+        <td>${ses.equipmentWeightKg != null ? U.fmtKg(ses.equipmentWeightKg) + ' kg' : ''}</td>
+        <td>${statusTag(r)}</td></tr>`).join('')}
+      </tbody></table></div></details></section>`;
+  }).join('');
+  const homonym = Q.isHomonym(s);
+  const backClass = (active[0] || enr[0])?.c.id || '';
+  return `<p class="small" style="margin:0 0 4px"><a href="javascript:history.back()">Indietro</a></p>
+    <h2>${U.esc(s.lastName)} ${U.esc(s.firstName)}</h2>
+    <p class="sub">${s.birthDate ? 'Nato/a il ' + U.fmtDate(s.birthDate) : 'Data di nascita non indicata'}${s.alias ? ', alias ' + U.esc(s.alias) : ''}</p>
+    ${homonym && !s.alias && !s.birthDate ? '<div class="notice">In archivio c\'è un altro studente con lo stesso nome. Aggiungi la data di nascita o un alias per distinguerli.</div>' : ''}
+    <div class="row" style="margin-bottom:16px">
+      <button class="btn" data-action="editStudent" data-student="${s.id}">Modifica dati</button>
+      ${active.map(x => `<button class="btn" data-action="removeStudent" data-student="${s.id}" data-class="${x.c.id}">Rimuovi da ${U.esc(x.c.name)}</button>`).join('')}
+    </div>
+    <div class="panel"><strong>Classi</strong><br>${enr.map(x => `${U.esc(x.c.name)} (${U.esc(x.y?.label ?? '')})${x.e.removedAt ? ', uscito/a' : ''}`).join(', ') || 'Nessuna'}</div>
+    ${yearIds.length > 1 ? `<label class="field" style="max-width:260px; margin-bottom:12px">Periodo
+      <select data-change="studYear"><option value="all">Tutti gli anni</option>${yearIds.map(y => `<option value="${y}" ${y === yf ? 'selected' : ''}>${U.esc(Q.year(y).label)}</option>`).join('')}</select></label>` : ''}
+    ${blocks || '<div class="panel empty"><strong>Nessuna misurazione</strong></div>'}
+    <h3>Eliminazione definitiva</h3>
+    <div class="panel">
+      <p class="small muted" style="margin-top:0">Cancella lo studente e tutte le sue misurazioni da questo dispositivo. Se lo studente ha solo cambiato classe o scuola, usa invece "Rimuovi dalla classe": lo storico resta conservato.</p>
+      <button class="btn danger" data-action="deleteStudent" data-student="${s.id}" data-class="${backClass}">Elimina definitivamente</button>
+    </div>`;
+}
+
+function viewRecuperi() {
+  const groups = S.classes.map(c => ({ c, y: Q.year(c.schoolYearId), pend: Q.pendingOfClass(c.id) })).filter(g => g.pend.length)
+    .sort((a, b) => (b.y?.label ?? '').localeCompare(a.y?.label ?? '') || a.c.name.localeCompare(b.c.name, 'it', { numeric: true }));
+  const total = groups.reduce((n, g) => n + g.pend.length, 0);
+  return `<h2>Recuperi</h2>
+    ${total ? `<p class="sub">${total} ${total === 1 ? 'prova' : 'prove'} da recuperare</p>` : ''}
+    ${groups.length ? groups.map(g => `<h3>Classe ${U.esc(g.c.name)} <span class="small muted">${U.esc(g.y?.label ?? '')}</span></h3>${pendingList(g.pend)}`).join('')
+      : '<div class="panel empty"><strong>Nessun recupero in sospeso</strong>Gli studenti segnati come assenti in una sessione compariranno qui.</div>'}`;
+}
+
+function paramRowHTML(p, idx, total, activeList) {
+  const u = Ops.paramUsage(p.id);
+  const inUse = u.sessions > 0 || u.results > 0;
+  const arrow = (dir, d, label, disabled) => `<button type="button" class="btn icon ghost" data-action="moveParam" data-param="${p.id}" data-dir="${dir}" aria-label="${label}" ${disabled ? 'disabled' : ''}>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="${d}"/></svg></button>`;
+  return `<li><div class="prm">
+    <div class="prm-main"><strong>${U.esc(p.name)}</strong>
+      <div class="small muted">Unità ${U.esc(p.unit)}, migliore se ${p.betterWhen === 'lower' ? 'più basso' : 'più alto'}, ${p.decimals} ${p.decimals === 1 ? 'decimale' : 'decimali'}, ${p.attempts} ${p.attempts === 1 ? 'prova' : 'prove'}</div>
+      <div class="row" style="gap:6px; margin-top:6px">
+        ${p.requiresEquipmentWeight ? '<span class="tag">Peso attrezzo</span>' : ''}
+        ${inUse ? `<span class="tag">In uso: ${u.sessions} ${u.sessions === 1 ? 'sessione' : 'sessioni'}</span>` : ''}
+      </div></div>
+    <div class="prm-actions">
+      ${p.active ? arrow('up', 'M6 15l6-6 6 6', `Sposta in alto ${U.esc(p.name)}`, idx === 0) + arrow('down', 'M6 9l6 6 6-6', `Sposta in basso ${U.esc(p.name)}`, idx === total - 1) : ''}
+      <button type="button" class="btn" data-action="editParam" data-param="${p.id}">Modifica</button>
+      <button type="button" class="btn" data-action="toggleParam" data-param="${p.id}">${p.active ? 'Archivia' : 'Riattiva'}</button>
+      ${inUse ? '' : `<button type="button" class="btn ghost" data-action="deleteParam" data-param="${p.id}">Elimina</button>`}
+    </div></div></li>`;
+}
+
+function viewParametri() {
+  const act = Q.params(false);
+  const arch = Q.params(true).filter(p => !p.active);
+  return `<h2>Parametri</h2>
+    <div class="row" style="margin-bottom:12px"><span class="muted">${act.length} attivi${arch.length ? `, ${arch.length} archiviati` : ''}</span><span class="spacer"></span>
+      <button class="btn primary" data-action="addParam">Aggiungi parametro</button></div>
+    ${act.length ? `<ul class="list">${act.map((p, i) => paramRowHTML(p, i, act.length)).join('')}</ul>`
+      : '<div class="panel empty"><strong>Nessun parametro attivo</strong>Aggiungi un parametro o riattiva uno di quelli archiviati.</div>'}
+    ${arch.length ? `<h3>Archiviati</h3><p class="small muted" style="margin-top:-4px">Non compaiono nell'inserimento delle sessioni, ma restano nello storico degli studenti.</p>
+      <ul class="list">${arch.map(p => paramRowHTML(p, 0, 0)).join('')}</ul>` : ''}`;
+}
+
+function viewDati() {
+  const modeLabel = {
+    idb: 'Database del browser (IndexedDB)',
+    local: 'Memoria semplice del browser (localStorage, modalità di ripiego)',
+    memory: 'Nessuna: i dati restano solo finché la pagina è aperta'
+  }[Storage.mode];
+  const persist = Storage.persisted === true ? 'Sì, il browser non li cancella in automatico'
+    : Storage.persisted === false ? 'No, il browser potrebbe cancellarli se manca spazio: fai backup frequenti' : 'Non verificabile su questo browser';
+  const last = S.settings.lastBackupAt;
+  const bs = backupStatus();
+  const days = S.settings.backupReminderDays || 14;
+  const years = Q.years();
+  return `<h2>Dati</h2>
+    <div class="panel">
+      <p style="margin-top:0"><strong>Dove sono salvati i dati</strong><br>${modeLabel}</p>
+      <p><strong>Protezione dalla pulizia automatica</strong><br>${persist}</p>
+      <p style="margin-bottom:0" class="small muted">In archivio: ${S.schoolYears.length} anni, ${S.classes.length} classi, ${S.students.length} studenti, ${S.sessions.length} sessioni, ${S.results.length} risultati.</p>
+    </div>
+    ${pwaPanelHTML()}
+    <h3>Backup</h3>
+    <div class="panel">
+      <p style="margin-top:0"><strong>Ultimo backup</strong><br>${last ? `${U.esc(fmtDateTime(last))}${bs ? ` (${bs.days === 0 ? 'oggi' : bs.days === 1 ? 'ieri' : `${bs.days} giorni fa`})` : ''}` : 'Mai'}</p>
+      <div class="row">
+        <button class="btn primary" data-action="exportJSON">Esporta backup (JSON)</button>
+        <button class="btn" data-action="importJSON">Importa backup</button>
+        <input type="file" id="importFile" accept=".json,application/json" hidden>
+      </div>
+      <label class="field" style="max-width:320px; margin-top:14px">Ricordami di fare il backup ogni
+        <select data-change="backupDays">${[3, 7, 14, 30].map(n => `<option value="${n}" ${n === days ? 'selected' : ''}>${n} giorni</option>`).join('')}</select></label>
+      <p class="small muted" style="margin-bottom:0">Il backup è un file con tutto l'archivio: serve a non perdere i dati e a passare a un altro dispositivo (Dati, Importa backup). Contiene dati personali degli studenti: conservalo sul dispositivo o in un archivio personale, come previsto dalla scuola. Non caricarlo mai su GitHub: diventerebbe pubblico.</p>
+    </div>
+    <h3>Esporta per Excel (CSV)</h3>
+    <div class="panel">
+      <div class="row" style="align-items:flex-end">
+        <label class="field">Anno scolastico<select id="csvYear"><option value="all">Tutti gli anni</option>${years.map(y => `<option value="${y.id}">${U.esc(y.label)}</option>`).join('')}</select></label>
+        <button class="btn" data-action="exportCSV" ${S.results.length ? '' : 'disabled'}>Esporta CSV</button>
+      </div>
+      <p class="small muted" style="margin-bottom:0">Una riga per ogni risultato, con separatore punto e virgola e virgola decimale, pronto per Excel in italiano. Serve per consultare o stampare i dati: per ripristinare l'archivio usa il backup JSON.</p>
+    </div>
+    <h3>Prova e azzeramento</h3>
+    <div class="panel">
+      <div class="row">
+        <button class="btn" data-action="loadDemo" ${archiveIsEmpty() ? '' : 'disabled'}>Carica dati di esempio</button>
+        <button class="btn danger" data-action="resetArchive">Svuota archivio</button>
+      </div>
+      <p class="small muted" style="margin-bottom:0">I dati di esempio si caricano solo in un archivio vuoto: 3 classi fittizie dell'anno 2025/26 con misurazioni casuali, assenze, recuperi, un esonero e una coppia di omonimi. Prima di iniziare a usare l'app con classi reali, svuota l'archivio.</p>
+    </div>
+    <footer class="ver">Versione ${APP_VERSION}, schema dati ${SCHEMA_VERSION}</footer>`;
+}
+
+function viewNotFound() {
+  return `<div class="panel empty"><strong>Elemento non trovato</strong>Potrebbe essere stato eliminato. <a href="#/classi">Torna alle classi</a></div>`;
+}
+
+/* ==========================================================
+   M2: anni, classi, studenti
+   ========================================================== */
+U.titleCase = function (s) {
+  return s.toLowerCase().replace(/(^|[\s'’\-])(\p{L})/gu, (m, sep, ch) => sep + ch.toUpperCase());
+};
+/** Toglie spazi doppi; se il testo è tutto maiuscolo o tutto minuscolo lo porta a "Iniziali Maiuscole". */
+U.cleanName = function (s) {
+  const t = String(s ?? '').replace(/\s+/g, ' ').trim();
+  const hasLetters = t.toLowerCase() !== t.toUpperCase();
+  return hasLetters && (t === t.toUpperCase() || t === t.toLowerCase()) ? U.titleCase(t) : t;
+};
+
+Q.removedOfClass = function (cid) {
+  const active = new Set(Q.activeEnrollments(cid).map(e => e.studentId));
+  const ids = new Set(S.enrollments.filter(e => e.classId === cid && e.removedAt && !active.has(e.studentId)).map(e => e.studentId));
+  return [...ids].map(id => Q.student(id)).filter(Boolean).sort(U.byName);
+};
+
+const Ops = {
+  suggestYear() {
+    const starts = S.schoolYears.map(y => parseInt(y.label, 10)).filter(Number.isFinite);
+    let start;
+    if (starts.length) start = Math.max(...starts) + 1;
+    else { const d = new Date(); start = d.getMonth() >= 8 ? d.getFullYear() : d.getFullYear() - 1; }
+    return `${start}/${String((start + 1) % 100).padStart(2, '0')}`;
+  },
+  yearError(label) {
+    const m = /^(\d{4})\/(\d{2})$/.exec(label);
+    if (!m) return 'Scrivi l\'anno nel formato 2026/27.';
+    if ((Number(m[1]) + 1) % 100 !== Number(m[2])) return 'Le due parti dell\'anno devono essere consecutive, per esempio 2026/27.';
+    if (S.schoolYears.some(y => y.label === label)) return 'Questo anno scolastico esiste già.';
+    return '';
+  },
+  addYear(label) {
+    const y = { id: U.uid('y'), label };
+    S.schoolYears.push(y);
+    S.settings.selectedYearId = y.id;
+    return y;
+  },
+  classNameError(name, yearId, exceptId = null) {
+    if (!name) return 'Scrivi il nome della classe.';
+    if (name.length > 20) return 'Il nome della classe è troppo lungo (massimo 20 caratteri).';
+    const k = U.normName(name);
+    if (S.classes.some(c => c.schoolYearId === yearId && c.id !== exceptId && U.normName(c.name) === k)) return 'In questo anno esiste già una classe con questo nome.';
+    return '';
+  },
+  addClass(yearId, name) {
+    const c = { id: U.uid('c'), schoolYearId: yearId, name, sourceClassId: null };
+    S.classes.push(c);
+    return c;
+  },
+  /** Una classe si può eliminare solo se è vuota: nessuna iscrizione (nemmeno passata) e nessuna sessione. */
+  classDeletable(cid) {
+    return !S.enrollments.some(e => e.classId === cid) && !S.sessions.some(s => s.classId === cid);
+  },
+  studentError(first, last, birth) {
+    if (!last) return 'Scrivi il cognome.';
+    if (!first) return 'Scrivi il nome.';
+    if (last.length > 60 || first.length > 60) return 'Nome o cognome troppo lungo (massimo 60 caratteri).';
+    if (birth) {
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(birth) || Number.isNaN(Date.parse(birth))) return 'Data di nascita non valida.';
+      if (birth > U.todayISO()) return 'La data di nascita è nel futuro.';
+    }
+    return '';
+  },
+  /** Studenti già in archivio con lo stesso nome e non distinguibili da data di nascita o alias. */
+  matchCandidates({ firstName, lastName, birthDate, alias }, excludeId = null) {
+    const key = U.normName(lastName + ' ' + firstName);
+    return S.students.filter(s => s.id !== excludeId
+      && U.normName(s.lastName + ' ' + s.firstName) === key
+      && !(birthDate && s.birthDate && birthDate !== s.birthDate)
+      && !(alias && s.alias && U.normName(alias) !== U.normName(s.alias)));
+  },
+  distinct(a, b) {
+    return !!((a.birth && b.birth && a.birth !== b.birth) || (a.alias && b.alias && U.normName(a.alias) !== U.normName(b.alias)));
+  },
+  describe(st) {
+    const parts = [st.birthDate ? `nato/a il ${U.fmtDate(st.birthDate)}` : 'data di nascita non indicata'];
+    if (st.alias) parts.push(`alias ${st.alias}`);
+    const cl = S.enrollments.filter(e => e.studentId === st.id).map(e => Q.cls(e.classId)).filter(Boolean);
+    const uniq = [...new Map(cl.map(c => [c.id, c])).values()]
+      .sort((a, b) => (Q.year(b.schoolYearId)?.label ?? '').localeCompare(Q.year(a.schoolYearId)?.label ?? ''));
+    parts.push(uniq.length ? 'classi ' + uniq.map(c => `${c.name} (${Q.year(c.schoolYearId)?.label ?? '?'})`).join(', ') : 'nessuna classe');
+    return parts.join(', ');
+  },
+  /** Verifica il vincolo: una sola iscrizione attiva per anno scolastico. */
+  enrollStatus(studentId, classId) {
+    const cls = Q.cls(classId);
+    if (!cls) return { ok: false, reason: 'classe non trovata' };
+    if (S.enrollments.some(e => e.studentId === studentId && e.classId === classId && !e.removedAt)) return { ok: false, reason: 'è già in questa classe' };
+    const other = S.enrollments.find(e => e.studentId === studentId && !e.removedAt && Q.cls(e.classId)?.schoolYearId === cls.schoolYearId);
+    if (other) return { ok: false, reason: `è già iscritto/a alla classe ${Q.cls(other.classId).name} in questo anno scolastico` };
+    return { ok: true };
+  },
+  enroll(studentId, classId) {
+    const st = Ops.enrollStatus(studentId, classId);
+    if (!st.ok) return st;
+    S.enrollments.push({ id: U.uid('e'), classId, studentId, addedAt: U.todayISO(), removedAt: null });
+    return st;
+  },
+  createStudent({ firstName, lastName, birthDate, alias }) {
+    const s = { id: U.uid('s'), firstName, lastName, birthDate: birthDate || null, alias: alias || '' };
+    S.students.push(s);
+    return s;
+  },
+  removeFromClass(studentId, classId) {
+    const today = U.todayISO();
+    S.enrollments.forEach(e => { if (e.studentId === studentId && e.classId === classId && !e.removedAt) e.removedAt = today; });
+  },
+  deleteStudent(studentId) {
+    S.results = S.results.filter(r => r.studentId !== studentId);
+    S.enrollments = S.enrollments.filter(e => e.studentId !== studentId);
+    S.students = S.students.filter(s => s.id !== studentId);
+  }
+};
+
+function go(hash) { if (location.hash === hash) render(); else location.hash = hash; }
+
+/* ---------- Finestre ---------- */
+function openDialog(html, wide = false) {
+  const d = document.getElementById('modal');
+  d.onclick = d.oninput = d.onchange = d.onkeydown = null;
+  d.className = wide ? 'wide' : '';
+  d.innerHTML = html;
+  d.returnValue = '';
+  const closed = new Promise(res => d.addEventListener('close', () => res(d.returnValue), { once: true }));
+  d.showModal();
+  return { d, closed };
+}
+/** Collega i pulsanti [data-do] ai gestori; Invio in un campo di testo attiva il gestore enterKey. */
+function wireDialog(d, handlers, enterKey = 'ok') {
+  d.onclick = e => {
+    const b = e.target.closest('[data-do]');
+    if (!b || b.disabled) return;
+    if (b.dataset.do === 'cancel') d.close('cancel');
+    else if (handlers[b.dataset.do]) handlers[b.dataset.do](b, e);
+  };
+  d.onkeydown = e => {
+    if (e.key === 'Enter' && e.target.tagName === 'INPUT' && enterKey && handlers[enterKey]) { e.preventDefault(); handlers[enterKey](e.target, e); }
+  };
+}
+const BTN_CANCEL = '<button type="button" class="btn ghost" data-do="cancel">Annulla</button>';
+
+async function dlgText({ title, label, value = '', placeholder = '', confirmLabel = 'Salva', validate, inputmode = '' }) {
+  const { d, closed } = openDialog(`<div class="modal-body"><h3 id="modalTitle">${U.esc(title)}</h3>
+    <label class="field">${U.esc(label)}<input type="text" id="f_val" value="${U.esc(value)}" placeholder="${U.esc(placeholder)}" autocomplete="off" ${inputmode ? `inputmode="${inputmode}"` : ''}></label>
+    <p class="field-error" id="err" role="alert"></p>
+    <div class="modal-actions">${BTN_CANCEL}<button type="button" class="btn primary" data-do="ok">${U.esc(confirmLabel)}</button></div></div>`);
+  let out = null;
+  const input = d.querySelector('#f_val');
+  wireDialog(d, {
+    ok: () => {
+      const v = input.value.replace(/\s+/g, ' ').trim();
+      const e = validate ? validate(v) : '';
+      if (e) { d.querySelector('#err').textContent = e; input.focus(); return; }
+      out = v; d.close('ok');
+    }
+  });
+  input.select();
+  return (await closed) === 'ok' ? out : null;
+}
+
+async function dlgClass(preYearId) {
+  const years = Q.years();
+  const hasYears = years.length > 0;
+  const yearField = hasYears
+    ? `<label class="field">Anno scolastico<select id="f_year">${years.map(y => `<option value="${y.id}" ${y.id === preYearId ? 'selected' : ''}>${U.esc(y.label)}</option>`).join('')}</select></label>`
+    : `<label class="field">Anno scolastico<input type="text" id="f_year" value="${U.esc(Ops.suggestYear())}" autocomplete="off"></label>`;
+  const { d, closed } = openDialog(`<div class="modal-body">
+    <h3 id="modalTitle">${hasYears ? 'Nuova classe' : 'Crea anno e classe'}</h3>
+    <div class="form-grid">${yearField}<label class="field">Nome della classe<input type="text" id="f_name" placeholder="es. 2A" maxlength="20" autocomplete="off"></label></div>
+    <p class="field-error" id="err" role="alert"></p>
+    <div class="modal-actions">${BTN_CANCEL}<button type="button" class="btn primary" data-do="ok">Crea classe</button></div></div>`);
+  let out = null;
+  wireDialog(d, {
+    ok: () => {
+      const err = d.querySelector('#err');
+      const name = d.querySelector('#f_name').value.replace(/\s+/g, ' ').trim();
+      let yearId = null, yearLabel = null;
+      if (hasYears) yearId = d.querySelector('#f_year').value;
+      else {
+        yearLabel = d.querySelector('#f_year').value.trim();
+        const ey = Ops.yearError(yearLabel);
+        if (ey) { err.textContent = ey; return; }
+      }
+      const en = Ops.classNameError(name, yearId);
+      if (en) { err.textContent = en; d.querySelector('#f_name').focus(); return; }
+      out = { yearId, yearLabel, name }; d.close('ok');
+    }
+  });
+  return (await closed) === 'ok' ? out : null;
+}
+
+function studentFieldsHTML(v = {}) {
+  return `<div class="form-grid">
+    <label class="field">Cognome<input type="text" id="f_last" value="${U.esc(v.lastName || '')}" maxlength="60" autocomplete="off" autocapitalize="words"></label>
+    <label class="field">Nome<input type="text" id="f_first" value="${U.esc(v.firstName || '')}" maxlength="60" autocomplete="off" autocapitalize="words"></label>
+    <label class="field">Data di nascita (facoltativa)<input type="date" id="f_birth" value="${U.esc(v.birthDate || '')}" max="${U.todayISO()}"></label>
+    <label class="field">Alias (facoltativo)<input type="text" id="f_alias" value="${U.esc(v.alias || '')}" maxlength="40" autocomplete="off" placeholder="serve solo per gli omonimi"></label>
+  </div>`;
+}
+function readStudentFields(d) {
+  return {
+    lastName: U.cleanName(d.querySelector('#f_last').value),
+    firstName: U.cleanName(d.querySelector('#f_first').value),
+    birthDate: d.querySelector('#f_birth').value || null,
+    alias: d.querySelector('#f_alias').value.replace(/\s+/g, ' ').trim()
+  };
+}
+
+/** Aggiunta di un singolo studente. Restituisce {kind:'new', data} oppure {kind:'link', studentId} oppure null. */
+async function dlgAddStudent(classId, opt = {}) {
+  const cls = opt.name ? { name: opt.name } : Q.cls(classId);
+  const statusOf = opt.statusFn || (id => Ops.enrollStatus(id, classId));
+  let value = null, warnedDraft = false;
+  const { d, closed } = openDialog('');
+
+  const showForm = (v = {}) => {
+    d.innerHTML = `<div class="modal-body"><h3 id="modalTitle">Aggiungi studente alla classe ${U.esc(cls.name)}</h3>
+      ${studentFieldsHTML(v)}
+      <p class="field-error" id="err" role="alert"></p>
+      <div class="modal-actions">${BTN_CANCEL}<button type="button" class="btn primary" data-do="ok">Aggiungi</button></div></div>`;
+    wireDialog(d, {
+      ok: () => {
+        const data = readStudentFields(d);
+        const e = Ops.studentError(data.firstName, data.lastName, data.birthDate);
+        if (e) { d.querySelector('#err').textContent = e; return; }
+        const key = U.normName(data.lastName + ' ' + data.firstName);
+        // Omonimo tra i nuovi della bozza: si avvisa solo se negli elenchi apparirebbero identici (stesso alias o data, oppure nessuno dei due)
+        const tag = x => U.normName(x.alias || x.birth || '');
+        const draftDup = (opt.extraNames || []).some(o => o.key === key && tag(o) === tag({ alias: data.alias, birth: data.birthDate || '' }));
+        if (draftDup && !warnedDraft) {
+          warnedDraft = true;
+          d.querySelector('#err').textContent = 'Tra i nuovi studenti di questa classe ce n\'è già uno con lo stesso nome. Aggiungi data di nascita o alias per distinguerli, oppure premi di nuovo Aggiungi.';
+          return;
+        }
+        const cands = Ops.matchCandidates(data);
+        if (!cands.length) { value = { kind: 'new', data }; d.close('ok'); }
+        else showMatch(data, cands);
+      }
+    });
+    d.querySelector('#f_last').focus();
+  };
+
+  const showMatch = (data, cands) => {
+    const noDist = !data.birthDate && !data.alias;
+    d.innerHTML = `<div class="modal-body"><h3 id="modalTitle">Esiste già uno studente con questo nome</h3>
+      <p>Stai aggiungendo <strong>${U.esc(data.lastName + ' ' + data.firstName)}</strong>. ${cands.length > 1 ? 'In archivio ci sono più studenti con lo stesso nome.' : 'In archivio c\'è uno studente con lo stesso nome.'} Si tratta della stessa persona?</p>
+      ${cands.map(c => {
+        const st = statusOf(c.id);
+        return `<div class="cand"><strong>${U.esc(c.lastName + ' ' + c.firstName)}</strong><br><span class="small muted">${U.esc(Ops.describe(c))}</span>
+          <div class="row" style="margin-top:8px"><button type="button" class="btn" data-do="link" data-id="${c.id}" ${st.ok ? '' : 'disabled'}>È lo stesso studente</button>
+          ${st.ok ? '' : `<span class="small muted">Non collegabile: ${U.esc(st.reason)}.</span>`}</div></div>`;
+      }).join('')}
+      ${noDist ? '<div class="notice">Se è un altro studente, aggiungi la data di nascita o un alias: servono a distinguerli negli elenchi.</div>' : ''}
+      <div class="modal-actions"><button type="button" class="btn ghost" data-do="back">Indietro</button>
+        <button type="button" class="btn primary" data-do="new">${noDist ? 'Aggiungi comunque come nuovo studente' : 'È un altro studente'}</button></div></div>`;
+    wireDialog(d, {
+      back: () => showForm(data),
+      link: b => { value = { kind: 'link', studentId: b.dataset.id }; d.close('ok'); },
+      new: () => { value = { kind: 'new', data }; d.close('ok'); }
+    }, null);
+  };
+
+  showForm();
+  return (await closed) === 'ok' ? value : null;
+}
+
+async function dlgEditStudent(st) {
+  const { d, closed } = openDialog(`<div class="modal-body"><h3 id="modalTitle">Modifica dati dello studente</h3>
+    ${studentFieldsHTML(st)}
+    <p class="field-error" id="err" role="alert"></p>
+    <div class="modal-actions">${BTN_CANCEL}<button type="button" class="btn primary" data-do="ok">Salva</button></div></div>`);
+  let out = null, warned = false;
+  wireDialog(d, {
+    ok: () => {
+      const data = readStudentFields(d);
+      const e = Ops.studentError(data.firstName, data.lastName, data.birthDate);
+      const err = d.querySelector('#err');
+      if (e) { err.textContent = e; return; }
+      if (!warned && !data.birthDate && !data.alias && Ops.matchCandidates(data, st.id).length) {
+        warned = true;
+        err.textContent = 'In archivio c\'è un altro studente con lo stesso nome. Aggiungi data di nascita o alias per distinguerli, oppure premi di nuovo Salva per confermare così.';
+        return;
+      }
+      out = data; d.close('ok');
+    }
+  });
+  return (await closed) === 'ok' ? out : null;
+}
+
+/* ---------- Inserimento da elenco ---------- */
+/** Una riga per studente. Separatori ammessi: tabulazione o punto e virgola (da foglio di calcolo), virgola, oppure spazio (primo termine = cognome). */
+function parseRoster(text) {
+  const out = [];
+  for (const rawLine of text.split(/\r?\n/)) {
+    const line = rawLine.replace(/^\s*\d+\s*[.)\-:]?\s+/, '').trim();
+    if (!line) continue;
+    let last, first;
+    if (/[\t;]/.test(line)) {
+      const parts = line.split(/[\t;]/).map(s => s.trim()).filter(Boolean);
+      last = parts[0]; first = parts.slice(1).join(' ');
+    } else if (line.includes(',')) {
+      const i = line.indexOf(',');
+      last = line.slice(0, i).trim(); first = line.slice(i + 1).trim();
+    } else {
+      const t = line.split(/\s+/);
+      last = t[0]; first = t.slice(1).join(' ');
+    }
+    out.push({ last: U.cleanName(last), first: U.cleanName(first), alias: '', birth: '', decision: null });
+  }
+  return out;
+}
+const isLink = r => !!(r.decision && r.decision.startsWith('link:'));
+/** Calcola per ogni riga: errori, candidati in archivio, duplicati nell'elenco e se è risolta. */
+function analyzeRoster(rows, classId, seed = []) {
+  const statusOf = typeof classId === 'function' ? classId : (id => Ops.enrollStatus(id, classId));
+  const linked = new Set();
+  const seen = [...seed];
+  rows.forEach(r => {
+    r.err = ''; r.cands = []; r.dup = false; r.flag = false; r.resolved = false;
+    if (r.decision === 'skip') return;
+    if (!r.last || !r.first) { r.err = 'Servono cognome e nome.'; return; }
+    if (r.last.length > 60 || r.first.length > 60) { r.err = 'Nome o cognome troppo lungo.'; return; }
+    const key = U.normName(r.last + ' ' + r.first);
+    r.cands = Ops.matchCandidates({ firstName: r.first, lastName: r.last, birthDate: r.birth || null, alias: r.alias })
+      .map(s => ({ s, st: statusOf(s.id) }));
+    r.dup = seen.some(o => o.key === key && !Ops.distinct(o, r));
+    seen.push({ key, birth: r.birth, alias: r.alias });
+    if (isLink(r)) {
+      const id = r.decision.slice(5);
+      const c = r.cands.find(c => c.s.id === id);
+      if (!c || !c.st.ok) r.decision = null;
+      else if (linked.has(id)) { r.decision = null; r.err = 'Questo studente è già collegato a un\'altra riga.'; }
+      else linked.add(id);
+    }
+    r.flag = r.cands.length > 0 || r.dup;
+    r.resolved = !r.err && (!r.flag || r.decision === 'new' || isLink(r));
+  });
+}
+function rosterRowHTML(r, i) {
+  const skipped = r.decision === 'skip';
+  const cls = 'prow' + (skipped ? ' skipped' : r.err ? ' err' : (r.flag && !r.resolved) ? ' flag' : '');
+  let html = `<div class="${cls}" data-i="${i}"><div class="prow-grid">
+    <label class="field">Cognome<input type="text" data-f="last" value="${U.esc(r.last)}" ${skipped ? 'disabled' : ''}></label>
+    <label class="field">Nome<input type="text" data-f="first" value="${U.esc(r.first)}" ${skipped ? 'disabled' : ''}></label>
+    <button type="button" class="btn ghost" data-do="${skipped ? 'restore' : 'skip'}" data-i="${i}">${skipped ? 'Ripristina' : 'Togli'}</button></div>`;
+  if (!skipped) {
+    if (r.err) html += `<p class="field-error">${U.esc(r.err)}</p>`;
+    if (r.flag) {
+      html += `<p class="small" style="margin:8px 0 0"><strong>${r.cands.length ? 'Esiste già in archivio uno studente con questo nome.' : 'Questo nome compare più volte nell\'elenco.'}</strong></p>
+        <select data-f="decision" aria-label="Come trattare questa riga"><option value="">Scegli cosa fare</option>
+        ${r.cands.map(c => `<option value="link:${c.s.id}" ${r.decision === 'link:' + c.s.id ? 'selected' : ''} ${c.st.ok ? '' : 'disabled'}>Stesso studente: ${U.esc(Ops.describe(c.s))}${c.st.ok ? '' : ' (non collegabile: ' + U.esc(c.st.reason) + ')'}</option>`).join('')}
+        <option value="new" ${r.decision === 'new' ? 'selected' : ''}>Nuovo studente (omonimo)</option></select>`;
+      if (r.decision === 'new') {
+        html += `<div class="form-grid" style="margin-top:8px">
+          <label class="field">Alias (facoltativo)<input type="text" data-f="alias" value="${U.esc(r.alias)}" maxlength="40"></label>
+          <label class="field">Data di nascita (facoltativa)<input type="date" data-f="birth" value="${U.esc(r.birth)}" max="${U.todayISO()}"></label></div>
+          ${!r.birth && !r.alias ? '<p class="small muted" style="margin:6px 0 0">Per distinguerlo dagli omonimi è consigliato indicare l\'alias o la data di nascita.</p>' : ''}`;
+      }
+    }
+  }
+  return html + '</div>';
+}
+
+/** Restituisce l'elenco di operazioni confermate [{kind:'new', data} | {kind:'link', studentId}] oppure null. */
+async function dlgImport(classId, opt = {}) {
+  const cls = opt.name ? { name: opt.name } : Q.cls(classId);
+  const target = opt.statusFn || classId, seed = opt.seed || [];
+  let text = '', rows = [], items = null;
+  const { d, closed } = openDialog('', true);
+
+  const showText = (err = '') => {
+    d.onchange = null;
+    d.innerHTML = `<div class="modal-body"><h3 id="modalTitle">Aggiungi da elenco alla classe ${U.esc(cls.name)}</h3>
+      <p class="small muted">Incolla l'elenco, una riga per studente, nel formato <strong>Cognome Nome</strong>. Funziona anche copiando da un foglio di calcolo o dal registro elettronico. Per i cognomi composti usa la virgola, per esempio <em>De Luca, Maria</em>. Nell'anteprima potrai correggere ogni riga.</p>
+      <textarea id="f_text" spellcheck="false" placeholder="Rossi Marco&#10;Sanna Giulia&#10;De Luca, Maria">${U.esc(text)}</textarea>
+      <p class="field-error" id="err" role="alert">${U.esc(err)}</p>
+      <div class="modal-actions">${BTN_CANCEL}<button type="button" class="btn primary" data-do="preview">Anteprima</button></div></div>`;
+    wireDialog(d, {
+      preview: () => {
+        text = d.querySelector('#f_text').value;
+        rows = parseRoster(text);
+        if (!rows.length) { d.querySelector('#err').textContent = 'Incolla almeno una riga.'; return; }
+        if (rows.length > 150) { d.querySelector('#err').textContent = 'L\'elenco supera le 150 righe: dividilo in più parti.'; return; }
+        showPreview();
+      }
+    }, null);
+    d.querySelector('#f_text').focus();
+  };
+
+  const stats = () => {
+    const live = rows.filter(r => r.decision !== 'skip');
+    const ready = live.filter(r => r.resolved);
+    const nLink = ready.filter(isLink).length;
+    return { nLink, nNew: ready.length - nLink, skipped: rows.length - live.length, unresolved: live.length - ready.length, ready: ready.length };
+  };
+  const summaryText = s => `${s.nNew} nuovi, ${s.nLink} collegati a studenti già in archivio` + (s.skipped ? `, ${s.skipped} tolti` : '') + (s.unresolved ? `, ${s.unresolved} da sistemare` : '');
+  const updateSummary = () => {
+    const s = stats();
+    d.querySelector('#sum').textContent = summaryText(s);
+    const ok = d.querySelector('[data-do="ok"]');
+    ok.disabled = s.unresolved > 0 || s.ready === 0;
+    ok.textContent = `Aggiungi ${s.ready} ${s.ready === 1 ? 'studente' : 'studenti'}`;
+  };
+  const sig = () => rows.map(r => [r.flag, r.resolved, r.err, r.dup, r.cands.length, r.decision].join(',')).join('|');
+
+  const showPreview = () => {
+    const scroll = d.scrollTop;
+    analyzeRoster(rows, target, seed);
+    const s = stats();
+    d.innerHTML = `<div class="modal-body"><h3 id="modalTitle">Anteprima: classe ${U.esc(cls.name)}</h3>
+      <div class="sumbar"><span id="sum" aria-live="polite">${U.esc(summaryText(s))}</span></div>
+      ${rows.map(rosterRowHTML).join('')}
+      <div class="modal-actions"><button type="button" class="btn ghost" data-do="back">Indietro</button>
+        <button type="button" class="btn primary" data-do="ok" ${s.unresolved > 0 || s.ready === 0 ? 'disabled' : ''}>Aggiungi ${s.ready} ${s.ready === 1 ? 'studente' : 'studenti'}</button></div></div>`;
+    wireDialog(d, {
+      back: () => showText(),
+      skip: b => { rows[Number(b.dataset.i)].decision = 'skip'; showPreview(); },
+      restore: b => { rows[Number(b.dataset.i)].decision = null; showPreview(); },
+      ok: () => {
+        analyzeRoster(rows, target, seed);
+        items = rows.filter(r => r.decision !== 'skip' && r.resolved).map(r => isLink(r)
+          ? { kind: 'link', studentId: r.decision.slice(5) }
+          : { kind: 'new', data: { firstName: r.first, lastName: r.last, birthDate: r.birth || null, alias: r.alias || '' } });
+        d.close('ok');
+      }
+    }, null);
+    d.onchange = e => {
+      const rowEl = e.target.closest('.prow');
+      if (!rowEl) return;
+      const r = rows[Number(rowEl.dataset.i)], f = e.target.dataset.f;
+      if (!r || !f) return;
+      const before = sig();
+      if (f === 'last' || f === 'first') { r[f] = U.cleanName(e.target.value); e.target.value = r[f]; }
+      else if (f === 'alias') r.alias = e.target.value.replace(/\s+/g, ' ').trim();
+      else if (f === 'birth') r.birth = e.target.value || '';
+      else if (f === 'decision') r.decision = e.target.value || null;
+      analyzeRoster(rows, target, seed);
+      if (f === 'decision' || sig() !== before) showPreview(); else updateSummary();
+    };
+    d.scrollTop = scroll;
+  };
+
+  showText();
+  return (await closed) === 'ok' ? items : null;
+}
+
+/* ==========================================================
+   M3: parametri
+   ========================================================== */
+Object.assign(Ops, {
+  paramUsage(id) {
+    const sess = S.sessions.filter(s => s.parameterId === id);
+    const ids = new Set(sess.map(s => s.id));
+    return { sessions: sess.length, results: S.results.filter(r => ids.has(r.sessionId)).length };
+  },
+  paramInUse(id) { const u = Ops.paramUsage(id); return u.sessions > 0 || u.results > 0; },
+  paramNameError(name, exceptId = null) {
+    if (!name) return 'Scrivi il nome del parametro.';
+    if (name.length > 40) return 'Il nome è troppo lungo (massimo 40 caratteri).';
+    const k = U.normName(name);
+    if (S.parameters.some(p => p.id !== exceptId && U.normName(p.name) === k)) return 'Esiste già un parametro con questo nome (anche tra gli archiviati).';
+    return '';
+  },
+  nextParamOrder() { return S.parameters.reduce((m, p) => Math.max(m, p.order), 0) + 1; }
+});
+
+/** Porta ai nomi attuali i parametri predefiniti salvati con il nome precedente. Restituisce true se ha modificato qualcosa. */
+function migrateNames() {
+  let changed = false;
+  S.parameters.forEach(p => {
+    if (p.id === 'pLungo' && p.name === 'Salto in lungo da fermo') { p.name = 'Salto in lungo'; changed = true; }
+  });
+  return changed;
+}
+
+const PARAM_TYPES = { tempo: 'Tempo', distanza: 'Distanza', conteggio: 'Conteggio' };
+const PARAM_DEFAULTS = {
+  tempo: { unit: 's', betterWhen: 'lower', decimals: 2 },
+  distanza: { unit: 'm', betterWhen: 'higher', decimals: 2 },
+  conteggio: { unit: 'rip', betterWhen: 'higher', decimals: 0 }
+};
+
+/** Finestra di creazione o modifica. Se il parametro è in uso si può cambiare solo il nome. */
+async function dlgParam(p) {
+  const usage = p ? Ops.paramUsage(p.id) : null;
+  const locked = !!(usage && (usage.sessions || usage.results));
+  const v = p || { name: '', type: 'tempo', ...PARAM_DEFAULTS.tempo, attempts: 3, requiresEquipmentWeight: false };
+  const dis = locked ? 'disabled' : '';
+  const opt = (val, label, cur) => `<option value="${val}" ${String(val) === String(cur) ? 'selected' : ''}>${label}</option>`;
+  const { d, closed } = openDialog(`<div class="modal-body"><h3 id="modalTitle">${p ? 'Modifica parametro' : 'Nuovo parametro'}</h3>
+    ${locked ? `<div class="notice">Questo parametro è già in uso (${usage.sessions} ${usage.sessions === 1 ? 'sessione' : 'sessioni'}, ${usage.results} risultati). Si può cambiare solo il nome: unità, direzione, decimali, prove e peso attrezzo sono bloccati per non alterare lo storico. Per cambiarli, crea un nuovo parametro e archivia questo.</div>` : ''}
+    <label class="field">Nome<input type="text" id="f_name" value="${U.esc(v.name)}" maxlength="40" autocomplete="off" placeholder="es. Salto triplo"></label>
+    <div class="form-grid" style="margin-top:12px">
+      <label class="field">Tipo<select id="f_type" ${dis}>${Object.entries(PARAM_TYPES).map(([k, l]) => opt(k, l, v.type)).join('')}</select></label>
+      <label class="field">Unità di misura<input type="text" id="f_unit" value="${U.esc(v.unit)}" maxlength="12" autocomplete="off" ${dis}></label>
+      <label class="field">Il risultato migliore è<select id="f_better" ${dis}>${opt('lower', 'il più basso', v.betterWhen)}${opt('higher', 'il più alto', v.betterWhen)}</select></label>
+      <label class="field">Decimali<select id="f_dec" ${dis}>${[0, 1, 2, 3].map(n => opt(n, n, v.decimals)).join('')}</select></label>
+      <label class="field">Prove per sessione<input type="number" id="f_att" min="1" max="10" step="1" inputmode="numeric" value="${v.attempts}" ${dis}></label>
+      <label class="field check"><input type="checkbox" id="f_eq" ${v.requiresEquipmentWeight ? 'checked' : ''} ${dis}>Richiede il peso dell'attrezzo</label>
+    </div>
+    <p class="field-error" id="err" role="alert"></p>
+    <div class="modal-actions">${BTN_CANCEL}<button type="button" class="btn primary" data-do="ok">${p ? 'Salva' : 'Aggiungi parametro'}</button></div></div>`);
+  let out = null;
+  const q = s => d.querySelector(s);
+  if (!p) {
+    // Nuovo parametro: scegliendo il tipo si propongono unità, direzione e decimali tipici
+    d.onchange = e => {
+      if (e.target.id !== 'f_type') return;
+      const df = PARAM_DEFAULTS[e.target.value];
+      q('#f_unit').value = df.unit; q('#f_better').value = df.betterWhen; q('#f_dec').value = String(df.decimals);
+    };
+  }
+  wireDialog(d, {
+    ok: () => {
+      const err = q('#err');
+      const name = q('#f_name').value.replace(/\s+/g, ' ').trim();
+      const en = Ops.paramNameError(name, p ? p.id : null);
+      if (en) { err.textContent = en; q('#f_name').focus(); return; }
+      if (locked) { out = { name }; d.close('ok'); return; }
+      const unit = q('#f_unit').value.trim();
+      if (!unit) { err.textContent = 'Indica l\'unità di misura, per esempio s, m o cm.'; q('#f_unit').focus(); return; }
+      const attempts = Number(q('#f_att').value);
+      if (!Number.isInteger(attempts) || attempts < 1 || attempts > 10) { err.textContent = 'Le prove per sessione devono essere un numero intero da 1 a 10.'; q('#f_att').focus(); return; }
+      out = {
+        name, unit, attempts,
+        type: q('#f_type').value, betterWhen: q('#f_better').value,
+        decimals: Number(q('#f_dec').value), requiresEquipmentWeight: q('#f_eq').checked
+      };
+      d.close('ok');
+    }
+  });
+  q('#f_name').focus();
+  return (await closed) === 'ok' ? out : null;
+}
+
+/* ==========================================================
+   M4: sessioni di test
+   ========================================================== */
+U.inputNum = v => (v === null || v === undefined) ? '' : String(v).replace('.', ',');
+U.fmtKg = w => Number(w).toLocaleString('it-IT', { maximumFractionDigits: 2 });
+U.decimalsOf = raw => (String(raw).trim().replace(',', '.').split('.')[1] || '').length;
+
+/** Nome breve per la barra degli studenti; agli omonimi aggiunge alias o anno di nascita. */
+Q.shortName = function (st, counts = Q.homonymCounts()) {
+  if (!Q.isHomonym(st, counts)) return `${st.lastName} ${st.firstName.charAt(0)}.`;
+  const tag = st.alias || (st.birthDate ? st.birthDate.slice(0, 4) : '');
+  return `${st.lastName} ${st.firstName}${tag ? ` (${tag})` : ''}`;
+};
+
+Object.assign(Ops, {
+  resultOf(sesId, stId) { return S.results.find(r => r.sessionId === sesId && r.studentId === stId); },
+  deleteResult(id) { S.results = S.results.filter(r => r.id !== id); },
+  sessionExists(classId, parameterId, date, exceptId = null) {
+    return S.sessions.find(s => s.id !== exceptId && s.classId === classId && s.parameterId === parameterId && s.date === date);
+  },
+  /** Ultimo peso attrezzo usato dalla classe per quel test, da proporre nella nuova sessione. */
+  lastWeight(classId, parameterId) {
+    const s = S.sessions.filter(x => x.classId === classId && x.parameterId === parameterId && x.equipmentWeightKg != null)
+      .sort((a, b) => b.date.localeCompare(a.date))[0];
+    return s ? s.equipmentWeightKg : null;
+  },
+  weightError(raw) {
+    const n = U.parseNum(raw);
+    if (n === null) return 'Indica il peso dell\'attrezzo in kg.';
+    if (Number.isNaN(n) || n <= 0) return 'Il peso dell\'attrezzo deve essere un numero maggiore di zero, per esempio 3 oppure 2,5.';
+    if (U.decimalsOf(raw) > 2) return 'Per il peso dell\'attrezzo usa al massimo 2 decimali.';
+    if (n > 50) return 'Il peso sembra troppo alto: controlla che sia in kg.';
+    return '';
+  },
+  dateError(date) {
+    if (!date || !/^\d{4}-\d{2}-\d{2}$/.test(date) || Number.isNaN(Date.parse(date))) return 'Indica una data valida.';
+    if (date > U.todayISO()) return 'La data non può essere nel futuro.';
+    return '';
+  },
+  createSession({ classId, parameterId, date, equipmentWeightKg }) {
+    const s = { id: U.uid('ses'), classId, parameterId, date, equipmentWeightKg: equipmentWeightKg ?? null };
+    S.sessions.push(s);
+    return s;
+  },
+  /** Cambia la data: i risultati registrati nel giorno della sessione la seguono, i recuperi mantengono la loro data. */
+  changeSessionDate(ses, newDate) {
+    S.results.forEach(r => { if (r.sessionId === ses.id && r.measuredOn === ses.date) r.measuredOn = newDate; });
+    ses.date = newDate;
+  },
+  deleteSession(id) {
+    S.results = S.results.filter(r => r.sessionId !== id);
+    S.sessions = S.sessions.filter(s => s.id !== id);
+  },
+  /** Errore di una singola prova, '' se valida o vuota. */
+  trialError(raw, p) {
+    const n = U.parseNum(raw);
+    if (n === null) return '';
+    if (Number.isNaN(n)) return 'non è un numero valido';
+    if (n < 0) return 'non può essere negativo';
+    if (n === 0 && p.type !== 'conteggio') return 'deve essere maggiore di zero; se la prova è nulla lascia il campo vuoto';
+    if (U.decimalsOf(raw) > p.decimals) return p.decimals === 0 ? 'deve essere un numero intero' : `usa al massimo ${p.decimals} ${p.decimals === 1 ? 'decimale' : 'decimali'}`;
+    if (n > 100000) return 'il valore è troppo grande';
+    return '';
+  },
+  /** Registra le prove; senza prove valide un risultato "misurato" torna "da registrare". */
+  setTrials(ses, stId, trials) {
+    const p = Q.param(ses.parameterId);
+    let r = Ops.resultOf(ses.id, stId);
+    const any = trials.some(t => typeof t === 'number');
+    if (!any) {
+      if (r && r.status === 'misurato') Ops.deleteResult(r.id);
+      return r && r.status !== 'misurato' ? r : null;
+    }
+    if (!r) { r = { id: U.uid('r'), sessionId: ses.id, studentId: stId, status: 'misurato', trials: [], value: null, measuredOn: ses.date }; S.results.push(r); }
+    if (r.status !== 'misurato' || !r.measuredOn) r.measuredOn = ses.date;
+    r.status = 'misurato';
+    r.trials = Array.from({ length: p.attempts }, (_, i) => typeof trials[i] === 'number' ? trials[i] : null);
+    r.value = U.bestOf(r.trials, p.betterWhen);
+    return r;
+  },
+  setStatus(ses, stId, status) {
+    const p = Q.param(ses.parameterId);
+    let r = Ops.resultOf(ses.id, stId);
+    if (!r) { r = { id: U.uid('r'), sessionId: ses.id, studentId: stId }; S.results.push(r); }
+    Object.assign(r, { status, trials: Array(p.attempts).fill(null), value: null, measuredOn: null });
+    return r;
+  },
+  previousResult(stId, paramId, beforeDate) {
+    return S.results.filter(r => r.studentId === stId && r.status === 'misurato')
+      .map(r => ({ r, ses: Q.session(r.sessionId) }))
+      .filter(x => x.ses && x.ses.parameterId === paramId && x.ses.date < beforeDate)
+      .sort((a, b) => b.ses.date.localeCompare(a.ses.date))[0] || null;
+  }
+});
+
+/** Studenti di una sessione: gli iscritti attivi più chi ha già un risultato (anche se poi uscito). */
+function sessionRoster(ses) {
+  const ids = new Set(Q.activeEnrollments(ses.classId).map(e => e.studentId));
+  Q.resultsOfSession(ses.id).forEach(r => ids.add(r.studentId));
+  return [...ids].map(id => Q.student(id)).filter(Boolean).sort(U.byName);
+}
+const resultState = r => !r ? 'todo' : r.status === 'misurato' ? 'done' : r.status;
+const STATE_LABEL = { todo: 'da registrare', done: 'misurato', assente: 'assente', esonerato: 'esonerato' };
+
+let SesCtx = null;      // contesto della scheda di inserimento aperta
+let saveTimer = null;   // salvataggio differito durante la digitazione
+function scheduleSave() {
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(() => { saveTimer = null; commit(); }, 500);
+}
+async function flushSave() {
+  if (saveTimer) { clearTimeout(saveTimer); saveTimer = null; await commit(); }
+}
+
+function sessionHeadHTML(ses, p, c) {
+  return `<p class="small" style="margin:0 0 4px"><a href="#/classe/${c.id}/sessioni">Classe ${U.esc(c.name)}</a></p>
+    <h2>${U.esc(p.name)}</h2>
+    <p class="sub">${U.fmtDate(ses.date)}, ${p.attempts} ${p.attempts === 1 ? 'prova' : 'prove'} in ${U.esc(p.unit)}, migliore se ${p.betterWhen === 'lower' ? 'più basso' : 'più alto'}${ses.equipmentWeightKg != null ? `, attrezzo da ${U.fmtKg(ses.equipmentWeightKg)} kg` : ''}</p>`;
+}
+function sessionProgress(ses, roster) {
+  const done = roster.filter(s => Ops.resultOf(ses.id, s.id)).length;
+  return `${done} di ${roster.length} registrati`;
+}
+
+function viewSessione(id, mode, studentId) {
+  const ses = Q.session(id);
+  if (!ses) return viewNotFound();
+  const p = Q.param(ses.parameterId), c = Q.cls(ses.classId);
+  if (!p || !c) return viewNotFound();
+  const roster = sessionRoster(ses);
+  if (mode === 'riepilogo') return viewSessionSummary(ses, p, c, roster);
+  if (!roster.length) return sessionHeadHTML(ses, p, c) + `<div class="panel empty"><strong>La classe non ha studenti</strong>Aggiungi gli studenti alla classe ${U.esc(c.name)} e torna qui.</div>`;
+
+  let idx = studentId ? roster.findIndex(s => s.id === studentId) : -1;
+  if (idx < 0) { idx = roster.findIndex(s => !Ops.resultOf(ses.id, s.id)); if (idx < 0) idx = 0; }
+  const st = roster[idx];
+  const r = Ops.resultOf(ses.id, st.id);
+  const state = resultState(r);
+  SesCtx = { sesId: ses.id, studentId: st.id, idx, ids: roster.map(s => s.id) };
+  const counts = Q.homonymCounts();
+  const blocked = state === 'assente' || state === 'esonerato';
+  const trials = r && r.status === 'misurato' ? r.trials : [];
+  const firstEmpty = blocked ? -1 : Math.max(0, Array.from({ length: p.attempts }, (_, i) => trials[i]).findIndex(v => v == null));
+  const prev = Ops.previousResult(st.id, p.id, ses.date);
+  const n = roster.length;
+
+  const inputs = Array.from({ length: p.attempts }, (_, i) => `<label class="field">Prova ${i + 1}
+      <input type="text" data-trial="${i}" inputmode="${p.decimals ? 'decimal' : 'numeric'}" enterkeyhint="${i === p.attempts - 1 ? 'done' : 'next'}" autocomplete="off"
+        value="${U.esc(U.inputNum(trials[i]))}" aria-label="Prova ${i + 1} in ${U.esc(p.unit)}" ${blocked ? 'disabled' : ''} ${i === firstEmpty ? 'data-autofocus' : ''}></label>`).join('');
+
+  let prevHTML = '';
+  if (prev) {
+    const wNote = prev.ses.equipmentWeightKg != null && prev.ses.equipmentWeightKg !== ses.equipmentWeightKg ? `, con attrezzo da ${U.fmtKg(prev.ses.equipmentWeightKg)} kg` : '';
+    prevHTML = `<p class="small muted" style="margin:0">Risultato precedente: ${U.fmtNum(prev.r.value, p.decimals)} ${U.esc(p.unit)} il ${U.fmtDate(prev.ses.date)}${wNote}</p>`;
+  }
+
+  return sessionHeadHTML(ses, p, c) + `
+    <div class="row" style="margin-bottom:6px"><span class="small muted" id="sesProgress">${sessionProgress(ses, roster)}</span></div>
+    <div class="strip" aria-label="Studenti della sessione">${roster.map((s, i) => {
+      const k = resultState(Ops.resultOf(ses.id, s.id));
+      return `<button type="button" class="chip ${k}" data-action="sesJump" data-student="${s.id}" ${i === idx ? 'aria-current="true"' : ''}><span class="dot" aria-hidden="true"></span>${U.esc(Q.shortName(s, counts))}<span class="sr">, ${STATE_LABEL[k]}</span></button>`;
+    }).join('')}</div>
+    <div class="entry">
+      <div class="entry-head"><span class="entry-bib" aria-hidden="true">${idx + 1}</span>
+        <div><div class="entry-name">${U.esc(Q.displayName(st, counts))}</div>
+        <div class="small muted">Studente ${idx + 1} di ${n}${r && Q.isRecovery(r) ? `, recuperato il ${U.fmtDate(r.measuredOn)}` : ''}</div></div></div>
+      ${prevHTML}
+      ${blocked ? `<div class="notice" style="margin:10px 0 0">${state === 'assente' ? 'Segnato come assente: la prova comparirà tra i recuperi.' : 'Segnato come esonerato.'} Per inserire le prove, togli prima ${state === 'assente' ? 'l\'assenza' : 'l\'esonero'}.</div>` : ''}
+      <div class="trials">${inputs}</div>
+      <p class="best">Migliore: <strong id="best">${r && r.status === 'misurato' ? U.fmtNum(r.value, p.decimals) : '—'}</strong> ${U.esc(p.unit)}</p>
+      <p class="field-error" id="trialErr" role="alert"></p>
+      <div class="row">
+        <button type="button" class="btn" data-action="sesStatus" data-status="assente" aria-pressed="${state === 'assente'}">Assente</button>
+        <button type="button" class="btn" data-action="sesStatus" data-status="esonerato" aria-pressed="${state === 'esonerato'}">Esonerato</button>
+      </div>
+      <div class="entry-nav">
+        <button type="button" class="btn" data-action="sesMove" data-dir="-1" ${idx === 0 ? 'disabled' : ''}>Precedente</button>
+        <button type="button" class="btn primary" data-action="sesMove" data-dir="1">${idx === n - 1 ? 'Vai al riepilogo' : 'Salva e avanti'}</button>
+      </div>
+    </div>
+    <div class="row" style="margin-top:16px">
+      <button type="button" class="btn ghost" data-action="sesMove" data-dir="summary">Riepilogo della sessione</button>
+      <button type="button" class="btn ghost" data-action="sesEdit" data-session="${ses.id}">Modifica sessione</button>
+    </div>`;
+}
+
+function viewSessionSummary(ses, p, c, roster) {
+  const counts = Q.homonymCounts();
+  const rows = roster.map(s => ({ s, r: Ops.resultOf(ses.id, s.id) }));
+  const cnt = k => rows.filter(x => resultState(x.r) === k).length;
+  const todo = cnt('todo');
+  const stat = (label, v) => `<div class="stat"><strong>${v}</strong><span class="small muted">${label}</span></div>`;
+  return sessionHeadHTML(ses, p, c) + `
+    <div class="stats">${stat('misurati', cnt('done'))}${stat('assenti', cnt('assente'))}${stat('esonerati', cnt('esonerato'))}${stat('da registrare', todo)}</div>
+    ${todo ? `<div class="notice">${todo === 1 ? 'Uno studente non ha' : `${todo} studenti non hanno`} ancora un risultato. Puoi completarli dall'inserimento oppure segnarli come assenti: compariranno tra i recuperi.
+      <div class="row" style="margin-top:10px"><button type="button" class="btn" data-action="sesMarkRest" data-session="${ses.id}">Segna come assenti</button></div></div>` : ''}
+    <div class="row" style="margin-bottom:12px">
+      <a class="btn primary" href="#/sessione/${ses.id}">Torna all'inserimento</a>
+      <a class="btn" href="#/classe/${c.id}/sessioni">Vai alla classe</a>
+    </div>
+    <div class="scroll-x"><table>
+      <thead><tr><th>Studente</th><th class="num">Prove</th><th class="num">Migliore</th><th>Stato</th></tr></thead>
+      <tbody>${rows.map(({ s, r }) => `<tr>
+        <td><a href="#/sessione/${ses.id}/s/${s.id}">${U.esc(Q.displayName(s, counts))}</a></td>
+        <td class="num">${r && r.status === 'misurato' ? r.trials.map(t => t === null ? '–' : U.fmtNum(t, p.decimals)).join(' / ') : ''}</td>
+        <td class="num"><strong>${r && r.status === 'misurato' ? U.fmtNum(r.value, p.decimals) : ''}</strong></td>
+        <td>${!r ? '<span class="tag warn">Da registrare</span>' : statusTag(r)}</td></tr>`).join('')}</tbody>
+    </table></div>
+    <div class="row" style="margin-top:16px">
+      <button type="button" class="btn ghost" data-action="sesEdit" data-session="${ses.id}">Modifica sessione</button>
+      <button type="button" class="btn ghost" data-action="sesDelete" data-session="${ses.id}">Elimina sessione</button>
+    </div>`;
+}
+
+/* ---------- Lettura e salvataggio delle prove ---------- */
+function trialInputs() { return [...document.querySelectorAll('#main [data-trial]')]; }
+function readTrials(p, inputs) {
+  const vals = []; let error = '', bad = -1;
+  inputs.forEach((inp, i) => {
+    const raw = inp.value.trim();
+    const e = raw ? Ops.trialError(raw, p) : '';
+    if (e) { if (bad < 0) { bad = i; error = `Prova ${i + 1}: ${e}.`; } vals.push(null); }
+    else vals.push(raw ? U.parseNum(raw) : null);
+  });
+  return { vals, error, bad };
+}
+function markInvalid(p, inputs) {
+  inputs.forEach(inp => {
+    const raw = inp.value.trim();
+    if (raw && Ops.trialError(raw, p)) inp.setAttribute('aria-invalid', 'true'); else inp.removeAttribute('aria-invalid');
+  });
+}
+/** Salva lo studente corrente. Con strict=true un valore non valido blocca e viene segnalato. */
+async function saveCurrent(strict) {
+  if (!SesCtx) return true;
+  const ses = Q.session(SesCtx.sesId), p = ses && Q.param(ses.parameterId);
+  if (!ses || !p) return true;
+  const inputs = trialInputs();
+  if (!inputs.length || inputs[0].disabled) { await flushSave(); return true; }
+  const { vals, error, bad } = readTrials(p, inputs);
+  if (error) {
+    if (strict) { markInvalid(p, inputs); document.getElementById('trialErr').textContent = error; inputs[bad].focus(); }
+    return false;
+  }
+  Ops.setTrials(ses, SesCtx.studentId, vals);
+  clearTimeout(saveTimer); saveTimer = null;
+  await commit();
+  return true;
+}
+/** Durante la digitazione: aggiorna il migliore e salva in differita, senza mostrare errori a metà valore. */
+function onTrialInput() {
+  if (!SesCtx) return;
+  const ses = Q.session(SesCtx.sesId), p = Q.param(ses.parameterId);
+  const inputs = trialInputs();
+  const { vals, error } = readTrials(p, inputs);
+  const best = U.bestOf(vals, p.betterWhen);
+  document.getElementById('best').textContent = best == null ? '—' : U.fmtNum(best, p.decimals);
+  if (error) return;
+  document.getElementById('trialErr').textContent = '';
+  inputs.forEach(i => i.removeAttribute('aria-invalid'));
+  const r = Ops.setTrials(ses, SesCtx.studentId, vals);
+  const chip = document.querySelector('.chip[aria-current="true"]');
+  if (chip) chip.className = 'chip ' + resultState(r);
+  const pr = document.getElementById('sesProgress');
+  if (pr) pr.textContent = sessionProgress(ses, sessionRoster(ses));
+  scheduleSave();
+}
+/** Uscendo da un campo si mostra subito l'eventuale errore di quel campo. */
+function onTrialBlur(inp) {
+  if (!SesCtx) return;
+  const p = Q.param(Q.session(SesCtx.sesId).parameterId);
+  const raw = inp.value.trim();
+  const e = raw ? Ops.trialError(raw, p) : '';
+  if (e) { inp.setAttribute('aria-invalid', 'true'); document.getElementById('trialErr').textContent = `Prova ${Number(inp.dataset.trial) + 1}: ${e}.`; }
+  else inp.removeAttribute('aria-invalid');
+}
+function goReplace(hash) { if (location.hash === hash) render(); else location.replace(hash); }
+
+/* ---------- Finestre delle sessioni ---------- */
+async function dlgSession(preClassId) {
+  const pre = Q.cls(preClassId);
+  const yid = pre ? pre.schoolYearId : (Q.year(S.settings.selectedYearId) ? S.settings.selectedYearId : Q.years()[0]?.id);
+  const classes = yid ? Q.classesOfYear(yid) : [];
+  const params = Q.params(false);
+  if (!classes.length) { toast('Crea prima una classe con i suoi studenti', 'error'); return null; }
+  if (!params.length) { toast('Non ci sono parametri attivi: aggiungine uno in Parametri', 'error'); return null; }
+  const cid0 = pre ? pre.id : classes[0].id;
+  const today = U.todayISO();
+  const { d, closed } = openDialog(`<div class="modal-body"><h3 id="modalTitle">Nuova sessione di test</h3>
+    <div class="form-grid">
+      <label class="field">Classe<select id="f_class">${classes.map(c => `<option value="${c.id}" ${c.id === cid0 ? 'selected' : ''}>${U.esc(c.name)} (${Q.activeEnrollments(c.id).length} studenti)</option>`).join('')}</select></label>
+      <label class="field">Test<select id="f_param">${params.map(p => `<option value="${p.id}">${U.esc(p.name)}</option>`).join('')}</select></label>
+      <label class="field">Data<input type="date" id="f_date" value="${today}" max="${today}"></label>
+      <label class="field" id="eqWrap">Peso attrezzo (kg)<input type="text" id="f_eq" inputmode="decimal" autocomplete="off" placeholder="es. 3 oppure 2,5"></label>
+    </div>
+    <p class="small muted" style="margin-bottom:0">Anno scolastico ${U.esc(Q.year(yid)?.label ?? '')}</p>
+    <p class="field-error" id="err" role="alert"></p>
+    <div class="row" id="openWrap" hidden></div>
+    <div class="modal-actions">${BTN_CANCEL}<button type="button" class="btn primary" data-do="ok">Inizia la sessione</button></div></div>`);
+  const q = s => d.querySelector(s);
+  let out = null, autoWeight = true;
+  const refresh = () => {
+    const p = Q.param(q('#f_param').value);
+    q('#eqWrap').hidden = !p.requiresEquipmentWeight;
+    if (p.requiresEquipmentWeight && autoWeight) q('#f_eq').value = U.inputNum(Ops.lastWeight(q('#f_class').value, p.id));
+    q('#openWrap').hidden = true; q('#err').textContent = '';
+  };
+  d.oninput = e => { if (e.target.id === 'f_eq') autoWeight = false; };
+  d.onchange = e => { if (e.target.id !== 'f_eq') refresh(); };
+  refresh();
+  wireDialog(d, {
+    ok: () => {
+      const err = q('#err');
+      q('#openWrap').hidden = true;
+      const cid = q('#f_class').value, p = Q.param(q('#f_param').value), date = q('#f_date').value;
+      if (!Q.activeEnrollments(cid).length) { err.textContent = 'La classe non ha studenti iscritti: aggiungili prima di creare una sessione.'; return; }
+      const de = Ops.dateError(date);
+      if (de) { err.textContent = de; return; }
+      let w = null;
+      if (p.requiresEquipmentWeight) {
+        const we = Ops.weightError(q('#f_eq').value);
+        if (we) { err.textContent = we; q('#f_eq').focus(); return; }
+        w = U.parseNum(q('#f_eq').value);
+      }
+      const ex = Ops.sessionExists(cid, p.id, date);
+      if (ex) {
+        err.textContent = `Esiste già una sessione di ${p.name} per questa classe in questa data.`;
+        const ow = q('#openWrap');
+        ow.innerHTML = `<button type="button" class="btn" data-do="open" data-id="${ex.id}">Apri la sessione esistente</button>`;
+        ow.hidden = false;
+        return;
+      }
+      out = { classId: cid, parameterId: p.id, date, equipmentWeightKg: w };
+      d.close('ok');
+    },
+    open: b => { out = { openId: b.dataset.id }; d.close('ok'); }
+  });
+  return (await closed) === 'ok' ? out : null;
+}
+
+async function dlgSessionEdit(ses) {
+  const p = Q.param(ses.parameterId), c = Q.cls(ses.classId);
+  const today = U.todayISO();
+  const { d, closed } = openDialog(`<div class="modal-body"><h3 id="modalTitle">Modifica sessione</h3>
+    <p class="small muted" style="margin-top:0">Classe ${U.esc(c.name)}, ${U.esc(p.name)}. Classe e test non si possono cambiare: se sono sbagliati, elimina la sessione e creane una nuova.</p>
+    <div class="form-grid">
+      <label class="field">Data<input type="date" id="f_date" value="${ses.date}" max="${today}"></label>
+      ${p.requiresEquipmentWeight ? `<label class="field">Peso attrezzo (kg)<input type="text" id="f_eq" inputmode="decimal" autocomplete="off" value="${U.esc(U.inputNum(ses.equipmentWeightKg))}"></label>` : ''}
+    </div>
+    <p class="field-error" id="err" role="alert"></p>
+    <div class="modal-actions">${BTN_CANCEL}<button type="button" class="btn primary" data-do="ok">Salva</button></div></div>`);
+  const q = s => d.querySelector(s);
+  let out = null;
+  wireDialog(d, {
+    ok: () => {
+      const err = q('#err'), date = q('#f_date').value;
+      const de = Ops.dateError(date);
+      if (de) { err.textContent = de; return; }
+      if (Ops.sessionExists(ses.classId, ses.parameterId, date, ses.id)) { err.textContent = `Esiste già una sessione di ${p.name} per questa classe in questa data.`; return; }
+      let w = ses.equipmentWeightKg;
+      if (p.requiresEquipmentWeight) {
+        const we = Ops.weightError(q('#f_eq').value);
+        if (we) { err.textContent = we; return; }
+        w = U.parseNum(q('#f_eq').value);
+      }
+      out = { date, equipmentWeightKg: w };
+      d.close('ok');
+    }
+  });
+  return (await closed) === 'ok' ? out : null;
+}
+
+/* ==========================================================
+   M5: recuperi
+   ========================================================== */
+Object.assign(Ops, {
+  recoveryDateError(date, ses) {
+    if (!date || !/^\d{4}-\d{2}-\d{2}$/.test(date) || Number.isNaN(Date.parse(date))) return 'Indica la data del recupero.';
+    if (date > U.todayISO()) return 'La data del recupero non può essere nel futuro.';
+    if (date < ses.date) return `La data del recupero non può essere precedente alla sessione (${U.fmtDate(ses.date)}).`;
+    return '';
+  },
+  /** Trasforma un'assenza in risultato misurato: stesso risultato, stessa sessione, data di misura = data del recupero. */
+  recordRecovery(ses, result, trials, date) {
+    const p = Q.param(ses.parameterId);
+    result.status = 'misurato';
+    result.trials = Array.from({ length: p.attempts }, (_, i) => typeof trials[i] === 'number' ? trials[i] : null);
+    result.value = U.bestOf(result.trials, p.betterWhen);
+    result.measuredOn = date;
+    return result;
+  }
+});
+
+/** Finestra di recupero. Restituisce {kind:'measure', date, vals} oppure {kind:'exempt'} oppure null. */
+async function dlgRecovery(r) {
+  const ses = Q.session(r.sessionId), p = Q.param(ses.parameterId), c = Q.cls(ses.classId), st = Q.student(r.studentId);
+  const today = U.todayISO();
+  const name = Q.displayName(st);
+  const info = `${p.name}, classe ${c.name}, sessione del ${U.fmtDate(ses.date)}${ses.equipmentWeightKg != null ? `, attrezzo da ${U.fmtKg(ses.equipmentWeightKg)} kg` : ''}`;
+  const keep = { date: today, raw: [] };
+  let out = null;
+  const { d, closed } = openDialog('');
+  const q = s => d.querySelector(s);
+  const inputs = () => [...d.querySelectorAll('[data-rt]')];
+
+  const showForm = () => {
+    d.innerHTML = `<div class="modal-body"><h3 id="modalTitle">Recupero di ${U.esc(name)}</h3>
+      <p class="small muted" style="margin-top:0">${U.esc(info)}</p>
+      <label class="field">Data del recupero<input type="date" id="f_date" value="${U.esc(keep.date)}" min="${ses.date}" max="${today}"></label>
+      <div class="trials">${Array.from({ length: p.attempts }, (_, i) => `<label class="field">Prova ${i + 1}
+        <input type="text" data-rt="${i}" inputmode="${p.decimals ? 'decimal' : 'numeric'}" enterkeyhint="${i === p.attempts - 1 ? 'done' : 'next'}" autocomplete="off"
+          value="${U.esc(keep.raw[i] ?? '')}" aria-label="Prova ${i + 1} in ${U.esc(p.unit)}"></label>`).join('')}</div>
+      <p class="best">Migliore: <strong id="best">—</strong> ${U.esc(p.unit)}</p>
+      <p class="field-error" id="err" role="alert"></p>
+      <div class="modal-actions">${BTN_CANCEL}<button type="button" class="btn" data-do="exempt">Segna come esonerato</button>
+        <button type="button" class="btn primary" data-do="ok">Registra recupero</button></div></div>`;
+    const updateBest = () => {
+      const { vals } = readTrials(p, inputs());
+      const b = U.bestOf(vals, p.betterWhen);
+      q('#best').textContent = b == null ? '—' : U.fmtNum(b, p.decimals);
+    };
+    const handlers = {
+      ok: () => {
+        const err = q('#err'), date = q('#f_date').value;
+        const de = Ops.recoveryDateError(date, ses);
+        if (de) { err.textContent = de; q('#f_date').focus(); return; }
+        const ins = inputs();
+        const { vals, error, bad } = readTrials(p, ins);
+        if (error) { markInvalid(p, ins); err.textContent = error; ins[bad].focus(); return; }
+        if (!vals.some(v => typeof v === 'number')) { err.textContent = 'Inserisci almeno una prova valida. Se lo studente non può recuperare, usa "Segna come esonerato".'; ins[0].focus(); return; }
+        out = { kind: 'measure', date, vals };
+        d.close('ok');
+      },
+      exempt: () => { keep.date = q('#f_date').value || today; keep.raw = inputs().map(i => i.value); showExempt(); }
+    };
+    wireDialog(d, handlers, null);
+    d.oninput = e => { if (e.target.dataset.rt !== undefined) { e.target.removeAttribute('aria-invalid'); q('#err').textContent = ''; updateBest(); } };
+    d.onkeydown = e => {
+      if (e.key !== 'Enter' || e.target.tagName !== 'INPUT') return;
+      e.preventDefault();
+      const ins = inputs(), i = ins.indexOf(e.target);
+      if (i >= 0 && i < ins.length - 1) ins[i + 1].focus(); else handlers.ok();
+    };
+    updateBest();
+    (inputs()[0] || q('#f_date')).focus();
+  };
+
+  const showExempt = () => {
+    d.innerHTML = `<div class="modal-body"><h3 id="modalTitle">Segnare come esonerato?</h3>
+      <p>${U.esc(name)} verrà segnato come esonerato da ${U.esc(p.name)} (sessione del ${U.fmtDate(ses.date)}) e non comparirà più tra i recuperi. Non viene registrato nessun motivo.</p>
+      <div class="modal-actions"><button type="button" class="btn ghost" data-do="back">Indietro</button>
+        <button type="button" class="btn primary" data-do="confirm">Conferma esonero</button></div></div>`;
+    wireDialog(d, { back: () => showForm(), confirm: () => { out = { kind: 'exempt' }; d.close('ok'); } }, null);
+    d.oninput = null; d.onkeydown = null;
+  };
+
+  showForm();
+  return (await closed) === 'ok' ? out : null;
+}
+
+/* ==========================================================
+   M6: grafici e progressi
+   ========================================================== */
+U.fmtSigned = function (v, dec = 2) {
+  const s = Math.abs(v).toLocaleString('it-IT', { minimumFractionDigits: dec, maximumFractionDigits: dec });
+  return (v > 0 ? '+' : v < 0 ? '\u2212' : '') + s;
+};
+const n1 = v => Math.round(v * 10) / 10;
+const pad2 = n => String(n).padStart(2, '0');
+const dayNum = iso => { const [y, m, d] = iso.split('-').map(Number); return Date.UTC(y, m - 1, d) / 86400000; };
+
+let StudView = { studentId: null, yearId: 'all' };   // filtro "Periodo" della scheda studente
+const ProgSel = {};                                  // test scelto nella scheda Progressi, per classe
+let lastChartW = 0;
+
+const Prog = {
+  /** Misure valide di uno studente per un test, in ordine cronologico di sessione. yearId = 'all' oppure l'id di un anno. */
+  points(studentId, paramId, yearId = 'all') {
+    const out = [];
+    for (const r of S.results) {
+      if (r.studentId !== studentId || r.status !== 'misurato' || typeof r.value !== 'number') continue;
+      const ses = Q.session(r.sessionId);
+      if (!ses || ses.parameterId !== paramId) continue;
+      const cls = Q.cls(ses.classId);
+      if (!cls || (yearId !== 'all' && cls.schoolYearId !== yearId)) continue;
+      out.push({ r, ses, cls, yearId: cls.schoolYearId, value: r.value, date: ses.date, measuredOn: r.measuredOn, weight: ses.equipmentWeightKg,
+        recovery: !!(r.measuredOn && r.measuredOn !== ses.date) });
+    }
+    return out.sort((a, b) => a.date.localeCompare(b.date) || String(a.measuredOn).localeCompare(String(b.measuredOn)));
+  },
+  /** Variazione tra prima e ultima misura. verdict: better | worse | same, secondo la direzione del test. */
+  trend(pts, p) {
+    if (!pts.length) return null;
+    const first = pts[0], last = pts[pts.length - 1];
+    const t = { n: pts.length, first, last, single: pts.length === 1 };
+    if (t.single) return t;
+    t.diff = U.round(last.value - first.value, p.decimals);
+    t.pct = first.value !== 0 ? (t.diff / first.value) * 100 : null;
+    t.verdict = t.diff === 0 ? 'same' : ((p.betterWhen === 'lower') === (t.diff < 0) ? 'better' : 'worse');
+    t.weightChanged = !!p.requiresEquipmentWeight && first.weight !== last.weight;
+    return t;
+  }
+};
+
+function niceTicks(min, max, count, maxDec, minStep = 0) {
+  const raw = (max - min) / count;
+  const mag = 10 ** Math.floor(Math.log10(raw));
+  const norm = raw / mag;
+  let step = (norm < 1.5 ? 1 : norm < 3 ? 2 : norm < 7 ? 5 : 10) * mag;
+  if (step < minStep) step = minStep;
+  const lo = Math.floor(min / step + 1e-9) * step, hi = Math.ceil(max / step - 1e-9) * step;
+  const ticks = [];
+  for (let v = lo; v <= hi + step / 2; v += step) ticks.push(U.round(v, 8));
+  const dec = Math.min(maxDec, Math.max(0, Math.ceil(-Math.log10(step) - 1e-9)));
+  return { lo: ticks[0], hi: ticks[ticks.length - 1], ticks, dec };
+}
+
+function chartWidth() {
+  const m = document.getElementById('main');
+  const w = (m && m.clientWidth) || 380;
+  return Math.max(280, Math.min(720, w - 32 - 22));
+}
+
+/** Un segnaposto per ogni anno scolastico con dati: gli anni occupano la stessa larghezza, l'estate non occupa spazio. */
+function schoolSlots(pts) {
+  const map = new Map();
+  pts.forEach(pt => {
+    if (map.has(pt.yearId)) return;
+    const label = Q.year(pt.yearId)?.label ?? '';
+    map.set(pt.yearId, { yearId: pt.yearId, label, startYear: parseInt(label, 10) || Number(pt.date.slice(0, 4)) });
+  });
+  return [...map.values()].sort((a, b) => a.startYear - b.startYear || a.label.localeCompare(b.label));
+}
+
+const MONTHS = [[9, 'Set'], [10, 'Ott'], [11, 'Nov'], [12, 'Dic'], [1, 'Gen'], [2, 'Feb'], [3, 'Mar'], [4, 'Apr'], [5, 'Mag'], [6, 'Giu']];
+
+/** Segno del punto. La forma distingue il peso dell'attrezzo, il simbolo vuoto distingue il recupero. */
+function marker(shape, x, y, hollow) {
+  x = n1(x); y = n1(y);
+  const c = `class="mk${hollow ? ' hollow' : ''}"`;
+  if (shape === 1) return `<rect ${c} x="${n1(x - 4.5)}" y="${n1(y - 4.5)}" width="9" height="9"/>`;
+  if (shape === 2) return `<path ${c} d="M${x} ${n1(y - 6)}L${n1(x + 5.5)} ${n1(y + 4.5)}L${n1(x - 5.5)} ${n1(y + 4.5)}Z"/>`;
+  if (shape === 3) return `<path ${c} d="M${x} ${n1(y - 6)}L${n1(x + 6)} ${y}L${x} ${n1(y + 6)}L${n1(x - 6)} ${y}Z"/>`;
+  return `<circle ${c} cx="${x}" cy="${y}" r="5"/>`;
+}
+
+function chartHTML(p, pts, studentId) {
+  const W = chartWidth(), H = 250;
+  lastChartW = W;
+  const M = { l: p.decimals > 0 ? 48 : 42, r: 14, t: 14, b: 38 };
+  const pw = W - M.l - M.r, ph = H - M.t - M.b;
+  const vals = pts.map(x => x.value);
+  const lo = Math.min(...vals), hi = Math.max(...vals);
+  const pad = (hi - lo) * 0.14 || Math.abs(hi) * 0.06 || 1;
+  const yt = niceTicks(lo - pad, hi + pad, 4, p.decimals, p.decimals === 0 ? 1 : 0);
+  const yOf = v => M.t + ph - ((v - yt.lo) / (yt.hi - yt.lo)) * ph;
+  const slots = schoolSlots(pts);
+  const slotW = pw / slots.length, inset = 10;
+  const idx = new Map(slots.map((s, i) => [s.yearId, i]));
+  const span = s => [dayNum(`${s.startYear}-09-01`), dayNum(`${s.startYear + 1}-06-30`)];
+  const xDay = (day, s, i) => { const [a, b] = span(s); const f = Math.min(1, Math.max(0, (day - a) / (b - a))); return M.l + i * slotW + inset + f * (slotW - 2 * inset); };
+  pts.forEach(pt => { const i = idx.get(pt.yearId); pt.x = xDay(dayNum(pt.date), slots[i], i); pt.y = yOf(pt.value); });
+
+  let g = '';
+  slots.forEach((s, i) => { if (i % 2 === 1) g += `<rect class="band" x="${n1(M.l + i * slotW)}" y="${M.t}" width="${n1(slotW)}" height="${ph}"/>`; });
+  yt.ticks.forEach(v => {
+    const y = n1(yOf(v));
+    g += `<line class="grid" x1="${M.l}" x2="${W - M.r}" y1="${y}" y2="${y}"/><text class="axl" x="${M.l - 6}" y="${n1(y + 4)}" text-anchor="end">${U.fmtNum(v, yt.dec)}</text>`;
+  });
+  if (slots.length === 1) {
+    const s = slots[0], [, endDay] = span(s);
+    MONTHS.forEach(([mo, name], k) => {
+      const yr = mo >= 9 ? s.startYear : s.startYear + 1;
+      const next = MONTHS[k + 1];
+      const d0 = dayNum(`${yr}-${pad2(mo)}-01`);
+      const d1 = next ? dayNum(`${next[0] >= 9 ? s.startYear : s.startYear + 1}-${pad2(next[0])}-01`) : endDay;
+      const xa = xDay(d0, s, 0), xb = xDay(d1, s, 0);
+      if (k > 0) g += `<line class="grid" x1="${n1(xa)}" x2="${n1(xa)}" y1="${M.t}" y2="${M.t + ph}"/>`;
+      g += `<text class="axl" x="${n1((xa + xb) / 2)}" y="${H - 20}" text-anchor="middle">${name}</text>`;
+    });
+    g += `<text class="axl yr" x="${n1(M.l + pw / 2)}" y="${H - 5}" text-anchor="middle">${U.esc(s.label)}</text>`;
+  } else {
+    slots.forEach((s, i) => {
+      if (i > 0) g += `<line class="sep" x1="${n1(M.l + i * slotW)}" x2="${n1(M.l + i * slotW)}" y1="${M.t}" y2="${M.t + ph}"/>`;
+      g += `<text class="axl yr" x="${n1(M.l + i * slotW + slotW / 2)}" y="${H - 8}" text-anchor="middle">${U.esc(s.label)}</text>`;
+    });
+  }
+  g += `<line class="grid" x1="${M.l}" x2="${W - M.r}" y1="${M.t + ph}" y2="${M.t + ph}"/>`;
+  if (pts.length > 1) g += `<polyline class="line" points="${pts.map(pt => `${n1(pt.x)},${n1(pt.y)}`).join(' ')}"/>`;
+
+  const weights = p.requiresEquipmentWeight ? [...new Set(pts.map(x => x.weight).filter(w => w != null))].sort((a, b) => a - b) : [];
+  const shapeOf = w => weights.length > 1 ? weights.indexOf(w) % 4 : 0;
+  pts.forEach(pt => {
+    const label = `${U.fmtDate(pt.date)}: ${U.fmtNum(pt.value, p.decimals)} ${p.unit}${pt.recovery ? ', recupero' : ''}${pt.weight != null && p.requiresEquipmentWeight ? `, attrezzo da ${U.fmtKg(pt.weight)} kg` : ''}`;
+    g += `<g class="pt" tabindex="0" role="button" data-action="showPoint" data-result="${pt.r.id}" data-student="${studentId}" aria-label="${U.esc(label)}">
+      <circle class="hit" cx="${n1(pt.x)}" cy="${n1(pt.y)}" r="17"/>${marker(shapeOf(pt.weight), pt.x, pt.y, pt.recovery)}</g>`;
+  });
+
+  const hasRec = pts.some(x => x.recovery);
+  const icon = (shape, hollow) => `<svg viewBox="0 0 14 14" aria-hidden="true">${marker(shape, 7, 7, hollow)}</svg>`;
+  let leg = '';
+  if (weights.length > 1) weights.forEach((w, i) => { leg += `<span>${icon(i % 4, false)}Attrezzo da ${U.fmtKg(w)} kg</span>`; });
+  else if (hasRec) leg += `<span>${icon(0, false)}Misura nel giorno della sessione</span>`;
+  if (hasRec) leg += `<span>${icon(0, true)}Recupero (simbolo vuoto)</span>`;
+
+  const first = pts[0], last = pts[pts.length - 1];
+  const aria = `Grafico dell'andamento, ${pts.length} ${pts.length === 1 ? 'misura' : 'misure'}, da ${U.fmtNum(first.value, p.decimals)} a ${U.fmtNum(last.value, p.decimals)} ${p.unit}. I dati sono anche nella tabella sotto il grafico.`;
+  return `<div class="chartbox chart"><svg class="plot" viewBox="0 0 ${W} ${H}" role="group" aria-label="${U.esc(aria)}" focusable="false">${g}</svg>
+    ${leg ? `<div class="legend">${leg}</div>` : ''}
+    <div class="pt-info" aria-live="polite">Tocca un punto per vedere le prove di quella sessione.</div></div>`;
+}
+
+function pointInfoHTML(r, ses, p, studentId) {
+  const trials = r.trials.map(t => t === null ? '–' : U.fmtNum(t, p.decimals)).join(' / ');
+  return `<strong>Sessione del ${U.fmtDate(ses.date)}</strong>: migliore ${U.fmtNum(r.value, p.decimals)} ${U.esc(p.unit)} (prove ${trials})`
+    + `${p.requiresEquipmentWeight && ses.equipmentWeightKg != null ? `, attrezzo da ${U.fmtKg(ses.equipmentWeightKg)} kg` : ''}`
+    + `${r.measuredOn && r.measuredOn !== ses.date ? `, recuperata il ${U.fmtDate(r.measuredOn)}` : ''}. <a href="#/sessione/${ses.id}/s/${studentId}">Apri la sessione</a>`;
+}
+
+const ARROW = {
+  down: '<path d="M12 5v14M6 13l6 6 6-6"/>', up: '<path d="M12 19V5M6 11l6-6 6 6"/>', flat: '<path d="M5 12h14"/>'
+};
+const arrowSVG = diff => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ARROW[diff > 0 ? 'up' : diff < 0 ? 'down' : 'flat']}</svg>`;
+const VERDICT = { better: 'Migliorato', worse: 'Peggiorato', same: 'Invariato' };
+
+function trendHTML(t, p) {
+  if (!t) return '';
+  const when = pt => `${U.fmtNum(pt.value, p.decimals)} ${p.unit} del ${U.fmtDate(pt.date)}`;
+  if (t.single) return `<div class="trend same"><div>Una sola misura: ${U.esc(when(t.first))}. Servono almeno due misure per vedere il progresso.</div></div>`;
+  return `<div class="trend ${t.verdict}">${arrowSVG(t.diff)}<div><span class="verdict">${VERDICT[t.verdict]}</span>: da ${U.esc(when(t.first))} a ${U.esc(when(t.last))}.<br>
+    Variazione ${U.fmtSigned(t.diff, p.decimals)} ${U.esc(p.unit)}${t.pct !== null ? ` (${U.fmtSigned(t.pct, 1)}%)` : ''}.
+    ${t.weightChanged ? `<br>Attenzione: l'attrezzo è cambiato (${U.fmtKg(t.first.weight)} kg, poi ${U.fmtKg(t.last.weight)} kg), quindi il confronto va letto con cautela.` : ''}</div></div>`;
+}
+
+/** Mini grafico in scala propria: serve a vedere la forma dell'andamento di uno studente, non a confrontare studenti. */
+function sparkHTML(pts, p) {
+  if (!pts.length) return '';
+  const W = 96, H = 28;
+  const vals = pts.map(x => x.value), lo = Math.min(...vals), hi = Math.max(...vals);
+  const d0 = dayNum(pts[0].date), d1 = dayNum(pts[pts.length - 1].date);
+  const xs = pt => pts.length === 1 || d1 === d0 ? W / 2 : 6 + ((dayNum(pt.date) - d0) / (d1 - d0)) * (W - 12);
+  const ys = v => hi === lo ? H / 2 : H - 5 - ((v - lo) / (hi - lo)) * (H - 10);
+  const label = `Andamento: ${pts.map(x => U.fmtNum(x.value, p.decimals)).join(', ')} ${p.unit}`;
+  const last = pts[pts.length - 1];
+  return `<svg class="spark" viewBox="0 0 ${W} ${H}" role="img" aria-label="${U.esc(label)}">
+    ${pts.length > 1 ? `<polyline class="l" points="${pts.map(x => `${n1(xs(x))},${n1(ys(x.value))}`).join(' ')}"/>` : ''}
+    <circle class="d" cx="${n1(xs(last))}" cy="${n1(ys(last.value))}" r="3"/></svg>`;
+}
+
+/** Scheda Progressi della classe: ogni studente è confrontato solo con se stesso. Nessuna media, nessuna classifica. */
+function viewProgressi(c) {
+  const studs = Q.studentsOfClass(c.id);
+  const yid = c.schoolYearId;
+  const withData = Q.params(true).filter(p => studs.some(s => Prog.points(s.id, p.id, yid).length));
+  if (!studs.length) return '<div class="panel empty"><strong>Nessuno studente</strong>Aggiungi gli studenti alla classe per vedere i progressi.</div>';
+  if (!withData.length) return '<div class="panel empty"><strong>Ancora nessuna misura</strong>I progressi compaiono dopo la prima sessione di test con risultati registrati.</div>';
+  let p = Q.param(ProgSel[c.id]);
+  if (!p || !withData.includes(p)) p = withData[0];
+  const counts = Q.homonymCounts();
+  const rows = studs.map(s => {
+    const pts = Prog.points(s.id, p.id, yid);
+    const t = Prog.trend(pts, p);
+    const pending = S.results.filter(r => r.studentId === s.id && r.status === 'assente' && Q.session(r.sessionId)?.parameterId === p.id && Q.cls(Q.session(r.sessionId).classId)?.schoolYearId === yid).length;
+    const val = pt => `${U.fmtNum(pt.value, p.decimals)} ${U.esc(p.unit)}<span class="small muted">${U.fmtDate(pt.date)}</span>`;
+    let first = '<span class="muted">—</span>', last = first, change = '<span class="muted">Nessuna misura</span>';
+    if (t) {
+      first = val(t.first);
+      if (t.single) { last = '<span class="muted">—</span>'; change = '<span class="muted">Una sola misura</span>'; }
+      else {
+        last = val(t.last);
+        change = `<span class="v ${t.verdict}">${arrowSVG(t.diff)}<span>${U.fmtSigned(t.diff, p.decimals)} ${U.esc(p.unit)}${t.pct !== null ? ` (${U.fmtSigned(t.pct, 1)}%)` : ''}<span class="small">${VERDICT[t.verdict]}${t.weightChanged ? ', attrezzo diverso' : ''}</span></span></span>`;
+      }
+    }
+    return `<tr><td><a href="#/studente/${s.id}">${U.esc(Q.displayName(s, counts))}</a></td><td class="num">${pts.length}</td><td>${first}</td><td>${last}</td><td>${change}</td>
+      <td>${sparkHTML(pts, p)}</td><td>${pending ? `<span class="tag mark">${pending} da recuperare</span>` : ''}</td></tr>`;
+  });
+  return `<div class="row" style="margin-bottom:12px; align-items:flex-end">
+      <label class="field">Test<select data-change="progParam" data-class="${c.id}">${withData.map(x => `<option value="${x.id}" ${x.id === p.id ? 'selected' : ''}>${U.esc(x.name)}</option>`).join('')}</select></label>
+      <span class="muted small">Anno scolastico ${U.esc(Q.year(yid)?.label ?? '')}, migliore se ${p.betterWhen === 'lower' ? 'più basso' : 'più alto'}</span></div>
+    <div class="scroll-x"><table class="prog">
+      <thead><tr><th>Studente</th><th class="num">Misure</th><th>Prima misura</th><th>Ultima misura</th><th>Variazione</th><th>Andamento</th><th>Recuperi</th></tr></thead>
+      <tbody>${rows.join('')}</tbody></table></div>
+    <p class="small muted">Gli studenti sono in ordine alfabetico e ognuno è confrontato solo con le proprie misure. Ogni mini grafico ha una scala propria: serve a vedere la forma dell'andamento, non a confrontare gli studenti.${p.requiresEquipmentWeight ? ' Se l\'attrezzo è cambiato tra la prima e l\'ultima misura, la variazione è segnalata.' : ''}</p>`;
+}
+
+/* ==========================================================
+   M7: passaggio classi
+   La procedura lavora su una bozza in memoria (Wiz): l'archivio S viene
+   modificato solo alla conferma finale, con un unico commit().
+   ========================================================== */
+let Wiz = null;
+let lastWizYearId = null;
+const WIZ_STEPS = ['Anno di destinazione', 'Classe di origine', 'Nome della nuova classe', 'Studenti che proseguono', 'Nuovi studenti', 'Riepilogo'];
+
+function newWiz() {
+  return { step: 1, target: null, sourceId: null, carrySource: null, name: '', nameTouched: false, carry: new Set(), adds: [], error: '', done: null };
+}
+const wizYearId = () => Wiz.target ? Wiz.target.yearId : null;
+const wizTargetLabel = () => Wiz.target ? (Wiz.target.yearId ? (Q.year(Wiz.target.yearId)?.label ?? '') : Wiz.target.label) : '';
+/** Vincolo dell'anno di destinazione: una sola iscrizione attiva per anno. */
+function wizYearStatus(studentId) {
+  const yid = wizYearId();
+  if (!yid) return { ok: true };
+  const e = S.enrollments.find(x => x.studentId === studentId && !x.removedAt && Q.cls(x.classId)?.schoolYearId === yid);
+  return e ? { ok: false, reason: `è già iscritto/a alla classe ${Q.cls(e.classId).name} nel ${Q.year(yid).label}` } : { ok: true };
+}
+/** Verifica usata dalle finestre di aggiunta: tiene conto anche di chi è già nella bozza. */
+function wizStatus(studentId) {
+  if (Wiz.carry.has(studentId)) return { ok: false, reason: 'prosegue già dalla classe di origine' };
+  if (Wiz.adds.some(a => a.kind === 'link' && a.studentId === studentId)) return { ok: false, reason: 'è già stato aggiunto' };
+  return wizYearStatus(studentId);
+}
+const wizDraftNames = () => Wiz.adds.filter(a => a.kind === 'new')
+  .map(a => ({ key: U.normName(a.data.lastName + ' ' + a.data.firstName), birth: a.data.birthDate || '', alias: a.data.alias || '' }));
+function suggestNextName(name) {
+  const m = /^(\d+)(.*)$/.exec(String(name).trim());
+  return m ? `${Number(m[1]) + 1}${m[2]}` : name;
+}
+/** Problemi che impediscono la conferma, ricontrollati sull'archivio attuale. */
+function wizProblems() {
+  const out = [];
+  const yid = wizYearId();
+  if (!yid) { const e = Ops.yearError(Wiz.target.label); if (e) out.push(e); }
+  const en = Ops.classNameError(Wiz.name, yid);
+  if (en) out.push(en);
+  if (!Q.cls(Wiz.sourceId)) out.push('La classe di origine non esiste più.');
+  const blocked = [...Wiz.carry, ...Wiz.adds.filter(a => a.kind === 'link').map(a => a.studentId)]
+    .map(id => ({ s: Q.student(id), st: wizYearStatus(id) })).filter(x => !x.s || !x.st.ok);
+  blocked.forEach(x => out.push(x.s ? `${x.s.lastName} ${x.s.firstName} ${x.st.reason}.` : 'Uno studente selezionato non è più in archivio.'));
+  if (!Wiz.carry.size && !Wiz.adds.length) out.push('La nuova classe non avrebbe studenti: selezionane almeno uno o aggiungine di nuovi.');
+  return out;
+}
+/** Applica la bozza all'archivio. Gli studenti non vengono duplicati: si creano solo nuove iscrizioni. */
+function applyWizard() {
+  const yid = wizYearId() || Ops.addYear(Wiz.target.label).id;
+  const c = Ops.addClass(yid, Wiz.name);
+  c.sourceClassId = Wiz.sourceId;
+  let carried = 0, linked = 0, created = 0;
+  [...Wiz.carry].forEach(id => { if (Q.student(id) && Ops.enroll(id, c.id).ok) carried++; });
+  Wiz.adds.forEach(a => {
+    if (a.kind === 'link') { if (Q.student(a.studentId) && Ops.enroll(a.studentId, c.id).ok) linked++; }
+    else { const s = Ops.createStudent(a.data); Ops.enroll(s.id, c.id); created++; }
+  });
+  S.settings.selectedYearId = yid;
+  return { classId: c.id, yearId: yid, sourceId: Wiz.sourceId, carried, linked, created };
+}
+
+/* ---------- Passi ---------- */
+function wizStep1() {
+  const years = Q.years();
+  const t = Wiz.target;
+  const sel = t ? (t.yearId || 'new') : (lastWizYearId && Q.year(lastWizYearId) ? lastWizYearId : 'new');
+  const newLabel = t && !t.yearId ? t.label : Ops.suggestYear();
+  return `<h3>Anno di destinazione</h3>
+    <p class="small muted">L'anno in cui creare la nuova classe. Se non esiste ancora, crealo qui: verrà salvato solo alla conferma finale.</p>
+    <div class="choices">${years.map(y => {
+      const n = Q.classesOfYear(y.id).length;
+      return `<label class="choice"><input type="radio" name="wizYear" value="${y.id}" ${sel === y.id ? 'checked' : ''}><span><strong>${U.esc(y.label)}</strong><span class="small muted">${n} ${n === 1 ? 'classe' : 'classi'}</span></span></label>`;
+    }).join('')}
+      <label class="choice"><input type="radio" name="wizYear" value="new" ${sel === 'new' ? 'checked' : ''}><span><strong>Nuovo anno scolastico</strong>
+        <input type="text" id="wizNewYear" value="${U.esc(newLabel)}" autocomplete="off" inputmode="numeric" aria-label="Nuovo anno scolastico" style="margin-top:6px; max-width:180px"></span></label>
+    </div>`;
+}
+function wizStep2() {
+  const yid = wizYearId(), tLabel = wizTargetLabel();
+  const cands = S.classes.filter(c => c.schoolYearId !== yid);
+  const yearIds = [...new Set(cands.map(c => c.schoolYearId))].sort((a, b) => (Q.year(b)?.label ?? '').localeCompare(Q.year(a)?.label ?? ''));
+  let sel = Wiz.sourceId;
+  if (!cands.some(c => c.id === sel)) {
+    const prevYear = yearIds.find(y => (Q.year(y)?.label ?? '') < tLabel) || yearIds[0];
+    sel = Q.classesOfYear(prevYear)[0]?.id;
+  }
+  return `<h3>Classe di origine</h3>
+    <p class="small muted">La classe da cui proseguono gli studenti. Non verrà modificata: resterà nel suo anno con tutto lo storico.</p>
+    ${yearIds.map(y => `<h4 class="grp">${U.esc(Q.year(y)?.label ?? '')}</h4><div class="choices">${Q.classesOfYear(y).map(c => {
+      const n = Q.activeEnrollments(c.id).length;
+      const passed = S.classes.filter(x => x.sourceClassId === c.id);
+      return `<label class="choice"><input type="radio" name="wizSource" value="${c.id}" ${c.id === sel ? 'checked' : ''}><span><strong>${U.esc(c.name)}</strong>
+        <span class="small muted">${n} ${n === 1 ? 'studente' : 'studenti'}${passed.length ? `, già passata come ${passed.map(x => `${U.esc(x.name)} (${U.esc(Q.year(x.schoolYearId)?.label ?? '')})`).join(', ')}` : ''}</span></span></label>`;
+    }).join('')}</div>`).join('')}`;
+}
+function wizStep3() {
+  const src = Q.cls(Wiz.sourceId);
+  return `<h3>Nome della nuova classe</h3>
+    <p class="small muted">Classe di origine ${U.esc(src?.name ?? '')}, anno di destinazione ${U.esc(wizTargetLabel())}.</p>
+    <label class="field" style="max-width:240px">Nome<input type="text" id="wizName" value="${U.esc(Wiz.name)}" maxlength="20" autocomplete="off"></label>`;
+}
+function wizStep4() {
+  const studs = Q.studentsOfClass(Wiz.sourceId);
+  studs.forEach(s => { if (!wizYearStatus(s.id).ok) Wiz.carry.delete(s.id); });
+  if (!studs.length) return `<h3>Studenti che proseguono</h3><div class="notice">La classe di origine non ha studenti iscritti. Potrai aggiungere gli studenti al passo successivo.</div>`;
+  const counts = Q.homonymCounts();
+  const eligible = studs.filter(s => wizYearStatus(s.id).ok).length;
+  return `<h3>Studenti che proseguono</h3>
+    <p class="small muted">Togli la spunta a chi non prosegue nella nuova classe (per esempio chi cambia sezione o scuola). Lo storico di chi prosegue resta collegato.</p>
+    <div class="row" style="margin-bottom:10px"><span class="small muted" id="wizCount">${Wiz.carry.size} di ${eligible} proseguono</span><span class="spacer"></span>
+      <button type="button" class="btn ghost" data-action="wizAll" data-v="1">Seleziona tutti</button>
+      <button type="button" class="btn ghost" data-action="wizAll" data-v="0">Nessuno</button></div>
+    <ul class="list">${studs.map(s => {
+      const st = wizYearStatus(s.id);
+      return `<li><label class="item"><input type="checkbox" data-wcarry="${s.id}" ${Wiz.carry.has(s.id) ? 'checked' : ''} ${st.ok ? '' : 'disabled'}>
+        <span>${U.esc(Q.displayName(s, counts))}${st.ok ? '' : `<br><span class="small muted">Non può proseguire qui: ${U.esc(st.reason)}.</span>`}</span></label></li>`;
+    }).join('')}</ul>`;
+}
+function wizStep5() {
+  const counts = Q.homonymCounts();
+  return `<h3>Nuovi studenti</h3>
+    <p class="small muted">Facoltativo: aggiungi chi arriva nella classe ${U.esc(Wiz.name)}, per esempio da un'altra sezione o da un'altra scuola. Se uno studente è già in archivio, l'app chiede se è la stessa persona.</p>
+    <div class="row" style="margin-bottom:10px"><button type="button" class="btn" data-action="wizAddList">Aggiungi da elenco</button>
+      <button type="button" class="btn primary" data-action="wizAddOne">Aggiungi studente</button></div>
+    ${Wiz.adds.length ? `<ul class="list">${Wiz.adds.map((a, i) => {
+      const label = a.kind === 'link' ? (() => { const s = Q.student(a.studentId); return s ? `${Q.displayName(s, counts)}` : '?'; })()
+        : `${a.data.lastName} ${a.data.firstName}${a.data.alias ? ` (${a.data.alias})` : a.data.birthDate ? ` (${U.fmtDate(a.data.birthDate)})` : ''}`;
+      const note = a.kind === 'link' ? `già in archivio, ${Ops.describe(Q.student(a.studentId) || {})}` : 'nuovo studente';
+      return `<li><div class="item"><span><strong>${U.esc(label)}</strong><br><span class="small muted">${U.esc(note)}</span></span><span class="spacer"></span>
+        <button type="button" class="btn ghost" data-action="wizRemoveAdd" data-i="${i}">Togli</button></div></li>`;
+    }).join('')}</ul>` : '<p class="muted">Nessun nuovo studente aggiunto.</p>'}`;
+}
+function wizStep6() {
+  const src = Q.cls(Wiz.sourceId);
+  const counts = Q.homonymCounts();
+  const carry = [...Wiz.carry].map(id => Q.student(id)).filter(Boolean).sort(U.byName);
+  const links = Wiz.adds.filter(a => a.kind === 'link').map(a => Q.student(a.studentId)).filter(Boolean);
+  const news = Wiz.adds.filter(a => a.kind === 'new');
+  const total = carry.length + links.length + news.length;
+  const problems = wizProblems();
+  const names = [...carry.map(s => Q.displayName(s, counts)), ...links.map(s => Q.displayName(s, counts)), ...news.map(a => `${a.data.lastName} ${a.data.firstName}`)]
+    .sort((a, b) => a.localeCompare(b, 'it', { sensitivity: 'base' }));
+  return `<h3>Riepilogo</h3>
+    <dl class="sumlist">
+      <dt>Anno di destinazione</dt><dd>${U.esc(wizTargetLabel())}${wizYearId() ? '' : ' (verrà creato)'}</dd>
+      <dt>Classe di origine</dt><dd>${U.esc(src?.name ?? '')} (${U.esc(Q.year(src?.schoolYearId)?.label ?? '')}), non verrà modificata</dd>
+      <dt>Nuova classe</dt><dd><strong>${U.esc(Wiz.name)}</strong></dd>
+      <dt>Studenti</dt><dd>${total} in tutto: ${carry.length} proseguono, ${links.length} già in archivio aggiunti, ${news.length} nuovi</dd>
+    </dl>
+    ${problems.length ? `<div class="notice danger"><strong>Da sistemare prima di confermare</strong><br>${problems.map(p => U.esc(p)).join('<br>')}</div>` : ''}
+    <details class="dt"><summary>Elenco degli studenti (${total})</summary><p class="small">${names.map(n => U.esc(n)).join(', ') || 'Nessuno'}</p></details>
+    <p class="small muted">Alla conferma verranno creati la classe e le iscrizioni in un'unica operazione. Gli studenti che proseguono non vengono duplicati: è lo stesso studente con il suo storico.</p>`;
+}
+function wizDoneHTML() {
+  const d = Wiz.done, c = Q.cls(d.classId), src = Q.cls(d.sourceId), y = Q.year(d.yearId);
+  const total = d.carried + d.linked + d.created;
+  const srcYear = src?.schoolYearId;
+  const remaining = srcYear ? Q.classesOfYear(srcYear).filter(x => !S.classes.some(k => k.sourceClassId === x.id && k.schoolYearId === d.yearId)) : [];
+  return `<div class="panel">
+    <p style="margin-top:0"><strong>Classe ${U.esc(c?.name ?? '')} creata nel ${U.esc(y?.label ?? '')} con ${total} ${total === 1 ? 'studente' : 'studenti'}</strong>
+      (${d.carried} proseguono, ${d.linked} già in archivio, ${d.created} nuovi). La classe ${U.esc(src?.name ?? '')} del ${U.esc(Q.year(srcYear)?.label ?? '')} non è stata modificata.</p>
+    ${remaining.length ? `<p class="small muted">Classi del ${U.esc(Q.year(srcYear)?.label ?? '')} non ancora passate al ${U.esc(y?.label ?? '')}: ${remaining.map(x => U.esc(x.name)).join(', ')}.</p>` : ''}
+    <div class="row">
+      <a class="btn primary" href="#/classe/${d.classId}">Apri la classe ${U.esc(c?.name ?? '')}</a>
+      <button type="button" class="btn" data-action="wizAgain">Passa un'altra classe</button>
+      <button type="button" class="btn ghost" data-action="wizClose">Torna alle classi</button>
+    </div></div>`;
+}
+function viewPassaggio() {
+  if (!Wiz) Wiz = newWiz();
+  const head = `<p class="small" style="margin:0 0 4px"><a href="#/classi">Classi</a></p><h2>Passaggio classi</h2>`;
+  if (Wiz.done) return head + wizDoneHTML();
+  const err = Wiz.error; Wiz.error = '';
+  const steps = `<ol class="steps" aria-label="Passi della procedura">${WIZ_STEPS.map((t, i) => `<li class="${i + 1 < Wiz.step ? 'done' : ''}" ${i + 1 === Wiz.step ? 'aria-current="step"' : ''}>${t}</li>`).join('')}</ol>`;
+  const body = [null, wizStep1, wizStep2, wizStep3, wizStep4, wizStep5, wizStep6][Wiz.step]();
+  return head + steps + `<div class="panel wiz">${body}
+    <p class="field-error" id="wizErr" role="alert">${U.esc(err)}</p>
+    <div class="entry-nav">
+      ${Wiz.step > 1 ? '<button type="button" class="btn" data-action="wizBack">Indietro</button>' : '<button type="button" class="btn" data-action="wizCancel">Annulla</button>'}
+      <button type="button" class="btn primary" data-action="wizNext">${Wiz.step === 6 ? `Crea la classe ${U.esc(Wiz.name)}` : 'Avanti'}</button>
+    </div>
+    ${Wiz.step > 1 ? '<p style="margin:10px 0 0"><button type="button" class="btn ghost" data-action="wizCancel">Annulla il passaggio</button></p>' : ''}</div>`;
+}
+
+/* ==========================================================
+   M8: backup, ripristino, CSV, promemoria
+   ========================================================== */
+const fmtDateTime = iso => { const d = new Date(iso); return Number.isNaN(d.getTime()) ? '—' : d.toLocaleString('it-IT', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' }); };
+const stamp = () => { const d = new Date(); return `${U.isoFromDate(d)}_${pad2(d.getHours())}${pad2(d.getMinutes())}`; };
+
+/** Azzera lo stato dell'interfaccia legato all'archivio precedente (procedure aperte, filtri). */
+function resetUiState() {
+  Wiz = null; StudView = { studentId: null, yearId: 'all' };
+  Object.keys(ProgSel).forEach(k => delete ProgSel[k]);
+  clearTimeout(saveTimer); saveTimer = null;
+}
+
+function backupStatus() {
+  if (archiveIsEmpty()) return null;
+  const last = S.settings.lastBackupAt;
+  const t = last ? Date.parse(last) : NaN;
+  const days = Number.isNaN(t) ? null : Math.max(0, Math.floor((Date.now() - t) / 86400000));
+  const limit = S.settings.backupReminderDays || 14;
+  return { last, days, limit, due: days === null || days >= limit };
+}
+function backupReminderHTML() {
+  const b = backupStatus();
+  if (!b || !b.due) return '';
+  return `<div class="notice">${b.days === null ? 'Non hai ancora fatto un backup.' : `L'ultimo backup è di ${b.days} giorni fa.`} I dati sono salvati solo in questo browser: esporta un backup e conservalo fuori dal dispositivo.<br>
+    <button type="button" class="btn" data-action="exportJSON">Esporta backup</button></div>`;
+}
+
+/** Avvia lo scaricamento di un file generato in memoria: nessun dato esce dal dispositivo. */
+function downloadFile(name, content, mime) {
+  const blob = new Blob([content], { type: mime });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = name; a.style.display = 'none';
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 30000);
+}
+
+async function exportBackup() {
+  const now = new Date().toISOString();
+  S.settings.lastBackupAt = now;
+  const data = { ...S, app: APP_ID, schemaVersion: SCHEMA_VERSION, exportedAt: now };
+  downloadFile(`registro-scienze-motorie-backup_${stamp()}.json`, JSON.stringify(data, null, 1), 'application/json');
+  await commit('Backup esportato: conservalo fuori dal dispositivo');
+}
+
+/* ---------- Validazione del backup ---------- */
+/** Aggiornamenti del formato: MIGRATIONS[n] porta un archivio dalla versione n alla n+1. */
+const MIGRATIONS = {};
+function migrateSchema(d) {
+  while (d.schemaVersion < SCHEMA_VERSION) {
+    const fn = MIGRATIONS[d.schemaVersion];
+    if (!fn) throw new Error(`formato ${d.schemaVersion} non supportato`);
+    d = fn(d); d.schemaVersion += 1;
+  }
+  return d;
+}
+const isISODate = x => typeof x === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(x) && !Number.isNaN(Date.parse(x));
+const isStr = (x, max, allowEmpty = false) => typeof x === 'string' && x.length <= max && (allowEmpty || x.trim().length > 0);
+const isNum = x => typeof x === 'number' && Number.isFinite(x);
+
+/**
+ * Controlla un backup e ne ricostruisce una copia pulita (solo i campi noti).
+ * Restituisce { errors: [...] } oppure { errors: [], data }.
+ */
+function validateBackup(raw) {
+  if (!raw || typeof raw !== 'object' || Array.isArray(raw)) return { errors: ['Il file non contiene un archivio valido.'] };
+  if (raw.app !== APP_ID) return { errors: ['Il file non è un backup del Registro Scienze Motorie.'] };
+  const v = raw.schemaVersion;
+  if (!Number.isInteger(v) || v < 1) return { errors: ['La versione del formato del backup non è riconosciuta.'] };
+  if (v > SCHEMA_VERSION) return { errors: [`Il backup è stato creato da una versione più recente dell'app (formato ${v}, questa app usa il formato ${SCHEMA_VERSION}). Usa il file dell'app più recente e riprova.`] };
+  let d;
+  try { d = migrateSchema(JSON.parse(JSON.stringify(raw))); }
+  catch (e) { return { errors: ['Impossibile aggiornare il formato del backup: ' + e.message + '.'] }; }
+  for (const k of ['schoolYears', 'students', 'classes', 'enrollments', 'parameters', 'sessions', 'results']) {
+    if (!Array.isArray(d[k])) return { errors: [`Nel backup manca l'elenco "${k}".`] };
+  }
+  const errors = [];
+  const err = m => { if (errors.length < 200) errors.push(m); };
+  const ids = new Set();
+  const idOk = (x, what) => {
+    if (!isStr(x && x.id, 100)) { err(`${what}: identificativo mancante.`); return false; }
+    if (ids.has(x.id)) { err(`${what}: identificativo duplicato (${x.id}).`); return false; }
+    ids.add(x.id); return true;
+  };
+  const out = { schoolYears: [], students: [], classes: [], enrollments: [], parameters: [], sessions: [], results: [] };
+
+  const labels = new Set();
+  d.schoolYears.forEach((y, i) => {
+    const w = `Anno ${i + 1}`;
+    if (!idOk(y, w)) return;
+    if (!isStr(y.label, 7) || !/^\d{4}\/\d{2}$/.test(y.label)) return err(`${w}: nome dell'anno non valido.`);
+    if (labels.has(y.label)) return err(`Anno ${y.label} presente due volte.`);
+    labels.add(y.label);
+    out.schoolYears.push({ id: y.id, label: y.label });
+  });
+  const yearIds = new Set(out.schoolYears.map(y => y.id));
+
+  d.students.forEach((s, i) => {
+    const w = `Studente ${i + 1}`;
+    if (!idOk(s, w)) return;
+    if (!isStr(s.lastName, 60) || !isStr(s.firstName, 60)) return err(`${w}: nome o cognome non validi.`);
+    if (s.birthDate != null && !isISODate(s.birthDate)) return err(`${w} (${s.lastName} ${s.firstName}): data di nascita non valida.`);
+    if (s.alias != null && !isStr(s.alias, 40, true)) return err(`${w} (${s.lastName} ${s.firstName}): alias non valido.`);
+    out.students.push({ id: s.id, firstName: s.firstName, lastName: s.lastName, birthDate: s.birthDate || null, alias: s.alias || '' });
+  });
+  const studentIds = new Set(out.students.map(s => s.id));
+
+  d.classes.forEach((c, i) => {
+    const w = `Classe ${i + 1}`;
+    if (!idOk(c, w)) return;
+    if (!isStr(c.name, 20)) return err(`${w}: nome non valido.`);
+    if (!yearIds.has(c.schoolYearId)) return err(`Classe ${c.name}: anno scolastico inesistente.`);
+    out.classes.push({ id: c.id, schoolYearId: c.schoolYearId, name: c.name, sourceClassId: c.sourceClassId || null });
+  });
+  const classById = new Map(out.classes.map(c => [c.id, c]));
+  out.classes.forEach(c => { if (c.sourceClassId && !classById.has(c.sourceClassId)) c.sourceClassId = null; });   // collegamento informativo: se manca si toglie
+
+  const activePerYear = new Set();
+  d.enrollments.forEach((e, i) => {
+    const w = `Iscrizione ${i + 1}`;
+    if (!idOk(e, w)) return;
+    if (!classById.has(e.classId) || !studentIds.has(e.studentId)) return err(`${w}: classe o studente inesistente.`);
+    if (e.addedAt != null && !isISODate(e.addedAt)) return err(`${w}: data di iscrizione non valida.`);
+    if (e.removedAt != null && !isISODate(e.removedAt)) return err(`${w}: data di uscita non valida.`);
+    if (!e.removedAt) {
+      const k = e.studentId + '|' + classById.get(e.classId).schoolYearId;
+      if (activePerYear.has(k)) return err(`${w}: lo stesso studente è iscritto a due classi nello stesso anno.`);
+      activePerYear.add(k);
+    }
+    out.enrollments.push({ id: e.id, classId: e.classId, studentId: e.studentId, addedAt: e.addedAt || null, removedAt: e.removedAt || null });
+  });
+
+  const pnames = new Set();
+  d.parameters.forEach((p, i) => {
+    const w = `Parametro ${i + 1}`;
+    if (!idOk(p, w)) return;
+    if (!isStr(p.name, 40) || !isStr(p.unit, 12)) return err(`${w}: nome o unità non validi.`);
+    if (!['tempo', 'distanza', 'conteggio'].includes(p.type) || !['lower', 'higher'].includes(p.betterWhen)) return err(`Parametro ${p.name}: tipo o direzione non validi.`);
+    if (!Number.isInteger(p.decimals) || p.decimals < 0 || p.decimals > 3 || !Number.isInteger(p.attempts) || p.attempts < 1 || p.attempts > 10) return err(`Parametro ${p.name}: decimali o numero di prove non validi.`);
+    const k = U.normName(p.name);
+    if (pnames.has(k)) return err(`Parametro ${p.name} presente due volte.`);
+    pnames.add(k);
+    out.parameters.push({ id: p.id, name: p.name, unit: p.unit, type: p.type, betterWhen: p.betterWhen, decimals: p.decimals, attempts: p.attempts,
+      requiresEquipmentWeight: p.requiresEquipmentWeight === true, active: p.active !== false, order: isNum(p.order) ? p.order : i + 1 });
+  });
+  const paramById = new Map(out.parameters.map(p => [p.id, p]));
+
+  const sesKeys = new Set();
+  d.sessions.forEach((s, i) => {
+    const w = `Sessione ${i + 1}`;
+    if (!idOk(s, w)) return;
+    if (!classById.has(s.classId) || !paramById.has(s.parameterId)) return err(`${w}: classe o test inesistente.`);
+    if (!isISODate(s.date)) return err(`${w}: data non valida.`);
+    if (s.equipmentWeightKg != null && !(isNum(s.equipmentWeightKg) && s.equipmentWeightKg > 0)) return err(`${w}: peso dell'attrezzo non valido.`);
+    const k = s.classId + '|' + s.parameterId + '|' + s.date;
+    if (sesKeys.has(k)) return err(`${w}: sessione doppia (stessa classe, test e data).`);
+    sesKeys.add(k);
+    out.sessions.push({ id: s.id, classId: s.classId, parameterId: s.parameterId, date: s.date, equipmentWeightKg: s.equipmentWeightKg ?? null });
+  });
+  const sesById = new Map(out.sessions.map(s => [s.id, s]));
+
+  const resKeys = new Set();
+  d.results.forEach((r, i) => {
+    const w = `Risultato ${i + 1}`;
+    if (!idOk(r, w)) return;
+    const ses = sesById.get(r.sessionId);
+    if (!ses || !studentIds.has(r.studentId)) return err(`${w}: sessione o studente inesistente.`);
+    const p = paramById.get(ses.parameterId);
+    const k = r.sessionId + '|' + r.studentId;
+    if (resKeys.has(k)) return err(`${w}: due risultati per lo stesso studente nella stessa sessione.`);
+    resKeys.add(k);
+    if (!['misurato', 'assente', 'esonerato'].includes(r.status)) return err(`${w}: stato non valido.`);
+    if (r.status !== 'misurato') {
+      out.results.push({ id: r.id, sessionId: r.sessionId, studentId: r.studentId, status: r.status, trials: Array(p.attempts).fill(null), value: null, measuredOn: null });
+      return;
+    }
+    if (!Array.isArray(r.trials) || r.trials.length !== p.attempts || !r.trials.every(t => t === null || (isNum(t) && t >= 0))) return err(`${w}: prove non valide per ${p.name}.`);
+    if (!r.trials.some(t => t !== null)) return err(`${w}: risultato misurato senza prove.`);
+    if (!isISODate(r.measuredOn)) return err(`${w}: data di misura non valida.`);
+    // Il migliore si ricalcola sempre dalle prove: è un dato derivato
+    out.results.push({ id: r.id, sessionId: r.sessionId, studentId: r.studentId, status: 'misurato', trials: r.trials.slice(), value: U.bestOf(r.trials, p.betterWhen), measuredOn: r.measuredOn });
+  });
+
+  const st = d.settings && typeof d.settings === 'object' ? d.settings : {};
+  const exportedAt = typeof d.exportedAt === 'string' && !Number.isNaN(Date.parse(d.exportedAt)) ? d.exportedAt : null;
+  const lastFromFile = typeof st.lastBackupAt === 'string' && !Number.isNaN(Date.parse(st.lastBackupAt)) ? st.lastBackupAt : null;
+  const data = {
+    app: APP_ID, schemaVersion: SCHEMA_VERSION, exportedAt,
+    settings: {
+      backupReminderDays: [3, 7, 14, 30].includes(st.backupReminderDays) ? st.backupReminderDays : 14,
+      lastBackupAt: exportedAt || lastFromFile,
+      selectedYearId: yearIds.has(st.selectedYearId) ? st.selectedYearId : null
+    },
+    ...out
+  };
+  return { errors, data };
+}
+
+function infoDialog(title, html) {
+  const { d, closed } = openDialog(`<div class="modal-body"><h3 id="modalTitle">${U.esc(title)}</h3>${html}
+    <div class="modal-actions"><button type="button" class="btn primary" data-do="cancel">Chiudi</button></div></div>`);
+  wireDialog(d, {}, null);
+  return closed;
+}
+
+/** Riepilogo prima di sostituire l'archivio. Con un archivio non vuoto bisogna scrivere SOSTITUISCI. */
+async function dlgImportSummary(data, fileName) {
+  const cnt = x => `${x.schoolYears.length} anni, ${x.classes.length} classi, ${x.students.length} studenti, ${x.sessions.length} sessioni, ${x.results.length} risultati`;
+  const needWord = !archiveIsEmpty();
+  const { d, closed } = openDialog(`<div class="modal-body"><h3 id="modalTitle">Ripristinare questo backup?</h3>
+    <dl class="sumlist">
+      <dt>File</dt><dd>${U.esc(fileName || 'backup')}</dd>
+      <dt>Creato il</dt><dd>${data.exportedAt ? U.esc(fmtDateTime(data.exportedAt)) : 'data non indicata'}</dd>
+      <dt>Contenuto</dt><dd>${cnt(data)}</dd>
+      <dt>Archivio attuale</dt><dd>${archiveIsEmpty() ? 'vuoto' : cnt(S)}</dd>
+    </dl>
+    ${needWord ? `<div class="notice">L'archivio attuale su questo dispositivo verrà sostituito interamente dal backup. Se contiene dati che non sono nel backup, esportalo prima.
+      <br><button type="button" class="btn" data-do="exportFirst">Esporta prima l'archivio attuale</button></div>
+      <label class="field">Scrivi SOSTITUISCI per confermare<input type="text" id="confirmText" autocomplete="off" autocapitalize="characters"></label>` : ''}
+    <div class="modal-actions">${BTN_CANCEL}<button type="button" class="btn ${needWord ? 'danger' : 'primary'}" data-do="ok" ${needWord ? 'disabled' : ''}>${needWord ? 'Sostituisci archivio' : 'Ripristina backup'}</button></div></div>`);
+  let ok = false;
+  const input = d.querySelector('#confirmText');
+  if (input) d.oninput = () => { d.querySelector('[data-do="ok"]').disabled = input.value.trim().toUpperCase() !== 'SOSTITUISCI'; };
+  wireDialog(d, {
+    ok: () => { ok = true; d.close('ok'); },
+    exportFirst: async () => { await exportBackup(); }
+  }, null);
+  await closed;
+  return ok;
+}
+
+/** Legge il testo di un file di backup, lo controlla e, se confermato, sostituisce l'archivio. */
+async function handleImportText(text, fileName) {
+  let raw;
+  try { raw = JSON.parse(text); }
+  catch (e) { await infoDialog('Backup non leggibile', '<p>Il file non è in formato JSON valido. Controlla di aver scelto il file di backup esportato dall\'app.</p>'); return false; }
+  const { errors, data } = validateBackup(raw);
+  if (errors.length) {
+    const shown = errors.slice(0, 6);
+    await infoDialog('Backup non valido', `<p>Il file non è stato importato e l'archivio attuale non è cambiato.</p>
+      <ul class="err-list">${shown.map(e => `<li>${U.esc(e)}</li>`).join('')}</ul>
+      ${errors.length > shown.length ? `<p class="small muted">E altri ${errors.length - shown.length} problemi.</p>` : ''}`);
+    return false;
+  }
+  if (!(await dlgImportSummary(data, fileName))) return false;
+  S = data;
+  migrateNames();
+  resetUiState();
+  await commit('Backup ripristinato');
+  go('#/classi');
+  return true;
+}
+
+/* ---------- CSV per Excel ---------- */
+function csvText(v) {
+  let s = String(v ?? '');
+  if (/^[=+\-@\t\r]/.test(s)) s = "'" + s;           // evita che Excel interpreti il testo come formula
+  return /[;"\r\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
+}
+const csvNum = (v, dec) => (v === null || v === undefined) ? '' : Number(v).toFixed(dec).replace('.', ',');
+const csvDate = iso => iso ? U.fmtDate(iso) : '';
+const csvKg = w => (w === null || w === undefined) ? '' : String(w).replace('.', ',');
+
+function buildCSV(yearId = 'all') {
+  const rows = S.results.map(r => {
+    const ses = Q.session(r.sessionId), st = Q.student(r.studentId);
+    const p = ses && Q.param(ses.parameterId), c = ses && Q.cls(ses.classId), y = c && Q.year(c.schoolYearId);
+    return { r, ses, st, p, c, y };
+  }).filter(x => x.ses && x.st && x.p && x.c && x.y && (yearId === 'all' || x.c.schoolYearId === yearId));
+  rows.sort((a, b) => a.y.label.localeCompare(b.y.label) || a.c.name.localeCompare(b.c.name, 'it', { numeric: true })
+    || U.byName(a.st, b.st) || a.p.order - b.p.order || a.ses.date.localeCompare(b.ses.date));
+  const maxTrials = Math.max(1, ...rows.map(x => x.p.attempts));
+  const head = ['Anno scolastico', 'Classe', 'Cognome', 'Nome', 'Alias', 'Test', 'Unità', 'Migliore se', 'Data sessione', 'Data misura', 'Stato',
+    ...Array.from({ length: maxTrials }, (_, i) => `Prova ${i + 1}`), 'Migliore', 'Peso attrezzo (kg)'];
+  const status = x => x.r.status === 'misurato' ? (x.r.measuredOn !== x.ses.date ? 'Recuperato' : 'Misurato') : x.r.status === 'assente' ? 'Assente' : 'Esonerato';
+  const lines = rows.map(x => [
+    csvText(x.y.label), csvText(x.c.name), csvText(x.st.lastName), csvText(x.st.firstName), csvText(x.st.alias || ''),
+    csvText(x.p.name), csvText(x.p.unit), x.p.betterWhen === 'lower' ? 'più basso' : 'più alto',
+    csvDate(x.ses.date), csvDate(x.r.measuredOn), status(x),
+    ...Array.from({ length: maxTrials }, (_, i) => csvNum(x.r.trials[i] ?? null, x.p.decimals)),
+    csvNum(x.r.value, x.p.decimals), csvKg(x.ses.equipmentWeightKg)
+  ].join(';'));
+  return { count: rows.length, text: '\uFEFF' + [head.map(csvText).join(';'), ...lines].join('\r\n') + '\r\n' };
+}
+
+/* ==========================================================
+   M9: installazione e uso offline
+   Il service worker (sw.js) si registra solo se la pagina è servita via HTTPS o da localhost.
+   Aprendo il file in locale non si registra nulla e non partono richieste aggiuntive.
+   ========================================================== */
+const PWA = { reg: null, waiting: null, applying: false, install: null, error: null, dismissed: false, reload: () => location.reload() };
+const pwaSupported = () => !!window.isSecureContext && 'serviceWorker' in navigator && location.protocol !== 'file:';
+const isStandalone = () => (window.matchMedia && matchMedia('(display-mode: standalone)').matches) || navigator.standalone === true;
+const refreshDatiIfOpen = () => { if (/^#\/dati/.test(location.hash)) render(); };
+function showUpdate() {
+  PWA.dismissed = false;
+  const b = document.getElementById('updateBar');
+  if (b) b.hidden = false;
+}
+function addHeadLink(rel, href) {
+  const l = document.createElement('link');
+  l.rel = rel; l.href = href;
+  document.head.appendChild(l);
+}
+
+async function initPWA() {
+  if (!pwaSupported()) return;
+  addHeadLink('manifest', 'manifest.json');
+  addHeadLink('apple-touch-icon', 'apple-touch-icon.png');
+  const sw = navigator.serviceWorker;
+  sw.addEventListener('message', e => {
+    const t = e.data && e.data.type;
+    if (t === 'APP_UPDATED') showUpdate();
+    else if (t === 'UP_TO_DATE') toast('Hai già la versione più recente');
+    else if (t === 'OFFLINE') toast('Controllo non riuscito: sei connesso a internet?', 'error');
+  });
+  sw.addEventListener('controllerchange', () => {
+    // La prima installazione assume il controllo senza ricaricare; si ricarica solo se l'utente ha scelto di aggiornare.
+    if (PWA.applying) PWA.reload(); else refreshDatiIfOpen();
+  });
+  try {
+    PWA.reg = await sw.register('sw.js');
+  } catch (e) {
+    PWA.error = e;
+    refreshDatiIfOpen();
+    return;
+  }
+  const reg = PWA.reg;
+  if (reg.waiting && sw.controller) { PWA.waiting = reg.waiting; showUpdate(); }
+  reg.addEventListener('updatefound', () => {
+    const nw = reg.installing;
+    if (!nw) return;
+    nw.addEventListener('statechange', () => {
+      if (nw.state === 'installed' && sw.controller) { PWA.waiting = nw; showUpdate(); }
+    });
+  });
+  try { await sw.ready; } catch (e) { /* nessuna azione */ }
+  refreshDatiIfOpen();
+}
+window.addEventListener('beforeinstallprompt', e => { e.preventDefault(); PWA.install = e; refreshDatiIfOpen(); });
+window.addEventListener('appinstalled', () => { PWA.install = null; toast('App installata'); refreshDatiIfOpen(); });
+
+function pwaPanelHTML() {
+  let msg, btns = '';
+  const sw = pwaSupported() ? navigator.serviceWorker : null;
+  if (location.protocol === 'file:') {
+    msg = 'Stai usando il file salvato sul dispositivo: funziona senza connessione. Per installare l\'app sulla schermata Home serve la versione pubblicata su un indirizzo https.';
+  } else if (!sw) {
+    msg = 'Questo browser non permette l\'uso offline dell\'app installata. L\'app funziona comunque finché la pagina resta aperta.';
+  } else if (PWA.error) {
+    msg = 'L\'uso offline non è stato attivato su questo dispositivo. Ricarica la pagina; se il problema continua, controlla che il browser non blocchi i service worker.';
+  } else if (sw.controller) {
+    msg = 'Pronta per l\'uso offline: l\'app è salvata su questo dispositivo e si apre anche senza connessione.' + (isStandalone() ? ' È installata come app.' : '');
+    if (PWA.install && !isStandalone()) btns += '<button type="button" class="btn primary" data-action="installApp">Installa l\'app</button>';
+    btns += '<button type="button" class="btn" data-action="checkUpdate">Controlla aggiornamenti</button>';
+  } else {
+    msg = 'Preparazione dell\'uso offline in corso. Riapri l\'app tra qualche istante.';
+  }
+  return `<h3>Uso offline e installazione</h3>
+    <div class="panel">
+      <p style="margin-top:0">${U.esc(msg)}</p>
+      ${btns ? `<div class="row">${btns}</div>` : ''}
+      <p class="small muted" style="margin-bottom:0">I dati sono conservati separatamente per ogni indirizzo da cui si apre l'app: il file locale e la versione pubblicata hanno archivi diversi. Per passare dall'uno all'altro, esporta il backup e importalo.</p>
+    </div>`;
+}
+
+/* ---------- Navigazione ---------- */
+const routes = [
+  { re: /^#\/classi$/, sec: 'classi', fn: () => viewClassi() },
+  { re: /^#\/classe\/([\w-]+)(?:\/(studenti|sessioni|progressi|recuperi))?$/, sec: 'classi', fn: m => viewClasse(m[1], m[2] || 'studenti') },
+  { re: /^#\/studente\/([\w-]+)$/, sec: 'classi', fn: m => viewStudente(m[1]) },
+  { re: /^#\/sessione\/([\w-]+)(?:\/(riepilogo)|\/s\/([\w-]+))?$/, sec: 'classi', fn: m => viewSessione(m[1], m[2] || 'entry', m[3]) },
+  { re: /^#\/passaggio$/, sec: 'classi', fn: () => viewPassaggio() },
+  { re: /^#\/recuperi$/, sec: 'recuperi', fn: () => viewRecuperi() },
+  { re: /^#\/parametri$/, sec: 'parametri', fn: () => viewParametri() },
+  { re: /^#\/dati$/, sec: 'dati', fn: () => viewDati() }
+];
+function render() {
+  SesCtx = null;
+  const hash = location.hash || '#/classi';
+  let html = null, sec = 'classi';
+  for (const r of routes) {
+    const m = hash.match(r.re);
+    if (m) { html = r.fn(m); sec = r.sec; break; }
+  }
+  if (html === null) { location.replace('#/classi'); return; }
+  const main = document.getElementById('main');
+  const bannerMemory = Storage.mode === 'memory'
+    ? '<div class="notice danger">Questo browser non permette di salvare i dati: tutto andrà perso alla chiusura. Apri il file con Chrome o Edge aggiornati.</div>' : '';
+  main.innerHTML = bannerMemory + html;
+  const af = main.querySelector('[data-autofocus]');
+  if (af) af.focus();
+  document.querySelectorAll('#nav a').forEach(a => {
+    if (a.dataset.sec === sec) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+  });
+  updateNavCounts();
+}
+function updateNavCounts() {
+  const n = Q.pendingAll().length;
+  const el = document.getElementById('navPending');
+  el.hidden = !n; el.textContent = n;
+}
+
+/* ---------- Azioni ---------- */
+const Actions = {
+  notYet(el) { notYet(el.dataset.mod); },
+  async loadDemo() {
+    if (!archiveIsEmpty()) { toast('I dati di esempio si caricano solo in un archivio vuoto', 'error'); return; }
+    S = buildDemoState();
+    resetUiState();
+    await commit('Dati di esempio caricati');
+    location.hash = '#/classi'; render();
+  },
+  async resetArchive() {
+    const ok = await confirmDialog({
+      title: 'Svuotare l\'archivio?',
+      message: 'Verranno eliminati tutti gli anni, le classi, gli studenti e le misurazioni su questo dispositivo. I parametri tornano a quelli iniziali. L\'operazione non si può annullare.',
+      confirmLabel: 'Svuota archivio', danger: true, requireText: 'SVUOTA'
+    });
+    if (!ok) return;
+    S = emptyState();
+    resetUiState();
+    await commit('Archivio svuotato');
+    render();
+  }
+};
+const ChangeActions = {
+  async selectYear(el) { S.settings.selectedYearId = el.value; await commit(); render(); },
+  progParam(el) { ProgSel[el.dataset.class] = el.value; render(); },
+  studYear(el) { StudView.yearId = el.value; render(); },
+  async backupDays(el) { S.settings.backupReminderDays = Number(el.value); await commit('Promemoria aggiornato'); render(); }
+};
+Object.assign(Actions, {
+  async newYear() {
+    const label = await dlgText({ title: 'Nuovo anno scolastico', label: 'Anno scolastico', value: Ops.suggestYear(), confirmLabel: 'Crea anno', validate: Ops.yearError, inputmode: 'numeric' });
+    if (!label) return;
+    Ops.addYear(label);
+    await commit(`Anno ${label} creato`);
+    render();
+  },
+  async deleteYear(el) {
+    const y = Q.year(el.dataset.year);
+    if (!y || S.classes.some(c => c.schoolYearId === y.id)) return;
+    const ok = await confirmDialog({ title: `Eliminare l'anno ${y.label}?`, message: 'L\'anno non contiene classi. L\'operazione non si può annullare.', confirmLabel: 'Elimina anno', danger: true });
+    if (!ok) return;
+    S.schoolYears = S.schoolYears.filter(x => x.id !== y.id);
+    if (S.settings.selectedYearId === y.id) S.settings.selectedYearId = null;
+    await commit(`Anno ${y.label} eliminato`);
+    render();
+  },
+  async newClass() {
+    const r = await dlgClass(S.settings.selectedYearId);
+    if (!r) return;
+    const yid = r.yearId || Ops.addYear(r.yearLabel).id;
+    S.settings.selectedYearId = yid;
+    const c = Ops.addClass(yid, r.name);
+    await commit(`Classe ${c.name} creata`);
+    go('#/classe/' + c.id);
+  },
+  async renameClass(el) {
+    const c = Q.cls(el.dataset.class);
+    if (!c) return;
+    const name = await dlgText({ title: 'Rinomina la classe', label: 'Nome della classe', value: c.name, validate: v => Ops.classNameError(v, c.schoolYearId, c.id) });
+    if (!name || name === c.name) return;
+    c.name = name;
+    await commit('Classe rinominata');
+    render();
+  },
+  async deleteClass(el) {
+    const c = Q.cls(el.dataset.class);
+    if (!c || !Ops.classDeletable(c.id)) return;
+    const ok = await confirmDialog({ title: `Eliminare la classe ${c.name}?`, message: 'La classe è vuota: non ha studenti né sessioni.', confirmLabel: 'Elimina classe', danger: true });
+    if (!ok) return;
+    S.classes = S.classes.filter(x => x.id !== c.id);
+    await commit(`Classe ${c.name} eliminata`);
+    go('#/classi');
+  },
+  async addStudent(el) {
+    const cid = el.dataset.class;
+    const r = await dlgAddStudent(cid);
+    if (!r) return;
+    let st;
+    if (r.kind === 'link') {
+      const status = Ops.enrollStatus(r.studentId, cid);
+      if (!status.ok) { toast(`Non collegabile: ${status.reason}`, 'error'); return; }
+      st = Q.student(r.studentId);
+    } else st = Ops.createStudent(r.data);
+    Ops.enroll(st.id, cid);
+    await commit(`${st.lastName} ${st.firstName} aggiunto/a alla classe`);
+    render();
+  },
+  async importList(el) {
+    const cid = el.dataset.class;
+    const items = await dlgImport(cid);
+    if (!items) return;
+    let added = 0, linked = 0, failed = 0;
+    for (const it of items) {
+      let st;
+      if (it.kind === 'link') {
+        st = Q.student(it.studentId);
+        if (!st || !Ops.enrollStatus(st.id, cid).ok) { failed++; continue; }
+        linked++;
+      } else {
+        if (Ops.studentError(it.data.firstName, it.data.lastName, it.data.birthDate)) { failed++; continue; }
+        st = Ops.createStudent(it.data);
+        added++;
+      }
+      Ops.enroll(st.id, cid);
+    }
+    await commit(`${added} nuovi, ${linked} collegati` + (failed ? `, ${failed} non aggiunti` : ''));
+    render();
+  },
+  async editStudent(el) {
+    const st = Q.student(el.dataset.student);
+    if (!st) return;
+    const data = await dlgEditStudent(st);
+    if (!data) return;
+    Object.assign(st, data);
+    await commit('Dati aggiornati');
+    render();
+  },
+  async removeStudent(el) {
+    const st = Q.student(el.dataset.student), c = Q.cls(el.dataset.class);
+    if (!st || !c) return;
+    const ok = await confirmDialog({
+      title: `Rimuovere dalla classe ${c.name}?`,
+      message: `${st.lastName} ${st.firstName} non comparirà più negli elenchi e nei recuperi della classe ${c.name}. Le misurazioni restano conservate nello storico e potrai reiscriverlo/a quando vuoi.`,
+      confirmLabel: 'Rimuovi dalla classe'
+    });
+    if (!ok) return;
+    Ops.removeFromClass(st.id, c.id);
+    await commit('Studente rimosso dalla classe');
+    render();
+  },
+  async reenroll(el) {
+    const st = Q.student(el.dataset.student), cid = el.dataset.class;
+    if (!st) return;
+    const status = Ops.enroll(st.id, cid);
+    if (!status.ok) { toast(`Non reiscrivibile: ${status.reason}`, 'error'); return; }
+    await commit(`${st.lastName} ${st.firstName} reiscritto/a`);
+    render();
+  },
+  async deleteStudent(el) {
+    const st = Q.student(el.dataset.student);
+    if (!st) return;
+    const name = `${st.lastName} ${st.firstName}`;
+    const n = S.results.filter(r => r.studentId === st.id).length;
+    const ok1 = await confirmDialog({
+      title: 'Eliminare definitivamente lo studente?',
+      message: `${name} e tutte le sue misurazioni (${n} risultati) verranno cancellati da questo dispositivo. L'operazione non si può annullare. Se lo studente ha solo cambiato classe, usa "Rimuovi dalla classe".`,
+      confirmLabel: 'Continua', danger: true
+    });
+    if (!ok1) return;
+    const ok2 = await confirmDialog({
+      title: 'Conferma finale',
+      message: `Scrivi ELIMINA per cancellare definitivamente ${name}. I backup già esportati in precedenza non vengono modificati: se contengono questo studente vanno eliminati a parte.`,
+      confirmLabel: 'Elimina definitivamente', danger: true, requireText: 'ELIMINA'
+    });
+    if (!ok2) return;
+    Ops.deleteStudent(st.id);
+    await commit('Studente eliminato definitivamente');
+    go(el.dataset.class && Q.cls(el.dataset.class) ? '#/classe/' + el.dataset.class : '#/classi');
+  }
+});
+Object.assign(Actions, {
+  async addParam() {
+    const data = await dlgParam(null);
+    if (!data) return;
+    S.parameters.push({ id: U.uid('p'), ...data, active: true, order: Ops.nextParamOrder() });
+    await commit(`Parametro "${data.name}" aggiunto`);
+    render();
+  },
+  async editParam(el) {
+    const p = Q.param(el.dataset.param);
+    if (!p) return;
+    const data = await dlgParam(p);
+    if (!data) return;
+    // Se il parametro è in uso il dialogo restituisce solo il nome; per sicurezza si ricontrolla qui.
+    if (Ops.paramInUse(p.id)) p.name = data.name; else Object.assign(p, data);
+    await commit('Parametro aggiornato');
+    render();
+  },
+  async moveParam(el) {
+    const all = Q.params(true);
+    const i = all.findIndex(p => p.id === el.dataset.param);
+    if (i < 0) return;
+    const step = el.dataset.dir === 'up' ? -1 : 1;
+    let j = i + step;
+    while (j >= 0 && j < all.length && !all[j].active) j += step;   // salta gli archiviati
+    if (j < 0 || j >= all.length) return;
+    [all[i], all[j]] = [all[j], all[i]];
+    all.forEach((p, k) => { p.order = k + 1; });
+    await commit();
+    render();
+  },
+  async toggleParam(el) {
+    const p = Q.param(el.dataset.param);
+    if (!p) return;
+    p.active = !p.active;
+    await commit(p.active ? `"${p.name}" riattivato` : `"${p.name}" archiviato: lo storico resta consultabile`);
+    render();
+  },
+  async deleteParam(el) {
+    const p = Q.param(el.dataset.param);
+    if (!p || Ops.paramInUse(p.id)) return;
+    const ok = await confirmDialog({ title: `Eliminare "${p.name}"?`, message: 'Il parametro non è stato mai usato in nessuna sessione. L\'operazione non si può annullare.', confirmLabel: 'Elimina parametro', danger: true });
+    if (!ok) return;
+    S.parameters = S.parameters.filter(x => x.id !== p.id);
+    await commit(`Parametro "${p.name}" eliminato`);
+    render();
+  }
+});
+Object.assign(Actions, {
+  async newSession(el) {
+    const r = await dlgSession(el.dataset.class);
+    if (!r) return;
+    if (r.openId) { go('#/sessione/' + r.openId); return; }
+    const ses = Ops.createSession(r);
+    await commit('Sessione creata');
+    go('#/sessione/' + ses.id);
+  },
+  async sesMove(el) {
+    if (!SesCtx) return;
+    const { sesId, ids, idx } = SesCtx;
+    if (!(await saveCurrent(true))) return;
+    const dir = el.dataset.dir;
+    if (dir === 'summary' || (dir === '1' && idx === ids.length - 1)) { goReplace(`#/sessione/${sesId}/riepilogo`); return; }
+    const j = idx + Number(dir);
+    if (j >= 0 && j < ids.length) goReplace(`#/sessione/${sesId}/s/${ids[j]}`);
+  },
+  async sesJump(el) {
+    if (!SesCtx) return;
+    const sesId = SesCtx.sesId;
+    if (!(await saveCurrent(true))) return;
+    goReplace(`#/sessione/${sesId}/s/${el.dataset.student}`);
+  },
+  async sesStatus(el) {
+    if (!SesCtx) return;
+    const { sesId, studentId, ids, idx } = SesCtx;
+    const ses = Q.session(sesId), status = el.dataset.status;
+    const r = Ops.resultOf(sesId, studentId);
+    if (r && r.status === status) {   // secondo tocco: annulla assenza o esonero
+      Ops.deleteResult(r.id);
+      await commit(status === 'assente' ? 'Assenza annullata' : 'Esonero annullato');
+      render();
+      return;
+    }
+    const typed = trialInputs().some(i => !i.disabled && i.value.trim() !== '');
+    if (typed || (r && r.status === 'misurato')) {
+      const st = Q.student(studentId);
+      const ok = await confirmDialog({
+        title: status === 'assente' ? 'Segnare come assente?' : 'Segnare come esonerato?',
+        message: `Le prove inserite per ${st.lastName} ${st.firstName} in questa sessione verranno cancellate.`,
+        confirmLabel: status === 'assente' ? 'Segna assente' : 'Segna esonerato'
+      });
+      if (!ok) return;
+    }
+    clearTimeout(saveTimer); saveTimer = null;
+    Ops.setStatus(ses, studentId, status);
+    await commit(status === 'assente' ? 'Segnato assente: da recuperare' : 'Segnato esonerato');
+    if (idx === ids.length - 1) goReplace(`#/sessione/${sesId}/riepilogo`);
+    else goReplace(`#/sessione/${sesId}/s/${ids[idx + 1]}`);
+  },
+  async sesMarkRest(el) {
+    const ses = Q.session(el.dataset.session);
+    if (!ses) return;
+    const todo = sessionRoster(ses).filter(s => !Ops.resultOf(ses.id, s.id));
+    if (!todo.length) return;
+    const ok = await confirmDialog({
+      title: 'Segnare come assenti?',
+      message: `${todo.length === 1 ? 'Lo studente senza risultato verrà segnato' : `I ${todo.length} studenti senza risultato verranno segnati`} come assenti e compariranno tra i recuperi.`,
+      confirmLabel: 'Segna come assenti'
+    });
+    if (!ok) return;
+    todo.forEach(s => Ops.setStatus(ses, s.id, 'assente'));
+    await commit('Segnati come assenti');
+    render();
+  },
+  async sesEdit(el) {
+    if (SesCtx && !(await saveCurrent(true))) return;
+    const ses = Q.session(el.dataset.session);
+    if (!ses) return;
+    const r = await dlgSessionEdit(ses);
+    if (!r) return;
+    if (r.date !== ses.date) Ops.changeSessionDate(ses, r.date);
+    ses.equipmentWeightKg = r.equipmentWeightKg;
+    await commit('Sessione aggiornata');
+    render();
+  },
+  async sesDelete(el) {
+    const ses = Q.session(el.dataset.session);
+    if (!ses) return;
+    const p = Q.param(ses.parameterId), c = Q.cls(ses.classId);
+    const n = Q.resultsOfSession(ses.id).length;
+    const ok = await confirmDialog({
+      title: 'Eliminare la sessione?',
+      message: `Sessione di ${p.name} del ${U.fmtDate(ses.date)}, classe ${c.name}. ${n ? `Verranno cancellati anche ${n} risultati, comprese assenze ed esoneri.` : 'Non contiene risultati.'} L'operazione non si può annullare.`,
+      confirmLabel: 'Elimina sessione', danger: true, requireText: n ? 'ELIMINA' : null
+    });
+    if (!ok) return;
+    clearTimeout(saveTimer); saveTimer = null;
+    Ops.deleteSession(ses.id);
+    await commit('Sessione eliminata');
+    go(`#/classe/${c.id}/sessioni`);
+  }
+});
+document.addEventListener('input', e => { if (e.target.matches('#main [data-trial]')) onTrialInput(); });
+document.addEventListener('focusout', e => { if (e.target.matches && e.target.matches('#main [data-trial]')) onTrialBlur(e.target); });
+document.addEventListener('keydown', e => {
+  if (e.key !== 'Enter' || !e.target.matches || !e.target.matches('#main [data-trial]')) return;
+  e.preventDefault();
+  const inputs = trialInputs();
+  const i = inputs.indexOf(e.target);
+  if (i < inputs.length - 1) inputs[i + 1].focus();
+  else document.querySelector('#main [data-action="sesMove"][data-dir="1"]')?.click();
+});
+// Se l'app passa in secondo piano (telefono bloccato, cambio app) si salva subito
+document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') flushSave(); });
+window.addEventListener('pagehide', () => { flushSave(); });
+Object.assign(Actions, {
+  async recoverResult(el) {
+    const r = S.results.find(x => x.id === el.dataset.result);
+    if (!r || r.status !== 'assente') return;
+    const ses = Q.session(r.sessionId), p = ses && Q.param(ses.parameterId);
+    if (!ses || !p) return;
+    const out = await dlgRecovery(r);
+    if (!out) return;
+    if (out.kind === 'exempt') {
+      Ops.setStatus(ses, r.studentId, 'esonerato');
+      await commit('Segnato esonerato: non è più tra i recuperi');
+    } else {
+      Ops.recordRecovery(ses, r, out.vals, out.date);
+      await commit(`Recupero registrato: ${U.fmtNum(r.value, p.decimals)} ${p.unit}`);
+    }
+    render();
+  }
+});
+Object.assign(Actions, {
+  showPoint(el) {
+    const box = el.closest('.chart');
+    const r = S.results.find(x => x.id === el.dataset.result);
+    if (!box || !r) return;
+    const ses = Q.session(r.sessionId), p = ses && Q.param(ses.parameterId);
+    if (!p) return;
+    box.querySelectorAll('.pt.sel').forEach(n => n.classList.remove('sel'));
+    el.classList.add('sel');
+    box.querySelector('.pt-info').innerHTML = pointInfoHTML(r, ses, p, el.dataset.student);
+  }
+});
+// I punti dei grafici sono raggiungibili da tastiera
+document.addEventListener('keydown', e => {
+  const t = e.target;
+  if ((e.key === 'Enter' || e.key === ' ') && t.classList && t.classList.contains('pt')) {
+    e.preventDefault();
+    t.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+  }
+});
+// Se cambia la larghezza della finestra i grafici della scheda studente vanno ridisegnati
+let resizeTimer = null;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    if (/^#\/studente\//.test(location.hash) && Math.abs(chartWidth() - lastChartW) > 20) render();
+  }, 200);
+});
+Object.assign(Actions, {
+  startWizard(el) {
+    Wiz = newWiz();
+    const y = Q.year(el.dataset.year);
+    if (y) Wiz.target = { yearId: y.id, label: y.label };
+    go('#/passaggio');
+  },
+  async wizNext() {
+    if (!Wiz) return;
+    const fail = msg => { Wiz.error = msg; render(); };
+    const q = s => document.querySelector(s);
+    if (Wiz.step === 1) {
+      const v = q('input[name="wizYear"]:checked')?.value;
+      if (!v) return fail('Scegli l\'anno di destinazione.');
+      let target;
+      if (v === 'new') {
+        const label = q('#wizNewYear').value.trim();
+        const e = Ops.yearError(label);
+        if (e) return fail(e);
+        target = { yearId: null, label };
+      } else target = { yearId: v, label: Q.year(v).label };
+      if (!S.classes.some(c => c.schoolYearId !== target.yearId)) return fail('Non ci sono classi di altri anni da cui far proseguire gli studenti.');
+      Wiz.target = target;
+      if (Wiz.sourceId && Q.cls(Wiz.sourceId)?.schoolYearId === target.yearId) Wiz.sourceId = null;
+      Wiz.step = 2;
+    } else if (Wiz.step === 2) {
+      const v = q('input[name="wizSource"]:checked')?.value;
+      const src = Q.cls(v);
+      if (!src) return fail('Scegli la classe di origine.');
+      Wiz.sourceId = src.id;
+      if (Wiz.carrySource !== src.id) {
+        Wiz.carry = new Set(Q.studentsOfClass(src.id).filter(s => wizYearStatus(s.id).ok).map(s => s.id));
+        Wiz.carrySource = src.id;
+        if (!Wiz.nameTouched) Wiz.name = suggestNextName(src.name);
+      }
+      Wiz.step = 3;
+    } else if (Wiz.step === 3) {
+      const name = q('#wizName').value.replace(/\s+/g, ' ').trim();
+      const e = Ops.classNameError(name, wizYearId());
+      if (e) { Wiz.name = name; return fail(e); }
+      Wiz.name = name; Wiz.nameTouched = true;
+      Wiz.step = 4;
+    } else if (Wiz.step === 4) {
+      Wiz.step = 5;
+    } else if (Wiz.step === 5) {
+      Wiz.step = 6;
+    } else if (Wiz.step === 6) {
+      const problems = wizProblems();
+      if (problems.length) return fail('Ci sono problemi da sistemare prima di confermare.');
+      Wiz.done = applyWizard();
+      lastWizYearId = Wiz.done.yearId;
+      await commit(`Classe ${Wiz.name} creata`);
+    }
+    render();
+    window.scrollTo(0, 0);
+  },
+  wizBack() {
+    if (!Wiz || Wiz.step <= 1) return;
+    if (Wiz.step === 3) { const n = document.querySelector('#wizName'); if (n) Wiz.name = n.value.replace(/\s+/g, ' ').trim(); }
+    Wiz.step--;
+    render();
+    window.scrollTo(0, 0);
+  },
+  async wizCancel() {
+    if (!Wiz) { go('#/classi'); return; }
+    if (Wiz.step > 1 || Wiz.adds.length) {
+      const ok = await confirmDialog({ title: 'Annullare il passaggio?', message: 'Le scelte fatte finora vengono scartate. Nell\'archivio non è stato salvato nulla.', confirmLabel: 'Annulla il passaggio', danger: true });
+      if (!ok) return;
+    }
+    Wiz = null;
+    go('#/classi');
+  },
+  wizAll(el) {
+    if (!Wiz) return;
+    const studs = Q.studentsOfClass(Wiz.sourceId).filter(s => wizYearStatus(s.id).ok);
+    Wiz.carry = el.dataset.v === '1' ? new Set(studs.map(s => s.id)) : new Set();
+    render();
+  },
+  async wizAddOne() {
+    if (!Wiz) return;
+    const r = await dlgAddStudent(null, { name: Wiz.name, statusFn: wizStatus, extraNames: wizDraftNames() });
+    if (!r) return;
+    if (r.kind === 'link' && !wizStatus(r.studentId).ok) { toast('Studente non aggiungibile: ' + wizStatus(r.studentId).reason, 'error'); return; }
+    Wiz.adds.push(r);
+    render();
+  },
+  async wizAddList() {
+    if (!Wiz) return;
+    const items = await dlgImport(null, { name: Wiz.name, statusFn: wizStatus, seed: wizDraftNames() });
+    if (!items) return;
+    let skipped = 0;
+    items.forEach(it => { if (it.kind === 'link' && !wizStatus(it.studentId).ok) skipped++; else Wiz.adds.push(it); });
+    if (skipped) toast(`${skipped} non aggiunti perché già presenti nella nuova classe`, 'error');
+    render();
+  },
+  wizRemoveAdd(el) {
+    if (!Wiz) return;
+    Wiz.adds.splice(Number(el.dataset.i), 1);
+    render();
+  },
+  wizAgain() {
+    const y = Q.year(lastWizYearId);
+    Wiz = newWiz();
+    if (y) { Wiz.target = { yearId: y.id, label: y.label }; Wiz.step = 2; }
+    render();
+    window.scrollTo(0, 0);
+  },
+  wizClose() { Wiz = null; go('#/classi'); }
+});
+// Passaggio classi: spunte degli studenti e scelta automatica di "Nuovo anno" quando si scrive l'anno
+document.addEventListener('change', e => {
+  const id = e.target.dataset && e.target.dataset.wcarry;
+  if (!id || !Wiz) return;
+  if (e.target.checked) Wiz.carry.add(id); else Wiz.carry.delete(id);
+  const el = document.getElementById('wizCount');
+  if (el) el.textContent = el.textContent.replace(/^\d+/, String(Wiz.carry.size));
+});
+document.addEventListener('input', e => {
+  if (e.target.id === 'wizNewYear') { const r = document.querySelector('input[name="wizYear"][value="new"]'); if (r) r.checked = true; }
+});
+Object.assign(Actions, {
+  async exportJSON() { await exportBackup(); render(); },
+  importJSON() { const f = document.getElementById('importFile'); if (f) { f.value = ''; f.click(); } },
+  exportCSV() {
+    const yid = document.getElementById('csvYear')?.value || 'all';
+    const { count, text } = buildCSV(yid);
+    if (!count) { toast('Nessun risultato da esportare per l\'anno scelto', 'error'); return; }
+    const y = Q.year(yid);
+    downloadFile(`registro-scienze-motorie-misure_${y ? y.label.replace('/', '-') + '_' : ''}${stamp()}.csv`, text, 'text/csv;charset=utf-8');
+    toast(`Esportati ${count} risultati`);
+  }
+});
+document.addEventListener('change', async e => {
+  if (e.target.id !== 'importFile') return;
+  const file = e.target.files && e.target.files[0];
+  if (!file) return;
+  if (file.size > 20 * 1024 * 1024) { toast('Il file è troppo grande per essere un backup dell\'app', 'error'); return; }
+  const text = typeof file.text === 'function' ? await file.text()
+    : await new Promise((res, rej) => { const fr = new FileReader(); fr.onload = () => res(fr.result); fr.onerror = () => rej(fr.error); fr.readAsText(file); });
+  await handleImportText(text, file.name);
+});
+Object.assign(Actions, {
+  dismissUpdate() { PWA.dismissed = true; document.getElementById('updateBar').hidden = true; },
+  async applyUpdate() {
+    // L'aggiornamento ricarica la pagina: prima si salva tutto e si avvisa se c'è una procedura da non perdere.
+    await flushSave();
+    if (Wiz && !Wiz.done) {
+      const ok = await confirmDialog({ title: 'Aggiornare ora?', message: 'Hai un passaggio classi in corso: aggiornando verrà scartato. I dati già salvati non sono toccati.', confirmLabel: 'Aggiorna e scarta' });
+      if (!ok) return;
+    }
+    if (PWA.waiting) {
+      PWA.applying = true;
+      PWA.waiting.postMessage({ type: 'SKIP_WAITING' });
+      setTimeout(() => { if (PWA.applying) PWA.reload(); }, 4000);   // rete di sicurezza se il cambio non arriva
+    } else PWA.reload();
+  },
+  async installApp() {
+    const p = PWA.install;
+    if (!p) return;
+    PWA.install = null;
+    try { p.prompt(); await p.userChoice; } catch (e) { /* scelta annullata */ }
+    refreshDatiIfOpen();
+  },
+  async checkUpdate() {
+    const sw = pwaSupported() ? navigator.serviceWorker : null;
+    if (!PWA.reg || !sw) { toast('L\'uso offline non è attivo su questo dispositivo', 'error'); return; }
+    try { await PWA.reg.update(); } catch (e) { /* offline: si prosegue con il controllo della pagina */ }
+    if (PWA.reg.waiting && sw.controller) { PWA.waiting = PWA.reg.waiting; showUpdate(); return; }
+    const w = PWA.reg.active || sw.controller;
+    if (!w) { toast('Preparazione in corso: riprova tra qualche istante', 'error'); return; }
+    w.postMessage({ type: 'CHECK_UPDATE' });
+  }
+});
+document.addEventListener('click', e => {
+  const el = e.target.closest('[data-action]');
+  if (!el || el.disabled) return;
+  const fn = Actions[el.dataset.action];
+  if (fn) { e.preventDefault(); fn(el, e); }
+});
+document.addEventListener('change', e => {
+  const el = e.target.closest('[data-change]');
+  if (!el) return;
+  const fn = ChangeActions[el.dataset.change];
+  if (fn) fn(el, e);
+});
+window.addEventListener('hashchange', () => { render(); window.scrollTo(0, 0); });
+
+/* ---------- Avvio ---------- */
+(async function start() {
+  await Storage.init();
+  try {
+    const loaded = await Storage.load();
+    if (loaded && loaded.app === APP_ID) S = loaded;
+    if (migrateNames()) await commit();
+  } catch (e) {
+    console.error(e);
+    toast('Archivio illeggibile: ripristina un backup', 'error');
+  }
+  document.getElementById('saveState').textContent = Storage.mode === 'memory' ? 'Non salvato' : '';
+  render();
+  initPWA();
+})();
+</script>
+</body>
+</html>
